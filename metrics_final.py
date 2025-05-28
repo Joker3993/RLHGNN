@@ -5,6 +5,7 @@ import time
 
 import torch
 from dgl.dataloading import GraphDataLoader
+from imblearn.metrics import geometric_mean_score
 from sklearn.metrics import roc_auc_score, average_precision_score, classification_report, \
     precision_recall_fscore_support
 from sklearn.preprocessing import LabelBinarizer
@@ -105,13 +106,18 @@ def Final_test(args):
         auc_score_macro = multiclass_roc_auc_score(Y_test_int, preds_a, average="macro")
         prauc_score_macro = multiclass_pr_auc_score(Y_test_int, preds_a, average="macro")
 
+        g_mean = geometric_mean_score(Y_test_int, preds_a, average="macro")
+
         print(classification_report(Y_test_int, preds_a, digits=3))
         print(f"AUC:{auc_score_macro}")
         print(f"PRAUC:{prauc_score_macro}")
+        print(f"Gmean:{g_mean}")
 
         outfile2.write(classification_report(Y_test_int, preds_a, digits=3))
         outfile2.write('\nAUC: ' + str(auc_score_macro))
         outfile2.write('\nPRAUC: ' + str(prauc_score_macro))
+        outfile2.write('\nGmean: ' + str(g_mean))
+
         outfile2.write('\n')
         outfile2.write('\n')
         outfile2.flush()
