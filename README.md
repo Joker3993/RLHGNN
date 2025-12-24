@@ -1,4 +1,6 @@
 # RLHGNN
+RLHGNN: Reinforcement Learning-driven Heterogeneous Graph Neural Network for Next Activity Prediction in Business Processes
+https://arxiv.org/abs/2507.02690
 
 ## Usage
 The following commands can be directly run to process the six datasets in the paper:
