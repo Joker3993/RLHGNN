@@ -20,7 +20,7 @@ Traditional methods represent event log prefixes with a single fixed graph struc
 | 2 | `forward_complex` | Forward + repeated-activity skip edges |
 | 3 | `Bidirect_complex` | Bidirectional + repeated-activity skip edges |
 
-Each node represents an event (with multi-dimensional attributes such as `activity` / `duration`), modeled by `HeteroSAGE` (heterogeneous SAGE convolution + LSTM aggregation + global attention pooling), which finally outputs the probability distribution over the next activity.
+Each node represents an event (with multi-dimensional attributes such as `activity` / `duration`), modeled by `HeteroSAGE` (heterogeneous SAGE convolution: `forward` / `backward` edges use LSTM aggregation, `repeat_next` edges use mean aggregation; Pre-LN residual blocks + stochastic depth + max-pooling readout), which finally outputs the probability distribution over the next activity.
 
 ### Pipeline
 
@@ -126,7 +126,8 @@ python pre_main.py
 ```
 
 - Trains one `HeteroSAGE` model per dataset × seed × graph configuration (choice 0–3).
-- Training details: NAdam + cosine annealing scheduler + AMP mixed precision + early stopping.
+- Training details: NAdam + 5-epoch linear warmup + cosine annealing scheduler (`eta_min=1e-6`) + AMP mixed precision + early stopping (patience 10).
+- Default hyperparameters: hidden 256, epochs 50, lr 1e-3, batch 64, dropout 0.2, layers 2, label smoothing 0.01, weight decay 1e-5, grad clip 1.0.
 - Outputs: `Pretrain/action_{choice}_{seed}/<dataset>/<dataset>_fold0_model.pkl`
 
 **Evaluate the pretrained models** (optional):
@@ -145,7 +146,9 @@ python env_train.py
 
 - Loads the 4 base GNNs from Step 2 as "environment evaluators".
 - Builds a Gymnasium environment: state = prefix features (activity sequence, length, entropy, duration statistics, etc.), action = choose one of the 4 graph configurations (0–3), reward = prediction performance of the selected GNN.
-- Trains a **PPO** policy (network `[256, 128, 64]`, cosine-annealed learning rate).
+- Trains a **PPO** policy (MLP `[256, 128, 64]`, cosine-annealed learning rate `1e-3 → 0`, `n_steps=1024`, batch 128, `ent_coef=0.01`, early-stop patience 5).
+- All 4 graph variants for every sample are pre-built and cached on GPU before training to avoid repeated graph construction.
+- The default `list_eventlog` covers all 7 datasets; edit it to select a subset.
 - Outputs the policy model: `RL_model/<dataset>/PPO_best_model_fold0_seed{seed}`.
 - After training, `final_policy.py` is invoked automatically: it uses the optimal policy to pick a graph configuration for **every prefix** and generates the final hybrid graph dataset:
   - `graph_data/<dataset>_0_seed{seed}/train_graphs`
@@ -159,6 +162,7 @@ python final_main.py
 ```
 
 - Trains the final `HeteroSAGE` model (next-activity classification) on the RL-generated hybrid graphs.
+- Default hyperparameters: hidden 256, epochs 50, lr 1e-3, batch 64, dropout 0.1, layers 3, label smoothing 0.1, weight decay 1e-4, grad clip 2.0, early stopping patience 10.
 - Outputs: `final_train/<dataset>/seed{seed}/<dataset>_fold0_seed{seed}_model.pkl`
 - Training time is recorded under `train_time/` and `pred_time/`.
 
@@ -211,13 +215,21 @@ python ablation_oracle_ceiling.py
 # Outputs: ablation_exp/oracle_ceiling/seed133/<dataset>_oracle_table.csv
 # Each CSV contains prefix_id, true_label, and the four action predictions.
 # The script also writes oracle_accuracy and oracle_macro_f1 into a summary txt.
+# oracle_macro_f1 is an approximate upper bound obtained by multi-restart (16)
+# coordinate-ascent hill climbing over per-prefix action choices
+# (CLI: --f1-restarts / --f1-seed); oracle_macro_f1_naive (fallback on misses)
+# is saved alongside for comparison. Multi-seed summaries (mean ± std) are also
+# written to the summary file. Other CLI options: --datasets --seeds --batch-size
+# --gpu --num-workers --model-root --output-root.
 ```
 
-Statistical significance analysis (Friedman + Nemenyi test, CD diagram; fill in the metrics of each method manually):
+Statistical significance analysis (Friedman + Nemenyi test, CD diagram; fill in the metrics of each method manually in the data section of the script):
 
 ```bash
 python cd_diagram.py
 ```
+
+Outputs `cd_diagram_accuracy.png` and `cd_diagram_f1.png` (Demsar 2006 style).
 
 ---
 
@@ -251,8 +263,9 @@ python cd_diagram.py
 | `final_main.py` | Final prediction model training |
 | `metrics_final.py` | Final model evaluation |
 | `ablation_main.py` / `ablation_metrics.py` | Ablation study |
-| `cd_diagram.py` | Statistical tests and CD diagram |
-| `model/model.py` | `HeteroSAGE` model definition |
+| `ablation_oracle_ceiling.py` | Oracle ceiling: per-prefix best-action accuracy + F1 upper-bound search |
+| `cd_diagram.py` | Friedman / Nemenyi tests and CD diagram (`cd_diagram_accuracy.png`, `cd_diagram_f1.png`) |
+| `model/model.py` | `HeteroSAGE` model (hetero SAGEConv + LSTM/mean aggregation, Pre-LN + stochastic depth, max pooling) |
 | `MyDataset*.py` | DGL dataset wrappers |
 
 ## 9. FAQ
@@ -260,6 +273,7 @@ python cd_diagram.py
 - **"File not found under `raw_dir/`"**: run `data_process.py` first.
 - **`env_train.py` cannot find the pretrained models**: run `pre_main.py` first and make sure `Pretrain/action_{choice}_{seed}/` contains the model for the dataset.
 - **Reduce runtime**: keep only one dataset and one seed (e.g., `seed_list = [133]`), and lower `iterations` in `env_train.py`.
+- **Recommended (validated) configuration**: on `p2p` / `bpi13_closed_problems` / `bpi13_problems` (5 seeds), hidden 256 / epochs 50 / lr 3e-4 / batch 32 / dropout 0.2 / layers 2 / label smoothing 0.1 / weight decay 3e-4 / clip 1.0 / patience 5 with 3–4 warmup epochs gives stable results (e.g. `p2p` Acc 0.798±0.016 / F1 0.788±0.012) and avoids seed-specific collapses; runs typically early-stop around epoch 9–13 (< 0.03 h).
 - **Out of GPU memory**: reduce `--batch-size` (default 64).
 - **Garbled characters in `bpi13_closed_problems`**: the code has a built-in `gbk` encoding mapping; other datasets default to `utf-8`. Add entries to `ENCODING_MAP` if needed.
 

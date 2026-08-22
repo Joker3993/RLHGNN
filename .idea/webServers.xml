@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a9e4f641-1aa5-46bf-8209-05c4eb35557d" name="RLHGNN">
+        <fileTransfer rootFolder="/root" accessType="SFTP" host="117.50.47.217" port="23" sshConfigId="3da13406-2a29-4cce-8b6b-1127af71fa67" sshConfig="root@117.50.47.217:23 password" />
+      </webServer>
+    </option>
+  </component>
+</project>

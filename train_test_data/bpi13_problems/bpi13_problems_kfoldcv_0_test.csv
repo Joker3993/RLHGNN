@@ -1,0 +1,1147 @@
+case,activity,resource,timestamp,Att1,Att2,Att3,Att4,Att5,Att6
+1405,Accepted-In Progress,Edward,2012/04/26 18:37:17.000000,High,us,Org line C,,PROD487,USA
+1405,Completed-Closed,Edward,2012/04/26 18:39:25.000000,High,us,Org line C,,PROD487,USA
+1407,Accepted-In Progress,Prasad,2012/04/27 06:41:52.000000,High,in,Org line C,E_10,PROD471,Sweden
+1407,Queued-Awaiting Assignment,Prasad,2012/04/27 06:45:17.000000,High,in,Org line C,E_10,PROD471,Sweden
+1407,Accepted-In Progress,Varun,2012/04/27 08:33:50.000000,High,in,Org line C,E_10,PROD471,Sweden
+1407,Completed-Closed,Varun,2012/04/27 13:44:06.000000,High,in,Org line C,E_10,PROD471,Sweden
+1406,Queued-Awaiting Assignment,Srinivasan,2012/04/27 10:01:45.000000,High,se,Org line B,E_10,PROD424,INDIA
+1406,Accepted-In Progress,Rijin,2012/04/27 11:08:12.000000,High,se,Org line B,E_10,PROD424,INDIA
+1406,Queued-Awaiting Assignment,Tomas,2012/04/30 15:24:09.000000,High,se,Org line C,C_6,PROD424,Sweden
+1406,Accepted-In Progress,Kenneth,2012/04/30 16:09:45.000000,High,se,Org line C,C_6,PROD424,Sweden
+1406,Accepted-Wait,Kenneth,2012/05/09 15:03:01.000000,High,se,Org line C,C_6,PROD424,Sweden
+1406,Accepted-In Progress,Tomas,2012/05/23 14:55:27.000000,High,se,Org line C,C_6,PROD424,Sweden
+1406,Completed-Closed,Tomas,2012/05/23 14:56:10.000000,High,se,Org line C,C_6,PROD424,Sweden
+1929,Queued-Awaiting Assignment,Srinivasan,2012/04/27 10:01:45.000000,High,se,Org line B,E_10,PROD424,INDIA
+1929,Accepted-In Progress,Rijin,2012/04/27 11:08:12.000000,High,se,Org line B,E_10,PROD424,INDIA
+1929,Queued-Awaiting Assignment,Tomas,2012/04/30 15:24:09.000000,High,se,Org line C,C_6,PROD424,Sweden
+1929,Accepted-In Progress,Kenneth,2012/04/30 16:09:45.000000,High,se,Org line C,C_6,PROD424,Sweden
+1929,Accepted-Wait,Kenneth,2012/05/09 15:03:01.000000,High,se,Org line C,C_6,PROD424,Sweden
+1929,Accepted-In Progress,Tomas,2012/05/23 14:55:27.000000,High,se,Org line C,C_6,PROD424,Sweden
+1929,Completed-Closed,Tomas,2012/05/23 14:56:10.000000,High,se,Org line C,C_6,PROD424,Sweden
+1409,Accepted-In Progress,Bjarne,2012/04/27 14:34:05.000000,Medium,us,Org line C,E_4,PROD794,Sweden
+1409,Completed-Closed,Bjarne,2012/05/08 15:02:28.000000,Medium,us,Org line C,E_4,PROD794,Sweden
+1408,Accepted-In Progress,Ewa,2012/04/27 14:51:08.000000,Medium,us,Org line G3,,PROD97,POLAND
+1408,Completed-Closed,Ewa,2012/04/27 15:05:37.000000,Medium,us,Org line G3,,PROD97,POLAND
+1411,Accepted-In Progress,Ewa,2012/04/28 03:18:10.000000,Medium,us,Org line G3,,PROD96,POLAND
+1411,Completed-Closed,Ewa,2012/04/28 03:20:33.000000,Medium,us,Org line G3,,PROD96,POLAND
+1412,Accepted-In Progress,Ewa,2012/04/28 03:45:24.000000,High,us,Org line G3,,PROD97,POLAND
+1412,Completed-Closed,Ewa,2012/04/28 03:48:03.000000,High,us,Org line G3,,PROD97,POLAND
+1410,Accepted-In Progress,Niklas,2012/04/28 12:17:13.000000,Low,se,Org line C,E_9,PROD673,Sweden
+1410,Accepted-Assigned,Niklas,2012/04/28 12:19:06.000000,Low,se,Org line C,E_9,PROD673,Sweden
+1410,Accepted-In Progress,Niklas,2012/05/04 07:46:07.000000,Low,se,Org line C,E_9,PROD673,Sweden
+1410,Completed-Closed,Niklas,2012/05/04 07:48:07.000000,Low,se,Org line C,E_9,PROD673,Sweden
+1413,Accepted-In Progress,Niclas,2012/04/29 10:41:28.000000,Major,se,Org line C,C_5,PROD597,Sweden
+1413,Accepted-Assigned,Niclas,2012/04/29 10:42:46.000000,Major,se,Org line C,C_5,PROD597,Sweden
+1413,Accepted-In Progress,Victoria,2012/05/23 13:18:57.000000,Major,se,Org line C,C_5,PROD597,Sweden
+1413,Accepted-In Progress,Niclas,2012/05/23 13:20:38.000000,Major,se,Org line C,C_5,PROD597,Sweden
+1413,Completed-Closed,Niclas,2012/05/23 13:21:04.000000,Major,se,Org line C,C_5,PROD597,Sweden
+1414,Accepted-In Progress,Praveen,2012/04/30 05:27:00.000000,High,in,Org line C,E_10,PROD802,Sweden
+1414,Queued-Awaiting Assignment,Praveen,2012/04/30 05:31:22.000000,High,in,Org line C,E_10,PROD802,Sweden
+1414,Accepted-In Progress,Abhinav,2012/04/30 06:13:44.000000,High,in,Org line C,E_10,PROD802,Sweden
+1414,Queued-Awaiting Assignment,Martin,2012/04/30 06:15:21.000000,High,in,Org line C,C_6,PROD802,Sweden
+1414,Accepted-In Progress,Martin,2012/04/30 10:34:04.000000,High,in,Org line C,C_6,PROD802,Sweden
+1414,Queued-Awaiting Assignment,Rakesh,2012/04/30 10:34:14.000000,High,in,Org line C,E_10,PROD802,Sweden
+1414,Accepted-In Progress,Tarun,2012/04/30 10:36:34.000000,High,in,Org line C,E_10,PROD802,Sweden
+1414,Queued-Awaiting Assignment,Jonas,2012/05/07 12:33:07.000000,High,in,Org line C,C_6,PROD802,Sweden
+1414,Accepted-In Progress,Joakim,2012/05/07 13:11:40.000000,High,in,Org line C,C_6,PROD802,Sweden
+1414,Queued-Awaiting Assignment,Rakesh,2012/05/07 13:14:50.000000,High,in,Org line C,E_10,PROD802,Sweden
+1414,Accepted-In Progress,Anurag,2012/05/07 13:22:56.000000,High,in,Org line C,E_10,PROD802,Sweden
+1414,Accepted-In Progress,Tarun,2012/05/07 14:01:53.000000,High,in,Org line C,E_10,PROD802,Sweden
+1414,Completed-Closed,Tarun,2012/05/07 15:40:13.000000,High,in,Org line C,E_10,PROD802,Sweden
+1930,Accepted-In Progress,Praveen,2012/04/30 05:27:00.000000,High,in,Org line C,E_10,PROD802,Sweden
+1930,Queued-Awaiting Assignment,Praveen,2012/04/30 05:31:22.000000,High,in,Org line C,E_10,PROD802,Sweden
+1930,Queued-Awaiting Assignment,Martin,2012/04/30 06:15:21.000000,High,in,Org line C,C_6,PROD802,Sweden
+1930,Accepted-In Progress,Martin,2012/04/30 10:34:04.000000,High,in,Org line C,C_6,PROD802,Sweden
+1930,Queued-Awaiting Assignment,Rakesh,2012/04/30 10:34:14.000000,High,in,Org line C,E_10,PROD802,Sweden
+1930,Accepted-In Progress,Tarun,2012/04/30 10:36:34.000000,High,in,Org line C,E_10,PROD802,Sweden
+1930,Queued-Awaiting Assignment,Rakesh,2012/05/07 13:14:50.000000,High,in,Org line C,E_10,PROD802,Sweden
+1930,Accepted-In Progress,Tarun,2012/05/07 14:01:53.000000,High,in,Org line C,E_10,PROD802,Sweden
+1930,Completed-Closed,Tarun,2012/05/07 15:40:13.000000,High,in,Org line C,E_10,PROD802,Sweden
+1415,Accepted-In Progress,Praveen,2012/04/30 05:47:41.000000,High,in,Org line C,E_10,PROD802,Sweden
+1415,Queued-Awaiting Assignment,Praveen,2012/04/30 05:55:51.000000,High,in,Org line C,E_10,PROD802,Sweden
+1415,Accepted-In Progress,Abhinav,2012/04/30 06:10:57.000000,High,in,Org line C,E_10,PROD802,Sweden
+1415,Queued-Awaiting Assignment,Martin,2012/04/30 06:13:34.000000,High,in,Org line C,C_6,PROD802,Sweden
+1415,Accepted-In Progress,Martin,2012/04/30 10:30:38.000000,High,in,Org line C,C_6,PROD802,Sweden
+1415,Queued-Awaiting Assignment,Rakesh,2012/04/30 10:31:32.000000,High,in,Org line C,E_10,PROD802,Sweden
+1415,Accepted-In Progress,Tarun,2012/04/30 10:36:03.000000,High,in,Org line C,E_10,PROD802,Sweden
+1415,Queued-Awaiting Assignment,Jonas,2012/05/07 12:35:33.000000,High,in,Org line C,C_6,PROD802,Sweden
+1415,Accepted-In Progress,Joakim,2012/05/07 13:16:01.000000,High,in,Org line C,C_6,PROD802,Sweden
+1415,Queued-Awaiting Assignment,Rakesh,2012/05/07 13:16:46.000000,High,in,Org line C,E_10,PROD802,Sweden
+1415,Accepted-In Progress,Anurag,2012/05/07 13:19:43.000000,High,in,Org line C,E_10,PROD802,Sweden
+1415,Accepted-In Progress,Tarun,2012/05/07 14:01:26.000000,High,in,Org line C,E_10,PROD802,Sweden
+1415,Completed-Closed,Tarun,2012/05/07 15:40:44.000000,High,in,Org line C,E_10,PROD802,Sweden
+1931,Accepted-In Progress,Praveen,2012/04/30 05:47:41.000000,High,in,Org line C,E_10,PROD802,Sweden
+1931,Queued-Awaiting Assignment,Praveen,2012/04/30 05:55:51.000000,High,in,Org line C,E_10,PROD802,Sweden
+1931,Queued-Awaiting Assignment,Martin,2012/04/30 06:13:34.000000,High,in,Org line C,C_6,PROD802,Sweden
+1931,Accepted-In Progress,Martin,2012/04/30 10:30:38.000000,High,in,Org line C,C_6,PROD802,Sweden
+1931,Queued-Awaiting Assignment,Rakesh,2012/04/30 10:31:32.000000,High,in,Org line C,E_10,PROD802,Sweden
+1931,Accepted-In Progress,Tarun,2012/04/30 10:36:03.000000,High,in,Org line C,E_10,PROD802,Sweden
+1931,Queued-Awaiting Assignment,Rakesh,2012/05/07 13:16:46.000000,High,in,Org line C,E_10,PROD802,Sweden
+1931,Accepted-In Progress,Tarun,2012/05/07 14:01:26.000000,High,in,Org line C,E_10,PROD802,Sweden
+1931,Completed-Closed,Tarun,2012/05/07 15:40:44.000000,High,in,Org line C,E_10,PROD802,Sweden
+1416,Accepted-In Progress,Sivakumar,2012/04/30 10:27:14.000000,Medium,se,Org line C,C_6,PROD621,INDIA
+1416,Completed-Closed,Sivakumar,2012/05/28 10:20:49.000000,Medium,se,Org line C,C_6,PROD621,INDIA
+1417,Accepted-In Progress,Jenny,2012/04/30 13:22:33.000000,High,se,Org line G1,E_6,PROD291,Sweden
+1417,Completed-Closed,Jenny,2012/04/30 13:27:28.000000,High,se,Org line G1,E_6,PROD291,Sweden
+1418,Accepted-Assigned,Tadeusz,2012/04/30 17:15:19.000000,High,pl,Org line A2,D_1,PROD782,POLAND
+1418,Accepted-In Progress,Tadeusz,2012/05/23 14:31:50.000000,High,pl,Org line A2,D_1,PROD782,POLAND
+1418,Completed-Closed,Tadeusz,2012/05/24 16:07:05.000000,High,pl,Org line A2,D_1,PROD782,POLAND
+1932,Accepted-In Progress,Vaibhav,2012/05/01 09:34:04.000000,Medium,us,Org line C,E_4,PROD793,Sweden
+1932,Accepted-In Progress,Vaibhav,2012/05/01 09:34:46.000000,Medium,us,Org line C,E_4,PROD793,Sweden
+1933,Queued-Awaiting Assignment,Rakesh,2012/05/01 14:55:13.000000,High,se,Org line C,E_10,PROD488,Sweden
+1419,Queued-Awaiting Assignment,Rakesh,2012/05/01 14:55:13.000000,High,se,Org line C,E_10,PROD488,Sweden
+1419,Accepted-In Progress,Ruchi,2012/05/01 14:59:48.000000,High,se,Org line C,E_10,PROD488,Sweden
+1419,Queued-Awaiting Assignment,Jonas,2012/05/01 20:45:14.000000,High,se,Org line C,C_6,PROD488,Sweden
+1419,Accepted-In Progress,Stefan,2012/05/02 11:10:57.000000,High,se,Org line C,C_6,PROD488,Sweden
+1419,Completed-Closed,Stefan,2012/05/02 11:13:08.000000,High,se,Org line C,C_6,PROD488,Sweden
+1934,Accepted-Wait,Alan,2012/05/02 10:46:29.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+1935,Accepted-In Progress,Prasad,2012/05/02 11:04:02.000000,Medium,be,Org line C,E_10,PROD509,Sweden
+1935,Accepted-Wait,Prasad,2012/05/02 11:09:06.000000,Medium,be,Org line C,E_10,PROD509,Sweden
+1935,Queued-Awaiting Assignment,Prasad,2012/05/15 09:44:34.000000,Medium,be,Org line C,E_10,PROD509,Sweden
+1935,Accepted-In Progress,Jitender,2012/05/15 10:02:01.000000,Medium,be,Org line C,E_10,PROD509,Sweden
+1935,Queued-Awaiting Assignment,Prasad,2012/05/15 10:05:42.000000,Medium,be,Org line C,E_10,PROD509,Sweden
+1935,Accepted-In Progress,Jitender,2012/05/15 10:06:03.000000,Medium,be,Org line C,E_10,PROD509,Sweden
+1935,Queued-Awaiting Assignment,Miroslaw,2012/05/15 10:13:32.000000,Medium,be,Org line A2,A2_1,PROD509,POLAND
+1935,Accepted-In Progress,Przemyslaw,2012/05/15 10:28:16.000000,Medium,be,Org line A2,A2_1,PROD509,POLAND
+1935,Queued-Awaiting Assignment,Prasad,2012/05/15 10:37:51.000000,Medium,be,Org line C,E_10,PROD509,Sweden
+1935,Accepted-In Progress,Jitender,2012/05/15 10:43:51.000000,Medium,be,Org line C,E_10,PROD509,Sweden
+1935,Queued-Awaiting Assignment,Pratap,2012/05/15 11:34:36.000000,Medium,be,Org line C,E_4,PROD509,INDIA
+1935,Accepted-In Progress,Joacim,2012/05/15 11:51:25.000000,Medium,be,Org line C,E_4,PROD509,Sweden
+1935,Accepted-Wait,Joacim,2012/05/15 12:58:54.000000,Medium,be,Org line C,E_4,PROD509,Sweden
+1935,Accepted-In Progress,Przemyslaw,2012/05/22 10:28:28.000000,Medium,be,Org line A2,A2_1,PROD509,POLAND
+1935,Queued-Awaiting Assignment,Gitt,2012/05/22 10:37:42.000000,Medium,be,Org line C,E_2,PROD509,Sweden
+1935,Accepted-In Progress,Urban,2012/05/22 11:26:41.000000,Medium,be,Org line C,E_2,PROD509,Sweden
+1935,Queued-Awaiting Assignment,Els,2012/05/22 15:29:42.000000,Medium,be,Org line C,C_2,PROD509,Belgium
+1935,Accepted-Assigned,Jo,2012/05/23 10:34:38.000000,Medium,be,Org line C,C_2,PROD509,Belgium
+1935,Accepted-In Progress,Els,2012/05/23 10:46:31.000000,Medium,be,Org line C,E_2,PROD509,Belgium
+1935,Queued-Awaiting Assignment,Els,2012/05/23 10:48:56.000000,Medium,be,Org line C,C_2,PROD509,Belgium
+1935,Accepted-Assigned,Lars,2012/05/23 10:50:34.000000,Medium,be,Org line C,C_2,PROD509,Sweden
+1935,Accepted-In Progress,Lars,2012/05/30 15:07:15.000000,Medium,be,Org line C,C_2,PROD509,Sweden
+1936,Accepted-In Progress,Peter,2012/05/02 11:59:57.000000,Medium,se,Org line C,E_7,PROD802,Sweden
+1936,Accepted-In Progress,Peter,2012/05/02 12:00:23.000000,Medium,se,Org line C,E_7,PROD802,Sweden
+1936,Queued-Awaiting Assignment,Peter,2012/05/02 12:02:06.000000,Medium,se,Org line C,E_7,PROD802,Sweden
+1936,Accepted-In Progress,Peter,2012/05/22 08:12:20.000000,Medium,se,Org line C,E_7,PROD802,Sweden
+1936,Queued-Awaiting Assignment,Rajesh Kumar,2012/05/22 08:14:25.000000,Medium,se,Org line C,E_7,PROD802,INDIA
+1936,Accepted-In Progress,Rajesh Kumar,2012/05/22 15:17:45.000000,Medium,se,Org line C,E_7,PROD802,INDIA
+1936,Accepted-In Progress,Daniel,2012/06/14 09:53:35.000000,Medium,se,Org line C,E_7,PROD802,Sweden
+1936,Queued-Awaiting Assignment,Anna,2012/06/14 09:57:33.000000,Medium,se,Org line C,E_7,PROD802,Sweden
+1937,Accepted-In Progress,Peter,2012/05/02 14:47:51.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1937,Queued-Awaiting Assignment,Peter,2012/05/02 14:50:42.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1937,Accepted-In Progress,Mohsin,2012/05/02 14:51:36.000000,Medium,be,Org line C,E_5,PROD745,INDIA
+1937,Queued-Awaiting Assignment,Peter,2012/05/02 14:56:52.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1937,Accepted-Assigned,Marie,2012/06/05 11:09:58.000000,Medium,be,Org line C,E_1,PROD745,Sweden
+1938,Accepted-In Progress,Peter,2012/05/02 14:58:29.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1938,Queued-Awaiting Assignment,Peter,2012/05/02 15:01:11.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1938,Accepted-Assigned,Marie,2012/06/05 11:10:21.000000,Medium,be,Org line C,E_1,PROD745,Sweden
+1939,Accepted-In Progress,Peter,2012/05/02 15:04:59.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1939,Queued-Awaiting Assignment,Peter,2012/05/02 15:06:51.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1939,Accepted-Assigned,Marie,2012/06/05 11:10:55.000000,Medium,be,Org line C,E_1,PROD745,Sweden
+1940,Accepted-In Progress,Peter,2012/05/02 15:09:52.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1940,Queued-Awaiting Assignment,Peter,2012/05/02 15:13:41.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1940,Accepted-Assigned,Marie,2012/06/05 11:11:15.000000,Medium,be,Org line C,E_1,PROD745,Sweden
+1941,Accepted-In Progress,Peter,2012/05/02 15:14:31.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1941,Queued-Awaiting Assignment,Peter,2012/05/02 15:16:08.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1941,Accepted-Assigned,Marie,2012/06/05 11:11:33.000000,Medium,be,Org line C,E_1,PROD745,Sweden
+1943,Accepted-In Progress,Lars,2012/05/02 15:19:07.000000,Medium,se,Org line C,E_3,PROD714,Sweden
+1942,Accepted-In Progress,Peter,2012/05/02 15:26:26.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1942,Queued-Awaiting Assignment,Peter,2012/05/02 15:27:51.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1942,Accepted-Assigned,Marie,2012/06/05 11:11:49.000000,Medium,be,Org line C,E_1,PROD745,Sweden
+1944,Accepted-In Progress,Peter,2012/05/02 15:30:23.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1944,Queued-Awaiting Assignment,Peter,2012/05/02 15:31:59.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1944,Accepted-Assigned,Marie,2012/06/05 11:12:04.000000,Medium,be,Org line C,E_1,PROD745,Sweden
+1945,Accepted-In Progress,Peter,2012/05/02 15:34:54.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1945,Queued-Awaiting Assignment,Peter,2012/05/02 15:36:26.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+1945,Accepted-Assigned,Marie,2012/06/05 11:12:30.000000,Medium,be,Org line C,E_1,PROD745,Sweden
+1420,Queued-Awaiting Assignment,Peter,2012/05/02 17:57:16.000000,Major,fr,Org line C,E_1,PROD816,Belgium
+1420,Accepted-In Progress,Raphael,2012/05/02 17:57:39.000000,Major,fr,Org line C,C_1,PROD816,France
+1420,Accepted-In Progress,Celine,2012/05/02 18:04:21.000000,Major,fr,Org line C,V3_3,PROD816,France
+1420,Completed-Closed,Celine,2012/05/25 18:42:22.000000,Major,fr,Org line C,V3_3,PROD816,France
+1946,Accepted-In Progress,Alice,2012/05/02 23:07:53.000000,Medium,br,Org line B,E_3,PROD120,Brazil
+1946,Accepted-Assigned,Alice,2012/05/02 23:21:30.000000,Medium,br,Org line B,E_3,PROD120,Brazil
+1421,Accepted-In Progress,Alice,2012/05/02 23:20:24.000000,Low,br,Org line B,E_3,PROD120,Brazil
+1421,Accepted-Assigned,Alice,2012/05/02 23:22:01.000000,Low,br,Org line B,E_3,PROD120,Brazil
+1421,Completed-Closed,Alice,2012/05/25 18:38:43.000000,Low,br,Org line B,E_3,PROD120,Brazil
+1947,Accepted-In Progress,Alice,2012/05/02 23:20:24.000000,Low,br,Org line B,E_3,PROD120,Brazil
+1947,Accepted-Assigned,Alice,2012/05/02 23:22:01.000000,Low,br,Org line B,E_3,PROD120,Brazil
+1947,Completed-Closed,Alice,2012/05/25 18:38:43.000000,Low,br,Org line B,E_3,PROD120,Brazil
+1948,Accepted-In Progress,Niklas,2012/05/03 09:25:49.000000,Medium,se,Org line C,E_10,PROD660,Sweden
+1948,Accepted-In Progress,Niklas,2012/05/03 11:52:35.000000,Medium,se,Org line C,E_10,PROD660,Sweden
+1949,Accepted-In Progress,Sameer,2012/05/03 09:32:43.000000,Low,in,Org line C,E_4,PROD436,INDIA
+1949,Accepted-Wait,Sameer,2012/05/09 14:34:20.000000,Low,in,Org line C,E_4,PROD436,INDIA
+1950,Accepted-In Progress,Panigrahy,2012/05/03 10:48:58.000000,Low,in,Org line A2,D_1,PROD611,Sweden
+1952,Accepted-In Progress,Jesper,2012/05/03 11:38:08.000000,Medium,se,Org line C,E_10,PROD660,Sweden
+1953,Accepted-In Progress,Olof,2012/05/03 12:04:47.000000,Low,se,Org line C,E_10,PROD660,Sweden
+1953,Accepted-In Progress,Olof,2012/05/03 12:05:56.000000,Low,se,Org line C,E_10,PROD660,Sweden
+1953,Accepted-Wait,Olof,2012/05/03 12:07:34.000000,Low,se,Org line C,E_10,PROD660,Sweden
+1953,Accepted-In Progress,Olof,2012/05/08 12:56:54.000000,Low,se,Org line C,E_10,PROD660,Sweden
+1953,Accepted-Wait,Olof,2012/05/09 09:57:50.000000,Low,se,Org line C,E_10,PROD660,Sweden
+1951,Accepted-In Progress,Venkata,2012/05/03 12:40:49.000000,Medium,se,Org line A2,A2_4,PROD337,Sweden
+1951,Accepted-Wait,Venkata,2012/05/03 12:41:56.000000,Medium,se,Org line A2,A2_4,PROD337,Sweden
+1422,Accepted-In Progress,Lisbeth,2012/05/03 14:03:32.000000,Low,se,Org line A2,A2_5,PROD461,Sweden
+1422,Completed-Closed,Lisbeth,2012/05/07 09:19:38.000000,Low,se,Org line A2,A2_5,PROD461,Sweden
+1423,Accepted-In Progress,Joris,2012/05/03 16:24:57.000000,High,0,Org line A2,A2_4,PROD604,Belgium
+1423,Completed-Closed,Joris,2012/05/03 16:34:02.000000,High,0,Org line A2,A2_4,PROD604,Belgium
+1954,Accepted-In Progress,Joris,2012/05/03 16:26:17.000000,Major,0,Org line A2,A2_4,PROD49,Belgium
+1954,Completed-Closed,Joris,2012/05/03 16:33:21.000000,Major,0,Org line A2,A2_4,PROD49,Belgium
+1954,Accepted-In Progress,Joris,2012/05/04 12:17:14.000000,Major,0,Org line A2,A2_4,PROD49,Belgium
+1424,Accepted-In Progress,Viktoria,2012/05/03 17:00:53.000000,Major,se,Org line A2,A2_3,PROD673,Sweden
+1424,Queued-Awaiting Assignment,Viktoria,2012/05/03 18:35:20.000000,Major,se,Org line A2,A2_3,PROD673,Sweden
+1424,Queued-Awaiting Assignment,Peter,2012/05/04 11:35:45.000000,Major,se,Org line C,E_7,PROD673,Sweden
+1424,Accepted-In Progress,Peter,2012/05/06 19:27:57.000000,Major,se,Org line C,E_7,PROD673,Sweden
+1424,Accepted-In Progress,Peter,2012/05/08 13:51:42.000000,Major,se,Org line C,E_7,PROD673,Sweden
+1424,Queued-Awaiting Assignment,Praveen,2012/05/08 14:24:52.000000,Major,se,Org line C,E_10,PROD673,Sweden
+1424,Queued-Awaiting Assignment,Martin,2012/05/10 14:25:04.000000,Major,se,Org line C,C_6,PROD673,Sweden
+1424,Accepted-In Progress,Pascal,2012/05/11 10:41:18.000000,Major,se,Org line C,C_6,PROD673,Sweden
+1424,Completed-Closed,Pascal,2012/05/16 15:22:25.000000,Major,se,Org line C,C_6,PROD673,Sweden
+1424,Accepted-In Progress,Pascal,2012/05/29 13:10:03.000000,Major,se,Org line C,C_6,PROD673,Sweden
+1424,Completed-Closed,Pascal,2012/05/29 13:17:45.000000,Major,se,Org line C,C_6,PROD673,Sweden
+1956,Accepted-In Progress,Viktoria,2012/05/03 17:00:53.000000,Major,se,Org line A2,A2_3,PROD673,Sweden
+1956,Queued-Awaiting Assignment,Viktoria,2012/05/03 18:35:20.000000,Major,se,Org line A2,A2_3,PROD673,Sweden
+1956,Queued-Awaiting Assignment,Peter,2012/05/04 11:35:45.000000,Major,se,Org line C,E_7,PROD673,Sweden
+1956,Accepted-In Progress,Peter,2012/05/06 19:27:57.000000,Major,se,Org line C,E_7,PROD673,Sweden
+1956,Accepted-In Progress,Peter,2012/05/08 13:51:42.000000,Major,se,Org line C,E_7,PROD673,Sweden
+1956,Queued-Awaiting Assignment,Praveen,2012/05/08 14:24:52.000000,Major,se,Org line C,E_10,PROD673,Sweden
+1956,Queued-Awaiting Assignment,Martin,2012/05/10 14:25:04.000000,Major,se,Org line C,C_6,PROD673,Sweden
+1956,Accepted-In Progress,Pascal,2012/05/11 10:41:18.000000,Major,se,Org line C,C_6,PROD673,Sweden
+1956,Completed-Closed,Pascal,2012/05/16 15:22:25.000000,Major,se,Org line C,C_6,PROD673,Sweden
+1956,Accepted-In Progress,Pascal,2012/05/29 13:10:03.000000,Major,se,Org line C,C_6,PROD673,Sweden
+1956,Completed-Closed,Pascal,2012/05/29 13:17:45.000000,Major,se,Org line C,C_6,PROD673,Sweden
+1955,Accepted-In Progress,Piotr,2012/05/03 17:32:07.000000,High,pl,Org line A2,A2_2,PROD424,POLAND
+1955,Queued-Awaiting Assignment,Piotr,2012/05/03 17:43:05.000000,High,pl,Org line A2,A2_2,PROD424,POLAND
+1955,Accepted-In Progress,Katarzyna,2012/05/03 17:51:26.000000,High,pl,Org line A2,A2_2,PROD424,POLAND
+1955,Queued-Awaiting Assignment,Grzegorz,2012/05/03 18:02:30.000000,High,pl,Org line C,E_10,PROD424,POLAND
+1955,Accepted-In Progress,Marcin,2012/05/23 13:32:48.000000,High,pl,Org line C,E_10,PROD424,POLAND
+1955,Accepted-Assigned,Diogo,2012/05/23 13:33:33.000000,High,pl,Org line C,E_10,PROD424,Brazil
+1425,Accepted-In Progress,Vincent,2012/05/04 10:15:41.000000,Major,us,Org line C,E_4,PROD348,China
+1425,Completed-Closed,Vincent,2012/05/07 10:12:12.000000,Major,us,Org line C,E_4,PROD348,China
+1959,Accepted-In Progress,Bj?rn,2012/05/04 11:53:40.000000,Medium,se,Org line V2,,PROD449,Sweden
+1958,Accepted-In Progress,Ian,2012/05/04 12:26:13.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+1958,Accepted-Assigned,Ian,2012/05/04 12:27:48.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+1958,Accepted-In Progress,Ian,2012/05/04 17:17:32.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+1960,Queued-Awaiting Assignment,Olivier,2012/05/04 13:43:49.000000,Medium,se,Org line C,C_6,PROD802,France
+1960,Accepted-In Progress,Andreas,2012/05/04 13:46:02.000000,Medium,se,Org line C,C_6,PROD802,Sweden
+1960,Queued-Awaiting Assignment,Olivier,2012/05/04 13:54:17.000000,Medium,se,Org line C,C_6,PROD802,France
+1960,Accepted-In Progress,Nicolas,2012/05/07 11:47:48.000000,Medium,se,Org line C,C_6,PROD802,France
+1960,Queued-Awaiting Assignment,Martin,2012/05/07 11:47:57.000000,Medium,se,Org line C,C_6,PROD802,Sweden
+1960,Accepted-In Progress,Andreas,2012/05/07 11:59:32.000000,Medium,se,Org line C,C_6,PROD802,Sweden
+1960,Queued-Awaiting Assignment,Olivier,2012/05/08 14:06:45.000000,Medium,se,Org line C,C_6,PROD802,France
+1960,Queued-Awaiting Assignment,Olivier,2012/05/16 10:55:45.000000,Medium,se,Org line C,C_6,PROD802,France
+1960,Accepted-In Progress,Raphael,2012/06/06 18:07:05.000000,Medium,se,Org line C,C_6,PROD802,France
+1960,Queued-Awaiting Assignment,Eva,2012/06/06 18:08:59.000000,Medium,se,Org line C,C_1,PROD802,Sweden
+1957,Queued-Awaiting Assignment,John,2012/05/04 14:38:08.000000,Medium,se,Org line C,C_6,PROD660,Sweden
+1957,Accepted-In Progress,John,2012/06/04 10:36:02.000000,Medium,se,Org line C,C_6,PROD660,Sweden
+1961,Accepted-In Progress,Rickard,2012/05/04 15:29:10.000000,Low,se,Org line G4,,PROD374,Sweden
+1961,Accepted-Wait,Rickard,2012/05/04 15:31:00.000000,Low,se,Org line G4,,PROD374,Sweden
+1961,Accepted-In Progress,Rickard,2012/06/05 18:05:29.000000,Low,se,Org line G4,,PROD374,Sweden
+1962,Accepted-In Progress,Els,2012/05/04 15:30:41.000000,Medium,se,Org line C,C_2,PROD327,Belgium
+1962,Queued-Awaiting Assignment,Els,2012/05/04 15:31:56.000000,Medium,se,Org line C,C_2,PROD327,Belgium
+1962,Accepted-In Progress,Els,2012/05/07 09:05:58.000000,Medium,se,Org line C,E_2,PROD327,Belgium
+1962,Accepted-Assigned,Jon,2012/05/07 09:06:20.000000,Medium,se,Org line C,E_2,PROD327,USA
+1426,Accepted-In Progress,John,2012/05/04 15:38:12.000000,Major,us,Org line C,C_6,PROD785,USA
+1426,Completed-Closed,John,2012/05/09 15:49:54.000000,Major,us,Org line C,C_6,PROD785,USA
+1963,Queued-Awaiting Assignment,Patrick,2012/05/04 16:07:02.000000,Medium,be,Org line C,E_1,PROD239,Belgium
+1964,Accepted-In Progress,Lena,2012/05/04 16:45:42.000000,Medium,se,Org line C,E_6,PROD94,Sweden
+1964,Queued-Awaiting Assignment,Lena,2012/05/04 16:49:27.000000,Medium,se,Org line C,E_6,PROD94,Sweden
+1964,Accepted-In Progress,Lena,2012/05/10 15:15:05.000000,Medium,se,Org line C,E_6,PROD94,Sweden
+1965,Accepted-Wait,Vijayakumar,2012/05/05 16:07:46.000000,Medium,in,Org line B,E_10,PROD209,INDIA
+1427,Accepted-In Progress,Fredrik,2012/05/07 05:38:25.000000,High,se,Org line A2,A2_3,PROD368,Sweden
+1427,Accepted-Assigned,Fredrik,2012/05/07 05:40:04.000000,High,se,Org line A2,A2_3,PROD368,Sweden
+1427,Accepted-In Progress,Stefan,2012/05/07 15:56:16.000000,High,se,Org line A2,A2_3,PROD368,Sweden
+1427,Completed-Closed,Stefan,2012/05/11 12:30:49.000000,High,se,Org line A2,A2_3,PROD368,Sweden
+1969,Accepted-In Progress,Lars,2012/05/07 10:49:22.000000,Medium,dk,Org line V11,,PROD236,Denmark
+1970,Accepted-In Progress,Avvaru,2012/05/07 11:14:46.000000,Medium,se,Org line A2,A2_4,PROD243,Sweden
+1972,Accepted-In Progress,Marianne,2012/05/07 11:20:17.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+1968,Accepted-In Progress,Maciej,2012/05/07 12:03:03.000000,Medium,fr,Org line A2,A2_2,PROD698,POLAND
+1968,Accepted-Wait,Maciej,2012/05/07 12:47:27.000000,Medium,fr,Org line A2,A2_2,PROD698,POLAND
+1971,Accepted-In Progress,Joey,2012/05/07 12:32:01.000000,High,se,Org line A2,A2_1,PROD350,China
+1429,Accepted-In Progress,Peter,2012/05/07 13:51:27.000000,Major,cn,Org line A2,A2_5,PROD789,China
+1429,Completed-Closed,Peter,2012/05/24 06:04:34.000000,Major,cn,Org line A2,A2_5,PROD789,China
+1967,Accepted-In Progress,Bj?rn,2012/05/07 14:00:54.000000,Medium,se,Org line V2,,PROD449,Sweden
+1430,Accepted-In Progress,Sylvie,2012/05/07 14:19:57.000000,Low,us,Org line C,C_1,PROD398,France
+1430,Completed-Closed,Sylvie,2012/05/09 12:42:38.000000,Low,us,Org line C,C_1,PROD398,France
+1428,Accepted-In Progress,Jack,2012/05/07 14:22:07.000000,Major,se,Org line A2,A2_1,PROD238,Sweden
+1428,Completed-Closed,Jack,2012/05/07 14:24:21.000000,Major,se,Org line A2,A2_1,PROD238,Sweden
+1973,Accepted-In Progress,G?ran,2012/05/07 14:58:34.000000,Low,se,Org line G4,,PROD397,Sweden
+1966,Accepted-In Progress,Lena,2012/05/07 15:24:19.000000,Medium,se,Org line A2,A2_3,PROD551,Sweden
+1974,Accepted-In Progress,Marc,2012/05/07 16:01:53.000000,Medium,se,Org line F,,PROD753,Belgium
+1432,Accepted-In Progress,Summy,2012/05/07 18:56:41.000000,Low,in,Org line C,E_10,PROD805,Sweden
+1432,Accepted-In Progress,Summy,2012/05/08 13:58:31.000000,Low,in,Org line C,E_10,PROD805,Sweden
+1432,Accepted-In Progress,Summy,2012/05/08 14:19:47.000000,Low,in,Org line C,E_10,PROD805,Sweden
+1432,Accepted-Wait,Summy,2012/05/08 14:23:42.000000,Low,in,Org line C,E_10,PROD805,Sweden
+1432,Accepted-In Progress,Summy,2012/05/08 17:29:34.000000,Low,in,Org line C,E_10,PROD805,Sweden
+1432,Completed-Closed,Summy,2012/05/08 17:29:59.000000,Low,in,Org line C,E_10,PROD805,Sweden
+1433,Accepted-In Progress,Robert,2012/05/07 19:00:49.000000,High,us,Org line C,,PROD378,USA
+1433,Queued-Awaiting Assignment,Robert,2012/05/07 19:02:48.000000,High,us,Org line C,,PROD378,USA
+1433,Accepted-In Progress,Edward,2012/05/07 19:04:55.000000,High,us,Org line C,,PROD378,USA
+1433,Completed-Closed,Edward,2012/05/24 15:46:48.000000,High,us,Org line C,,PROD378,USA
+1975,Accepted-In Progress,Vesa,2012/05/07 19:07:13.000000,High,se,Org line C,C_6,PROD805,Sweden
+1975,Accepted-Wait,Vesa,2012/05/07 19:11:09.000000,High,se,Org line C,C_6,PROD805,Sweden
+1975,Accepted-Wait,Vesa,2012/05/08 14:14:03.000000,High,se,Org line C,C_6,PROD805,Sweden
+1975,Accepted-In Progress,Vesa,2012/05/08 14:17:43.000000,High,se,Org line C,C_6,PROD805,Sweden
+1975,Accepted-Wait,Vesa,2012/05/08 15:04:41.000000,High,se,Org line C,C_6,PROD805,Sweden
+1975,Queued-Awaiting Assignment,Vesa,2012/05/08 16:53:55.000000,High,se,Org line C,C_6,PROD805,Sweden
+1431,Accepted-In Progress,Vesa,2012/05/07 19:07:13.000000,High,se,Org line C,C_6,PROD805,Sweden
+1431,Accepted-Wait,Vesa,2012/05/07 19:11:09.000000,High,se,Org line C,C_6,PROD805,Sweden
+1431,Accepted-Wait,Vesa,2012/05/08 14:14:03.000000,High,se,Org line C,C_6,PROD805,Sweden
+1431,Accepted-In Progress,Vesa,2012/05/08 14:17:43.000000,High,se,Org line C,C_6,PROD805,Sweden
+1431,Accepted-Wait,Vesa,2012/05/08 15:04:41.000000,High,se,Org line C,C_6,PROD805,Sweden
+1431,Queued-Awaiting Assignment,Vesa,2012/05/08 16:53:55.000000,High,se,Org line C,C_6,PROD805,Sweden
+1431,Accepted-In Progress,Bj?rn,2012/05/08 17:27:14.000000,High,se,Org line C,C_6,PROD805,Sweden
+1431,Completed-Closed,Bj?rn,2012/05/16 12:18:55.000000,High,se,Org line C,C_6,PROD805,Sweden
+1976,Accepted-In Progress,Harshavardhan,2012/05/08 09:11:39.000000,High,se,Org line G4,,PROD700,Sweden
+1977,Accepted-In Progress,Vesa,2012/05/08 11:08:10.000000,High,se,Org line C,C_6,PROD805,Sweden
+1434,Queued-Awaiting Assignment,Robert,2012/05/08 11:54:44.000000,Major,in,Org line C,E_4,PROD794,USA
+1434,Accepted-In Progress,Bhim,2012/05/08 13:07:03.000000,Major,in,Org line C,E_5,PROD794,INDIA
+1434,Completed-Closed,Bhim,2012/05/08 13:11:01.000000,Major,in,Org line C,E_5,PROD794,INDIA
+1435,Accepted-In Progress,Robert,2012/05/08 12:27:37.000000,High,us,Org line C,E_4,PROD793,USA
+1435,Queued-Awaiting Assignment,Robert,2012/05/08 12:30:54.000000,High,us,Org line C,E_4,PROD793,USA
+1435,Accepted-In Progress,Vaibhav,2012/05/22 15:28:14.000000,High,us,Org line C,E_4,PROD793,Sweden
+1435,Completed-Closed,Vaibhav,2012/05/22 16:12:41.000000,High,us,Org line C,E_4,PROD793,Sweden
+1980,Accepted-In Progress,Robert,2012/05/08 12:27:37.000000,High,us,Org line C,E_4,PROD793,USA
+1980,Queued-Awaiting Assignment,Robert,2012/05/08 12:30:54.000000,High,us,Org line C,E_4,PROD793,USA
+1980,Accepted-In Progress,Vaibhav,2012/05/22 15:28:14.000000,High,us,Org line C,E_4,PROD793,Sweden
+1980,Completed-Closed,Vaibhav,2012/05/22 16:12:41.000000,High,us,Org line C,E_4,PROD793,Sweden
+1978,Accepted-In Progress,Jimmy,2012/05/08 12:56:29.000000,Low,se,Org line C,V3_2,PROD262,Sweden
+1979,Accepted-In Progress,Samira,2012/05/08 13:46:41.000000,Medium,se,Org line G4,,PROD448,Sweden
+1979,Accepted-Assigned,Samira,2012/05/08 13:48:44.000000,Medium,se,Org line G4,,PROD448,Sweden
+1979,Accepted-In Progress,Samira,2012/05/29 09:29:13.000000,Medium,se,Org line G4,,PROD448,Sweden
+1979,Accepted-Wait,Samira,2012/06/08 15:25:04.000000,Medium,se,Org line G4,,PROD448,Sweden
+1981,Accepted-In Progress,Andreas,2012/05/08 14:43:59.000000,Low,se,Org line G4,,PROD408,Sweden
+1981,Accepted-Assigned,Andreas,2012/05/08 14:53:49.000000,Low,se,Org line G4,,PROD408,Sweden
+1436,Accepted-In Progress,David,2012/05/08 14:51:43.000000,High,se,Org line G4,,PROD802,Sweden
+1436,Accepted-Assigned,David,2012/05/08 14:58:54.000000,High,se,Org line G4,,PROD802,Sweden
+1436,Accepted-In Progress,David,2012/05/17 10:35:00.000000,High,se,Org line G4,,PROD802,Sweden
+1436,Completed-Closed,David,2012/05/17 10:35:01.000000,High,se,Org line G4,,PROD802,Sweden
+1982,Accepted-In Progress,David,2012/05/08 14:51:43.000000,High,se,Org line G4,,PROD802,Sweden
+1982,Accepted-Assigned,David,2012/05/08 14:58:54.000000,High,se,Org line G4,,PROD802,Sweden
+1982,Accepted-In Progress,David,2012/05/17 10:35:00.000000,High,se,Org line G4,,PROD802,Sweden
+1982,Completed-Closed,David,2012/05/17 10:35:01.000000,High,se,Org line G4,,PROD802,Sweden
+1983,Accepted-In Progress,Mikael,2012/05/08 17:05:20.000000,Medium,se,Org line A2,A2_4,PROD537,Sweden
+1437,Accepted-In Progress,Ewa,2012/05/08 17:48:23.000000,Low,us,Org line G3,,PROD428,POLAND
+1437,Completed-Closed,Ewa,2012/05/08 17:50:22.000000,Low,us,Org line G3,,PROD428,POLAND
+1984,Accepted-In Progress,David,2012/05/08 19:22:05.000000,Medium,se,Org line G4,,PROD412,Sweden
+1984,Accepted-Assigned,David,2012/05/08 19:27:09.000000,Medium,se,Org line G4,,PROD412,Sweden
+1986,Accepted-In Progress,Himanshu,2012/05/08 20:23:46.000000,Low,in,Org line C,E_10,PROD805,Sweden
+1986,Accepted-In Progress,Himanshu,2012/05/08 20:34:05.000000,Low,in,Org line C,E_10,PROD805,Sweden
+1986,Accepted-Wait,Himanshu,2012/05/08 20:36:25.000000,Low,in,Org line C,E_10,PROD805,Sweden
+1985,Accepted-In Progress,Ian,2012/05/08 20:29:01.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+1985,Accepted-Assigned,Ian,2012/05/08 20:29:46.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+1987,Accepted-In Progress,Henrik,2012/05/09 11:03:04.000000,Low,se,Org line C,E_10,PROD178,Sweden
+1987,Queued-Awaiting Assignment,Henrik,2012/05/09 11:07:02.000000,Low,se,Org line C,E_10,PROD178,Sweden
+1987,Accepted-In Progress,Hicham,2012/05/30 10:12:09.000000,Low,se,Org line C,E_10,PROD178,Sweden
+1989,Accepted-In Progress,Ian,2012/05/09 12:14:46.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+1989,Accepted-Assigned,Ian,2012/05/09 12:15:48.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+1988,Accepted-In Progress,Pratap,2012/05/09 12:47:35.000000,Medium,se,Org line C,C_3,PROD375,INDIA
+1993,Accepted-In Progress,Kell,2012/05/09 14:28:23.000000,High,se,Org line C,E_6,PROD802,Sweden
+1991,Accepted-In Progress,Johan,2012/05/09 14:28:47.000000,Medium,se,Org line G4,,PROD412,Sweden
+1990,Accepted-In Progress,Ian,2012/05/09 14:49:11.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+1990,Accepted-Assigned,Ian,2012/05/09 14:55:56.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+1994,Accepted-In Progress,Valter,2012/05/09 15:07:58.000000,Low,se,Org line A2,A2_3,PROD802,Sweden
+1994,Accepted-Assigned,Valter,2012/05/09 15:15:44.000000,Low,se,Org line A2,A2_3,PROD802,Sweden
+1994,Accepted-Wait,Valter,2012/05/09 15:55:09.000000,Low,se,Org line A2,A2_3,PROD802,Sweden
+1439,Accepted-In Progress,Alice,2012/05/09 16:42:39.000000,Medium,br,Org line B,E_3,PROD119,Brazil
+1439,Accepted-Assigned,Alice,2012/05/09 19:46:34.000000,Medium,br,Org line B,E_3,PROD119,Brazil
+1439,Completed-Closed,Alice,2012/05/22 18:09:16.000000,Medium,br,Org line B,E_3,PROD119,Brazil
+1995,Accepted-In Progress,Christer,2012/05/09 16:54:37.000000,High,se,Org line C,C_6,PROD805,Sweden
+1438,Completed-Closed,Maria,2012/05/09 17:27:42.000000,Medium,se,Org line A2,A2_4,PROD591,Sweden
+1992,Completed-Closed,Maria,2012/05/09 17:27:42.000000,Medium,se,Org line A2,A2_4,PROD591,Sweden
+1997,Accepted-In Progress,Thiago,2012/05/09 22:48:06.000000,Low,br,Org line B,E_6,PROD122,Brazil
+1997,Accepted-In Progress,Thiago,2012/05/09 23:00:18.000000,Low,br,Org line B,E_6,PROD122,Brazil
+1997,Accepted-In Progress,Marise,2012/05/17 18:51:16.000000,Low,br,Org line B,E_6,PROD122,Brazil
+1997,Queued-Awaiting Assignment,Carlos,2012/05/17 18:54:10.000000,Low,br,Org line A2,A2_3,PROD122,Brazil
+1998,Accepted-In Progress,Hineesh,2012/05/09 23:42:10.000000,High,us,Org line C,E_4,PROD793,INDIA
+1996,Accepted-In Progress,Sameer,2012/05/10 00:36:03.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+1996,Accepted-Wait,Sameer,2012/05/10 00:40:36.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+1999,Accepted-In Progress,Sameer,2012/05/10 03:23:06.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+1999,Accepted-Wait,Sameer,2012/05/10 03:24:43.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2001,Accepted-In Progress,Frederic,2012/05/10 10:36:55.000000,Medium,fr,Org line C,,PROD348,France
+2001,Accepted-In Progress,Frederic,2012/05/22 14:40:20.000000,Medium,fr,Org line C,,PROD348,France
+2000,Accepted-In Progress,Arun,2012/05/10 10:51:50.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2000,Accepted-Wait,Arun,2012/05/10 11:16:30.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2002,Accepted-In Progress,Christer,2012/05/10 11:32:04.000000,High,se,Org line C,C_6,PROD805,Sweden
+2003,Accepted-In Progress,Mattias,2012/05/10 12:07:53.000000,Medium,se,Org line G4,,PROD108,Sweden
+2005,Accepted-In Progress,Johan,2012/05/10 12:41:28.000000,Medium,se,Org line G4,,PROD411,Sweden
+2005,Accepted-Assigned,Johan,2012/05/10 12:50:54.000000,Medium,se,Org line G4,,PROD411,Sweden
+2004,Accepted-In Progress,Ian,2012/05/10 13:38:11.000000,Medium,gb,Org line A2,A2_1,PROD235,United Kingdom
+2004,Accepted-Assigned,Ian,2012/05/10 13:57:13.000000,Medium,gb,Org line A2,A2_1,PROD235,United Kingdom
+2006,Accepted-In Progress,Roland,2012/05/10 14:24:06.000000,Low,se,Org line G4,,PROD374,Sweden
+2007,Accepted-In Progress,Stephane,2012/05/10 14:31:01.000000,High,fr,Org line A2,A2_4,PROD187,France
+2009,Accepted-In Progress,Arup,2012/05/10 16:37:52.000000,High,in,Org line A2,D_1,PROD613,Sweden
+1440,Accepted-In Progress,Lars,2012/05/10 16:53:26.000000,Medium,se,Org line C,C_4,PROD673,Sweden
+1440,Completed-Closed,Lars,2012/05/31 16:19:08.000000,Medium,se,Org line C,C_4,PROD673,Sweden
+2010,Accepted-In Progress,Lars,2012/05/10 16:53:26.000000,Medium,se,Org line C,C_4,PROD673,Sweden
+2010,Completed-Closed,Lars,2012/05/31 16:19:08.000000,Medium,se,Org line C,C_4,PROD673,Sweden
+2008,Queued-Awaiting Assignment,Praveen,2012/05/10 17:01:40.000000,Medium,fr,Org line C,E_10,PROD805,Sweden
+2008,Accepted-In Progress,Arun,2012/05/14 13:09:14.000000,Medium,fr,Org line C,E_10,PROD805,Sweden
+2008,Queued-Awaiting Assignment,Martin,2012/05/14 13:11:03.000000,Medium,fr,Org line C,C_6,PROD805,Sweden
+2008,Accepted-In Progress,Aurelien,2012/05/16 16:41:47.000000,Medium,fr,Org line C,C_6,PROD805,France
+2008,Queued-Awaiting Assignment,Bruno,2012/05/16 16:48:13.000000,Medium,fr,Org line C,E_6,PROD805,France
+2008,Accepted-In Progress,Aurelien,2012/05/16 16:51:13.000000,Medium,fr,Org line C,C_6,PROD805,France
+2008,Queued-Awaiting Assignment,Bruno,2012/05/16 16:51:43.000000,Medium,fr,Org line C,E_6,PROD805,France
+2008,Accepted-In Progress,Bruno,2012/06/07 12:14:17.000000,Medium,fr,Org line C,E_6,PROD805,France
+2011,Accepted-In Progress,Henrik,2012/05/11 08:25:19.000000,Low,se,Org line C,E_10,PROD178,Sweden
+2011,Queued-Awaiting Assignment,Henrik,2012/06/13 23:04:04.000000,Low,se,Org line C,E_10,PROD178,Sweden
+1441,Accepted-In Progress,Suzanne,2012/05/11 09:10:04.000000,Medium,se,Org line V2,,PROD631,Sweden
+1441,Completed-Closed,Suzanne,2012/05/30 10:57:00.000000,Medium,se,Org line V2,,PROD631,Sweden
+2012,Accepted-In Progress,Emil,2012/05/11 10:23:35.000000,Medium,se,Org line C,C_6,PROD544,Sweden
+2012,Queued-Awaiting Assignment,Emil,2012/05/11 10:23:44.000000,Medium,se,Org line C,C_6,PROD544,Sweden
+2012,Accepted-In Progress,Emil,2012/05/16 10:25:43.000000,Medium,se,Org line C,C_6,PROD544,Sweden
+1442,Accepted-In Progress,Ewa,2012/05/11 12:32:41.000000,High,us,Org line G3,,PROD98,POLAND
+1442,Completed-Closed,Ewa,2012/05/11 12:35:47.000000,High,us,Org line G3,,PROD98,POLAND
+2013,Accepted-In Progress,Ewa,2012/05/11 12:32:41.000000,High,us,Org line G3,,PROD98,POLAND
+2013,Completed-Closed,Ewa,2012/05/11 12:35:47.000000,High,us,Org line G3,,PROD98,POLAND
+2014,Accepted-In Progress,Timothy,2012/05/11 12:52:48.000000,High,gb,Org line A2,A2_1,PROD235,United Kingdom
+2014,Accepted-Wait,Timothy,2012/05/11 13:44:27.000000,High,gb,Org line A2,A2_1,PROD235,United Kingdom
+2019,Accepted-In Progress,James,2012/05/11 13:05:02.000000,Medium,gb,Org line V11,,PROD160,United Kingdom
+2015,Accepted-In Progress,Maciej,2012/05/11 13:22:26.000000,Low,fr,Org line A2,A2_2,PROD698,POLAND
+2015,Accepted-Wait,Maciej,2012/05/11 13:34:09.000000,Low,fr,Org line A2,A2_2,PROD698,POLAND
+2018,Accepted-In Progress,Timothy,2012/05/11 13:33:09.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2018,Accepted-Wait,Timothy,2012/05/11 13:41:36.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+1443,Accepted-In Progress,Avvaru,2012/05/11 13:44:22.000000,Medium,se,Org line A2,A2_4,PROD243,Sweden
+1443,Completed-Closed,Avvaru,2012/05/29 08:23:44.000000,Medium,se,Org line A2,A2_4,PROD243,Sweden
+2020,Accepted-In Progress,Avvaru,2012/05/11 13:44:22.000000,Medium,se,Org line A2,A2_4,PROD243,Sweden
+2020,Completed-Closed,Avvaru,2012/05/29 08:23:44.000000,Medium,se,Org line A2,A2_4,PROD243,Sweden
+2021,Accepted-In Progress,Lars,2012/05/11 14:18:00.000000,High,se,Org line V2,,PROD391,Sweden
+2017,Accepted-In Progress,Aneesh V,2012/05/11 15:07:17.000000,Medium,in,Org line B,E_10,PROD424,INDIA
+2017,Accepted-In Progress,Aneesh V,2012/05/11 15:24:06.000000,Medium,in,Org line B,E_10,PROD424,INDIA
+2016,Accepted-In Progress,Olivier,2012/05/11 15:35:23.000000,Medium,fr,Org line C,E_10,PROD13,France
+2016,Queued-Awaiting Assignment,Olivier,2012/05/11 16:54:34.000000,Medium,fr,Org line C,E_10,PROD13,France
+2016,Accepted-In Progress,Mathias,2012/05/23 14:21:56.000000,Medium,fr,Org line C,C_6,PROD13,Sweden
+2023,Accepted-In Progress,B?rje,2012/05/11 16:38:58.000000,Major,se,Org line C,C_1,PROD153,Sweden
+2022,Accepted-In Progress,Mikael,2012/05/11 17:39:44.000000,High,se,Org line C,E_6,PROD148,Sweden
+2022,Accepted-Wait,Mikael,2012/05/14 17:50:04.000000,High,se,Org line C,E_6,PROD148,Sweden
+2024,Queued-Awaiting Assignment,Henrique,2012/05/11 22:56:56.000000,High,br,Org line A2,A2_2,PROD124,Brazil
+1444,Accepted-In Progress,Hari,2012/05/13 02:55:10.000000,High,in,Org line C,E_4,PROD701,INDIA
+1444,Queued-Awaiting Assignment,Hari,2012/05/13 02:56:10.000000,High,in,Org line C,E_4,PROD701,INDIA
+1444,Accepted-In Progress,Patrik,2012/05/15 09:58:46.000000,High,in,Org line C,E_4,PROD701,Sweden
+1444,Completed-Closed,Patrik,2012/05/15 10:06:53.000000,High,in,Org line C,E_4,PROD701,Sweden
+1445,Accepted-In Progress,Ewa,2012/05/13 17:29:31.000000,High,us,Org line G3,,PROD98,POLAND
+1445,Completed-Closed,Ewa,2012/05/13 17:30:04.000000,High,us,Org line G3,,PROD98,POLAND
+2025,Accepted-In Progress,Ewa,2012/05/13 17:29:31.000000,High,us,Org line G3,,PROD98,POLAND
+2025,Completed-Closed,Ewa,2012/05/13 17:30:04.000000,High,us,Org line G3,,PROD98,POLAND
+1446,Accepted-In Progress,Ewa,2012/05/13 17:54:39.000000,High,us,Org line G3,,PROD97,POLAND
+1446,Completed-Closed,Ewa,2012/05/13 18:01:55.000000,High,us,Org line G3,,PROD97,POLAND
+2026,Accepted-In Progress,Kenneth,2012/05/14 09:57:22.000000,High,se,Org line A2,A2_3,PROD592,Sweden
+1447,Accepted-In Progress,Ewa,2012/05/14 12:27:18.000000,High,us,Org line G3,,PROD98,POLAND
+1447,Completed-Closed,Ewa,2012/05/14 12:28:52.000000,High,us,Org line G3,,PROD98,POLAND
+2027,Accepted-In Progress,Ewa,2012/05/14 12:27:18.000000,High,us,Org line G3,,PROD98,POLAND
+2027,Completed-Closed,Ewa,2012/05/14 12:28:52.000000,High,us,Org line G3,,PROD98,POLAND
+1449,Accepted-In Progress,Christer,2012/05/14 13:50:28.000000,Medium,se,Org line C,E_7,PROD671,Sweden
+1449,Completed-Closed,Christer,2012/05/21 11:48:01.000000,Medium,se,Org line C,E_7,PROD671,Sweden
+2029,Accepted-In Progress,Marco,2012/05/14 15:03:41.000000,High,se,Org line G4,,PROD412,Sweden
+2029,Accepted-Wait,Marco,2012/05/14 15:04:27.000000,High,se,Org line G4,,PROD412,Sweden
+1450,Accepted-In Progress,Ewa,2012/05/14 15:12:01.000000,High,us,Org line G3,,PROD96,POLAND
+1450,Completed-Closed,Ewa,2012/05/14 15:14:26.000000,High,us,Org line G3,,PROD96,POLAND
+2030,Accepted-In Progress,Niklas,2012/05/14 15:32:58.000000,Low,se,Org line A2,A2_2,PROD681,Sweden
+1451,Accepted-In Progress,Ewa,2012/05/14 15:44:18.000000,Medium,us,Org line G3,,PROD97,POLAND
+1451,Completed-Closed,Ewa,2012/05/14 15:56:34.000000,Medium,us,Org line G3,,PROD97,POLAND
+2031,Accepted-In Progress,Pascal,2012/05/14 16:05:22.000000,Medium,se,Org line C,C_6,PROD802,Sweden
+2032,Accepted-In Progress,Mikael,2012/05/14 17:38:49.000000,Medium,se,Org line C,E_6,PROD148,Sweden
+2032,Accepted-Wait,Mikael,2012/05/14 17:49:54.000000,Medium,se,Org line C,E_6,PROD148,Sweden
+2033,Accepted-In Progress,Ramith,2012/05/14 17:58:00.000000,High,us,Org line C,E_4,PROD793,INDIA
+1448,Accepted-In Progress,Rakesh,2012/05/14 18:27:12.000000,Medium,in,Org line C,E_10,PROD154,Sweden
+1448,Completed-Closed,Rakesh,2012/05/14 18:33:42.000000,Medium,in,Org line C,E_10,PROD154,Sweden
+2028,Accepted-In Progress,Rakesh,2012/05/14 18:27:12.000000,Medium,in,Org line C,E_10,PROD154,Sweden
+2028,Completed-Closed,Rakesh,2012/05/14 18:33:42.000000,Medium,in,Org line C,E_10,PROD154,Sweden
+1452,Accepted-In Progress,Ruchi,2012/05/15 02:30:02.000000,High,in,Org line C,E_10,PROD154,Sweden
+1452,Completed-Closed,Ruchi,2012/05/16 01:59:49.000000,High,in,Org line C,E_10,PROD154,Sweden
+1453,Accepted-In Progress,Per,2012/05/15 10:09:29.000000,High,be,Org line C,C_1,PROD795,Sweden
+1453,Completed-Closed,Per,2012/05/30 22:12:43.000000,High,be,Org line C,C_1,PROD795,Sweden
+2034,Accepted-In Progress,Devakumar,2012/05/15 10:50:30.000000,Low,se,Org line C,E_1,PROD834,INDIA
+2034,Accepted-Wait,Devakumar,2012/06/12 10:31:19.000000,Low,se,Org line C,E_1,PROD834,INDIA
+2035,Accepted-In Progress,Peter,2012/05/15 11:13:45.000000,Major,se,Org line C,C_5,PROD601,Sweden
+2035,Accepted-Wait,Peter,2012/05/15 11:20:04.000000,Major,se,Org line C,C_5,PROD601,Sweden
+2036,Accepted-In Progress,Kjell,2012/05/15 11:16:00.000000,Low,se,Org line C,E_7,PROD673,Sweden
+2038,Accepted-In Progress,Ian,2012/05/15 15:09:47.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2038,Accepted-In Progress,Ian,2012/05/16 11:08:10.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2038,Accepted-Assigned,Ian,2012/05/16 11:24:45.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2037,Accepted-In Progress,Ann-Charlotte,2012/05/15 15:39:29.000000,Low,se,Org line A2,A2_3,PROD368,Sweden
+1455,Accepted-In Progress,?sa,2012/05/15 15:47:11.000000,Major,se,Org line A2,D_1,PROD617,Sweden
+1455,Completed-Closed,?sa,2012/05/31 14:34:39.000000,Major,se,Org line A2,D_1,PROD617,Sweden
+2039,Accepted-In Progress,?sa,2012/05/15 15:47:11.000000,Major,se,Org line A2,D_1,PROD617,Sweden
+2039,Completed-Closed,?sa,2012/05/31 14:34:39.000000,Major,se,Org line A2,D_1,PROD617,Sweden
+1456,Accepted-In Progress,Vishal,2012/05/15 17:19:08.000000,Major,se,Org line V5,,PROD221,INDIA
+1456,Completed-Closed,Vishal,2012/05/15 17:27:51.000000,Major,se,Org line V5,,PROD221,INDIA
+1454,Accepted-In Progress,Ewa,2012/05/15 17:35:05.000000,High,us,Org line G3,,PROD97,POLAND
+1454,Completed-Closed,Ewa,2012/05/15 17:38:18.000000,High,us,Org line G3,,PROD97,POLAND
+2041,Accepted-In Progress,Christoffer,2012/05/15 17:44:06.000000,Low,se,Org line G4,,PROD412,Sweden
+2041,Accepted-Wait,Christoffer,2012/05/15 17:44:50.000000,Low,se,Org line G4,,PROD412,Sweden
+2040,Accepted-In Progress,Steve,2012/05/15 17:53:46.000000,Medium,se,Org line C,E_10,PROD646,Belgium
+2042,Queued-Awaiting Assignment,Gunilla,2012/05/15 22:11:24.000000,High,se,Org line G1,E_6,PROD295,Sweden
+2042,Accepted-In Progress,Peter,2012/05/16 07:56:17.000000,High,se,Org line G1,E_6,PROD295,Sweden
+2042,Completed-Closed,Peter,2012/05/16 07:58:42.000000,High,se,Org line G1,E_6,PROD295,Sweden
+2042,Accepted-In Progress,Peter,2012/05/29 14:47:15.000000,High,se,Org line G1,E_6,PROD295,Sweden
+2042,Queued-Awaiting Assignment,Susan,2012/05/29 14:48:57.000000,High,se,Org line C,E_6,PROD295,Sweden
+2042,Accepted-In Progress,Peter,2012/05/29 14:48:58.000000,High,se,Org line G1,E_6,PROD295,Sweden
+2042,Queued-Awaiting Assignment,Susan,2012/05/29 14:49:30.000000,High,se,Org line C,E_6,PROD295,Sweden
+2042,Accepted-In Progress,Susan,2012/05/30 09:01:23.000000,High,se,Org line C,E_6,PROD295,Sweden
+2042,Accepted-Assigned,Lars,2012/05/30 09:02:21.000000,High,se,Org line C,E_6,PROD295,Sweden
+1457,Accepted-In Progress,Ruchi,2012/05/16 03:13:02.000000,High,in,Org line C,E_10,PROD154,Sweden
+1457,Completed-Closed,Ruchi,2012/05/16 03:18:13.000000,High,in,Org line C,E_10,PROD154,Sweden
+2043,Accepted-In Progress,Avvaru,2012/05/16 06:14:26.000000,Medium,se,Org line A2,A2_4,PROD243,Sweden
+2044,Accepted-In Progress,Vikrant,2012/05/16 10:17:46.000000,Medium,se,Org line A2,A2_4,PROD337,Sweden
+2045,Accepted-In Progress,Niklas,2012/05/16 10:18:12.000000,Medium,se,Org line A2,A2_2,PROD681,Sweden
+1458,Accepted-In Progress,Jiheung,2012/05/16 11:04:44.000000,High,kr,Org line A2,,PROD221,Korea
+1458,Queued-Awaiting Assignment,Jiheung,2012/05/16 11:05:16.000000,High,kr,Org line A2,,PROD221,Korea
+1458,Accepted-In Progress,Jiheung,2012/05/16 11:59:22.000000,High,kr,Org line A2,,PROD221,Korea
+1458,Accepted-Assigned,Jiheung,2012/05/31 11:58:48.000000,High,kr,Org line A2,,PROD221,Korea
+1458,Completed-Closed,Jiheung,2012/05/31 12:07:43.000000,High,kr,Org line A2,,PROD221,Korea
+2049,Accepted-In Progress,Steven,2012/05/16 11:08:08.000000,Medium,be,Org line C,E_6,PROD327,Belgium
+2049,Queued-Awaiting Assignment,Steven,2012/05/16 11:10:58.000000,Medium,be,Org line C,E_6,PROD327,Belgium
+2049,Accepted-In Progress,Robert,2012/05/16 11:37:15.000000,Medium,be,Org line C,E_6,PROD327,Belgium
+2050,Accepted-In Progress,Steven,2012/05/16 11:12:56.000000,Medium,be,Org line C,E_6,PROD327,Belgium
+2050,Queued-Awaiting Assignment,Steven,2012/05/16 11:18:57.000000,Medium,be,Org line C,E_6,PROD327,Belgium
+2050,Accepted-In Progress,Robert,2012/05/16 11:37:38.000000,Medium,be,Org line C,E_6,PROD327,Belgium
+2051,Accepted-In Progress,Marilyn,2012/05/16 11:35:28.000000,Medium,au,Org line B,A2_1,PROD327,Australia
+2051,Queued-Awaiting Assignment,Marilyn,2012/05/16 11:36:46.000000,Medium,au,Org line B,A2_1,PROD327,Australia
+2051,Queued-Awaiting Assignment,John,2012/05/17 08:11:01.000000,Medium,au,Org line C,E_2,PROD327,Australia
+2051,Queued-Awaiting Assignment,Marilyn,2012/05/24 07:51:35.000000,Medium,au,Org line B,A2_1,PROD327,Australia
+2051,Accepted-In Progress,Marilyn,2012/06/07 09:38:46.000000,Medium,au,Org line B,A2_1,PROD327,Australia
+2051,Queued-Awaiting Assignment,John,2012/06/07 09:44:04.000000,Medium,au,Org line C,E_2,PROD327,Australia
+2046,Queued-Awaiting Assignment,Michael,2012/05/16 11:42:10.000000,Medium,us,Org line C,V3_2,PROD611,USA
+2046,Accepted-Assigned,Jennifer,2012/06/06 16:24:57.000000,Medium,us,Org line C,V3_2,PROD611,USA
+2046,Accepted-Assigned,Jennifer,2012/06/14 19:27:00.000000,Medium,us,Org line C,V3_2,PROD611,USA
+2054,Accepted-In Progress,Fredrik,2012/05/16 11:49:07.000000,Low,se,Org line G4,,PROD108,Sweden
+2047,Accepted-In Progress,Kristina,2012/05/16 11:49:57.000000,Medium,se,Org line A2,A2_3,PROD231,Sweden
+1459,Accepted-In Progress,Rakesh,2012/05/16 12:04:19.000000,High,in,Org line C,E_10,PROD154,Sweden
+1459,Completed-Closed,Rakesh,2012/05/21 12:18:48.000000,High,in,Org line C,E_10,PROD154,Sweden
+2048,Accepted-In Progress,Rakesh,2012/05/16 12:04:19.000000,High,in,Org line C,E_10,PROD154,Sweden
+2048,Completed-Closed,Rakesh,2012/05/21 12:18:48.000000,High,in,Org line C,E_10,PROD154,Sweden
+2052,Accepted-In Progress,G?ran,2012/05/16 12:18:54.000000,Low,se,Org line G4,,PROD193,Sweden
+2052,Accepted-In Progress,G?ran,2012/05/30 09:12:05.000000,Low,se,Org line G4,,PROD193,Sweden
+2055,Accepted-In Progress,Viktoria,2012/05/16 13:12:42.000000,Medium,se,Org line A2,A2_3,PROD231,Sweden
+2055,Queued-Awaiting Assignment,Viktoria,2012/05/31 14:30:05.000000,Medium,se,Org line A2,A2_3,PROD231,Sweden
+2057,Accepted-In Progress,Ann-Charlotte,2012/05/16 13:16:49.000000,Medium,se,Org line A2,A2_3,PROD368,Sweden
+1460,Accepted-In Progress,Hineesh,2012/05/16 13:23:17.000000,High,us,Org line C,E_4,PROD793,INDIA
+1460,Completed-Closed,Hineesh,2012/05/22 12:19:21.000000,High,us,Org line C,E_4,PROD793,INDIA
+2056,Accepted-In Progress,Hineesh,2012/05/16 13:23:17.000000,High,us,Org line C,E_4,PROD793,INDIA
+2056,Completed-Closed,Hineesh,2012/05/22 12:19:21.000000,High,us,Org line C,E_4,PROD793,INDIA
+2058,Accepted-In Progress,Miroslaw,2012/05/16 13:33:40.000000,Medium,pl,Org line A2,A2_1,PROD327,POLAND
+2058,Queued-Awaiting Assignment,Miroslaw,2012/05/16 13:34:34.000000,Medium,pl,Org line A2,A2_1,PROD327,POLAND
+2059,Accepted-In Progress,Steven,2012/05/16 14:00:49.000000,Medium,be,Org line C,E_6,PROD327,Belgium
+2059,Queued-Awaiting Assignment,Steven,2012/05/16 14:01:42.000000,Medium,be,Org line C,E_6,PROD327,Belgium
+2059,Accepted-In Progress,Robert,2012/05/16 14:11:38.000000,Medium,be,Org line C,E_6,PROD327,Belgium
+2060,Accepted-In Progress,Katia,2012/05/16 14:31:17.000000,Medium,be,Org line C,A2_1,PROD327,Belgium
+2060,Queued-Awaiting Assignment,Katia,2012/05/16 14:32:33.000000,Medium,be,Org line C,A2_1,PROD327,Belgium
+2061,Accepted-In Progress,Els,2012/05/16 15:14:24.000000,Medium,se,Org line C,C_2,PROD327,Belgium
+2061,Queued-Awaiting Assignment,Els,2012/05/16 15:25:43.000000,Medium,se,Org line C,C_2,PROD327,Belgium
+2061,Accepted-In Progress,Els,2012/05/16 15:26:28.000000,Medium,se,Org line C,E_2,PROD327,Belgium
+1462,Accepted-In Progress,Els,2012/05/16 15:14:24.000000,Medium,se,Org line C,C_2,PROD327,Belgium
+1462,Queued-Awaiting Assignment,Els,2012/05/16 15:25:43.000000,Medium,se,Org line C,C_2,PROD327,Belgium
+1462,Accepted-In Progress,Els,2012/05/16 15:26:28.000000,Medium,se,Org line C,E_2,PROD327,Belgium
+1462,Accepted-Assigned,Hilde,2012/05/16 15:26:48.000000,Medium,se,Org line C,E_2,PROD327,Belgium
+1462,Accepted-Wait,Hilde,2012/05/16 18:11:06.000000,Medium,se,Org line C,E_2,PROD327,Belgium
+1462,Completed-Closed,Hilde,2012/05/22 14:26:12.000000,Medium,se,Org line C,E_2,PROD327,Belgium
+2062,Accepted-In Progress,Ilona,2012/05/16 15:33:30.000000,Medium,be,Org line C,A2_1,PROD327,Belgium
+2062,Queued-Awaiting Assignment,Ilona,2012/05/16 15:36:08.000000,Medium,be,Org line C,A2_1,PROD327,Belgium
+2053,Accepted-In Progress,Ian,2012/05/16 16:06:45.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2053,Accepted-Assigned,Ian,2012/05/16 16:27:43.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2063,Accepted-In Progress,Leif,2012/05/16 17:06:56.000000,High,se,Org line C,E_10,PROD646,Sweden
+1461,Accepted-In Progress,Ewa,2012/05/16 17:12:20.000000,Medium,us,Org line G3,,PROD96,POLAND
+1461,Completed-Closed,Ewa,2012/05/16 17:54:28.000000,Medium,us,Org line G3,,PROD96,POLAND
+2065,Accepted-In Progress,Emmanuel,2012/05/16 17:35:29.000000,Medium,gb,Org line C,E_10,PROD494,Belgium
+2065,Accepted-In Progress,Emmanuel,2012/05/24 11:21:36.000000,Medium,gb,Org line C,E_10,PROD494,Belgium
+2067,Queued-Awaiting Assignment,Alain,2012/05/16 17:52:15.000000,Medium,be,Org line C,E_1,PROD558,Belgium
+1463,Accepted-In Progress,Ewa,2012/05/16 17:58:10.000000,Medium,us,Org line G3,,PROD96,POLAND
+1463,Completed-Closed,Ewa,2012/05/17 16:46:59.000000,Medium,us,Org line G3,,PROD96,POLAND
+2066,Queued-Awaiting Assignment,Alain,2012/05/16 18:00:04.000000,Medium,be,Org line C,E_1,PROD558,Belgium
+2064,Accepted-In Progress,Roland,2012/05/16 18:18:20.000000,High,se,Org line G4,,PROD374,Sweden
+2069,Accepted-In Progress,Jubin,2012/05/17 04:43:33.000000,Medium,us,Org line C,E_4,PROD436,INDIA
+2069,Accepted-Assigned,Jubin,2012/05/22 05:58:36.000000,Medium,us,Org line C,E_4,PROD436,INDIA
+2069,Accepted-In Progress,Vaibhav,2012/05/22 14:14:38.000000,Medium,us,Org line C,E_4,PROD436,Sweden
+2070,Queued-Awaiting Assignment,Alain,2012/05/17 08:36:39.000000,Medium,be,Org line C,E_1,PROD558,Belgium
+2070,Accepted-In Progress,Tomasz,2012/05/17 08:38:58.000000,Medium,be,Org line A2,A2_1,PROD558,POLAND
+2070,Queued-Awaiting Assignment,Alain,2012/05/17 08:40:06.000000,Medium,be,Org line C,E_1,PROD558,Belgium
+2068,Accepted-In Progress,Vesa,2012/05/17 10:20:34.000000,Low,se,Org line C,C_6,PROD805,Sweden
+2068,Queued-Awaiting Assignment,Vesa,2012/05/17 10:24:02.000000,Low,se,Org line C,C_6,PROD805,Sweden
+2068,Accepted-In Progress,Amitabh,2012/05/17 10:38:19.000000,Low,se,Org line C,C_6,PROD805,Sweden
+2068,Accepted-In Progress,Amitabh,2012/05/22 14:30:28.000000,Low,se,Org line C,C_6,PROD805,Sweden
+2068,Accepted-Wait,Amitabh,2012/06/08 14:27:52.000000,Low,se,Org line C,C_6,PROD805,Sweden
+2072,Accepted-In Progress,Ian,2012/05/17 12:24:17.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2072,Accepted-Assigned,Ian,2012/05/17 12:24:51.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2071,Accepted-In Progress,Ian,2012/05/17 15:19:42.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2071,Accepted-Assigned,Ian,2012/05/17 15:46:59.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+1464,Accepted-In Progress,Ewa,2012/05/17 16:20:58.000000,Medium,us,Org line G3,,PROD96,POLAND
+1464,Completed-Closed,Ewa,2012/05/17 16:30:49.000000,Medium,us,Org line G3,,PROD96,POLAND
+1465,Accepted-In Progress,Ewa,2012/05/17 16:51:43.000000,High,us,Org line G3,,PROD98,POLAND
+1465,Completed-Closed,Ewa,2012/05/18 16:10:30.000000,High,us,Org line G3,,PROD98,POLAND
+2073,Accepted-In Progress,Ewa,2012/05/17 16:51:43.000000,High,us,Org line G3,,PROD98,POLAND
+2073,Completed-Closed,Ewa,2012/05/18 16:10:30.000000,High,us,Org line G3,,PROD98,POLAND
+2074,Accepted-In Progress,Peter,2012/05/18 10:29:52.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+1466,Accepted-In Progress,Ewa,2012/05/18 12:29:44.000000,Medium,us,Org line G3,,PROD97,POLAND
+1466,Completed-Closed,Ewa,2012/05/18 12:32:34.000000,Medium,us,Org line G3,,PROD97,POLAND
+1467,Accepted-In Progress,Ewa,2012/05/18 12:42:26.000000,Medium,us,Org line G3,,PROD96,POLAND
+1467,Completed-Closed,Ewa,2012/05/18 12:43:58.000000,Medium,us,Org line G3,,PROD96,POLAND
+2075,Accepted-In Progress,Mariusz,2012/05/18 12:45:12.000000,High,pl,Org line A2,D_1,PROD405,POLAND
+2077,Accepted-In Progress,Ian,2012/05/18 15:02:31.000000,Medium,gb,Org line A2,A2_1,PROD235,United Kingdom
+2077,Accepted-Assigned,Ian,2012/05/18 15:03:20.000000,Medium,gb,Org line A2,A2_1,PROD235,United Kingdom
+2076,Accepted-In Progress,Ian,2012/05/18 15:10:38.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2076,Accepted-Assigned,Ian,2012/05/18 15:17:06.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2079,Accepted-In Progress,Timothy,2012/05/18 15:21:23.000000,Medium,us,Org line C,E_1,PROD332,USA
+2078,Accepted-In Progress,Ian,2012/05/18 15:54:11.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2078,Accepted-Assigned,Ian,2012/05/18 15:57:07.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2080,Accepted-In Progress,Stephen,2012/05/18 16:08:41.000000,High,us,Org line C,C_6,PROD785,USA
+2080,Queued-Awaiting Assignment,Stephen,2012/05/18 16:24:02.000000,High,us,Org line C,C_6,PROD785,USA
+2080,Accepted-In Progress,Kymaria,2012/05/18 16:24:03.000000,High,us,Org line C,V3_3,PROD785,USA
+2080,Queued-Awaiting Assignment,Stephen,2012/05/18 18:14:23.000000,High,us,Org line C,C_6,PROD785,USA
+2080,Accepted-In Progress,Stephen,2012/05/18 19:57:59.000000,High,us,Org line C,C_6,PROD785,USA
+2081,Accepted-In Progress,Ian,2012/05/18 18:22:08.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2081,Accepted-Assigned,Ian,2012/05/18 18:29:21.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2081,Accepted-Assigned,Ian,2012/05/18 18:29:50.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2082,Accepted-In Progress,Daniel,2012/05/18 19:17:14.000000,High,se,Org line C,E_10,PROD802,Sweden
+2082,Queued-Awaiting Assignment,Daniel,2012/05/29 12:02:03.000000,High,se,Org line C,E_10,PROD802,Sweden
+2082,Accepted-In Progress,Hampus,2012/05/29 13:56:26.000000,High,se,Org line C,E_10,PROD802,Sweden
+2082,Accepted-Wait,Hampus,2012/05/30 15:30:09.000000,High,se,Org line C,E_10,PROD802,Sweden
+2083,Accepted-In Progress,Thomas,2012/05/18 20:21:35.000000,High,us,Org line C,,PROD306,USA
+1468,Accepted-In Progress,Charlotta,2012/05/18 22:02:06.000000,Low,se,Org line G4,,PROD633,Sweden
+1468,Completed-Closed,Charlotta,2012/05/24 09:36:08.000000,Low,se,Org line G4,,PROD633,Sweden
+2084,Accepted-In Progress,-,2012/05/19 10:15:02.000000,High,in,Org line C,E_7,PROD631,INDIA
+2084,Queued-Awaiting Assignment,-,2012/05/19 10:24:38.000000,High,in,Org line C,E_7,PROD631,INDIA
+2084,Accepted-In Progress,Rajkishore,2012/05/19 21:52:57.000000,High,in,Org line C,E_7,PROD631,INDIA
+2084,Queued-Awaiting Assignment,Rajesh Kumar,2012/05/19 21:55:08.000000,High,in,Org line C,E_7,PROD631,INDIA
+2084,Accepted-In Progress,Stefan,2012/05/21 09:56:03.000000,High,in,Org line C,E_7,PROD631,Sweden
+2084,Queued-Awaiting Assignment,Peter,2012/05/21 09:58:23.000000,High,in,Org line C,E_7,PROD631,Sweden
+2084,Accepted-In Progress,Stefan,2012/05/21 09:58:56.000000,High,in,Org line C,E_7,PROD631,Sweden
+2084,Accepted-Assigned,Rajesh Kumar,2012/05/21 10:00:21.000000,High,in,Org line C,E_7,PROD631,INDIA
+2084,Queued-Awaiting Assignment,Praveen,2012/06/13 15:06:57.000000,High,in,Org line C,E_10,PROD631,Sweden
+2085,Accepted-In Progress,Kim,2012/05/19 10:37:29.000000,Medium,se,Org line C,C_4,PROD276,Sweden
+2085,Accepted-Assigned,Kim,2012/05/29 08:57:35.000000,Medium,se,Org line C,C_4,PROD276,Sweden
+2085,Queued-Awaiting Assignment,Stefan,2012/06/14 09:59:11.000000,Medium,se,Org line C,C_4,PROD276,Sweden
+1469,Accepted-In Progress,Ashwani,2012/05/19 15:21:09.000000,Low,in,Org line C,E_10,PROD631,Sweden
+1469,Completed-Closed,Ashwani,2012/05/19 15:53:02.000000,Low,in,Org line C,E_10,PROD631,Sweden
+2086,Queued-Awaiting Assignment,Henrik,2012/05/21 09:13:29.000000,Medium,pl,Org line A2,A2_2,PROD767,Sweden
+2086,Accepted-In Progress,Piotr,2012/05/21 09:13:30.000000,Medium,pl,Org line A2,A2_2,PROD767,POLAND
+2086,Queued-Awaiting Assignment,Krzysztof,2012/05/21 09:15:03.000000,Medium,pl,Org line A2,A2_2,PROD767,POLAND
+2086,Accepted-In Progress,Piotr,2012/05/21 09:15:04.000000,Medium,pl,Org line A2,A2_2,PROD767,POLAND
+2086,Queued-Awaiting Assignment,Krzysztof,2012/05/21 09:16:45.000000,Medium,pl,Org line A2,A2_2,PROD767,POLAND
+2086,Accepted-In Progress,Krzysztof,2012/05/21 10:23:24.000000,Medium,pl,Org line A2,A2_2,PROD767,POLAND
+2086,Queued-Awaiting Assignment,Krzysztof,2012/05/21 10:24:44.000000,Medium,pl,Org line A2,A2_2,PROD767,POLAND
+2086,Accepted-In Progress,Krzysztof,2012/05/21 10:25:01.000000,Medium,pl,Org line A2,A2_2,PROD767,POLAND
+2086,Accepted-Assigned,Pawel,2012/05/21 10:25:19.000000,Medium,pl,Org line A2,A2_2,PROD767,POLAND
+2087,Accepted-In Progress,Miroslaw,2012/05/21 10:14:04.000000,Medium,pl,Org line A2,A2_1,PROD761,POLAND
+1470,Accepted-In Progress,Tomas,2012/05/21 11:17:33.000000,Medium,se,Org line C,C_6,PROD434,Sweden
+1470,Queued-Awaiting Assignment,Tomas,2012/05/21 11:29:25.000000,Medium,se,Org line C,C_6,PROD434,Sweden
+1470,Accepted-In Progress,Bj?rn T,2012/05/21 11:31:04.000000,Medium,se,Org line C,C_6,PROD434,Sweden
+1470,Completed-Closed,Bj?rn T,2012/05/23 09:56:40.000000,Medium,se,Org line C,C_6,PROD434,Sweden
+2088,Accepted-In Progress,Bhaskar,2012/05/21 11:39:28.000000,High,se,Org line C,E_5,PROD802,INDIA
+2088,Queued-Awaiting Assignment,Bhaskar,2012/05/21 11:47:57.000000,High,se,Org line C,E_5,PROD802,INDIA
+2088,Queued-Awaiting Assignment,Praveen,2012/05/21 12:17:16.000000,High,se,Org line C,E_10,PROD802,Sweden
+2088,Queued-Awaiting Assignment,Martin,2012/05/23 13:33:34.000000,High,se,Org line C,C_6,PROD802,Sweden
+2090,Accepted-In Progress,Cyril,2012/05/21 12:37:35.000000,High,fr,Org line C,E_6,PROD612,France
+2089,Accepted-In Progress,Piotr,2012/05/21 13:00:48.000000,Medium,se,Org line A2,A2_5,PROD320,POLAND
+2089,Accepted-Assigned,Piotr,2012/05/21 13:58:05.000000,Medium,se,Org line A2,A2_5,PROD320,POLAND
+2089,Accepted-Wait,Piotr,2012/05/21 14:00:16.000000,Medium,se,Org line A2,A2_5,PROD320,POLAND
+1471,Accepted-In Progress,Thomas,2012/05/21 16:44:23.000000,Medium,us,Org line C,E_1,PROD460,Sweden
+1471,Completed-Closed,Thomas,2012/05/23 15:40:55.000000,Medium,us,Org line C,E_1,PROD460,Sweden
+2091,Accepted-In Progress,Louis,2012/05/21 17:14:31.000000,Medium,fr,Org line C,V3_3,PROD612,France
+2091,Accepted-In Progress,Louis,2012/05/21 17:20:58.000000,Medium,fr,Org line C,V3_3,PROD612,France
+1472,Accepted-In Progress,Reine,2012/05/22 02:19:54.000000,High,se,Org line G4,,PROD343,Sweden
+1472,Completed-Closed,Reine,2012/05/31 09:38:22.000000,High,se,Org line G4,,PROD343,Sweden
+2092,Accepted-Assigned,Ian,2012/05/22 10:39:28.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2092,Accepted-Wait,Ian,2012/05/22 12:15:17.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+1473,Accepted-In Progress,Himmath,2012/05/22 10:53:45.000000,High,in,Org line C,E_10,PROD154,Sweden
+1473,Completed-Closed,Himmath,2012/05/22 10:54:00.000000,High,in,Org line C,E_10,PROD154,Sweden
+2094,Accepted-In Progress,Rosemary,2012/05/22 10:58:58.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2094,Accepted-Wait,Rosemary,2012/05/22 11:01:20.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+1474,Accepted-In Progress,Ewa,2012/05/22 11:57:53.000000,High,us,Org line G3,,PROD98,POLAND
+1474,Completed-Closed,Ewa,2012/05/22 12:03:02.000000,High,us,Org line G3,,PROD98,POLAND
+2097,Accepted-In Progress,Ewa,2012/05/22 11:57:53.000000,High,us,Org line G3,,PROD98,POLAND
+2097,Completed-Closed,Ewa,2012/05/22 12:03:02.000000,High,us,Org line G3,,PROD98,POLAND
+2095,Accepted-In Progress,Bj?rn,2012/05/22 12:01:04.000000,Medium,se,Org line V2,,PROD449,Sweden
+2096,Accepted-In Progress,Fiona,2012/05/22 12:19:48.000000,Medium,cn,Org line A2,D_1,PROD607,China
+2093,Accepted-Assigned,Ian,2012/05/22 12:24:05.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2093,Accepted-Wait,Ian,2012/05/22 12:24:30.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2098,Accepted-In Progress,Christer,2012/05/22 14:14:43.000000,Medium,se,Org line C,C_6,PROD805,Sweden
+2098,Accepted-Assigned,Christer,2012/05/22 14:28:09.000000,Medium,se,Org line C,C_6,PROD805,Sweden
+1475,Accepted-In Progress,Ewa,2012/05/22 16:47:41.000000,High,us,Org line G3,,PROD97,POLAND
+1475,Completed-Closed,Ewa,2012/05/22 17:02:17.000000,High,us,Org line G3,,PROD97,POLAND
+2099,Accepted-In Progress,Peter,2012/05/22 17:14:50.000000,Medium,be,Org line C,E_1,PROD818,Belgium
+2099,Queued-Awaiting Assignment,Peter,2012/06/12 17:10:26.000000,Medium,be,Org line C,E_1,PROD818,Belgium
+2100,Accepted-In Progress,Tarun,2012/05/22 18:13:25.000000,High,in,Org line C,E_10,PROD154,Sweden
+2101,Accepted-In Progress,Dusan,2012/05/22 19:11:09.000000,Major,se,Org line A2,A2_3,PROD617,Sweden
+2102,Accepted-In Progress,Katarina,2012/05/22 23:17:41.000000,High,se,Org line G4,,PROD374,Sweden
+2102,Accepted-Assigned,Katarina,2012/06/11 15:27:51.000000,High,se,Org line G4,,PROD374,Sweden
+1476,Accepted-In Progress,Hineesh,2012/05/23 08:18:50.000000,High,us,Org line C,E_4,PROD166,INDIA
+1476,Completed-Closed,Hineesh,2012/05/29 06:43:36.000000,High,us,Org line C,E_4,PROD166,INDIA
+2103,Accepted-In Progress,Peter,2012/05/23 09:35:04.000000,Medium,se,Org line G4,,PROD502,Sweden
+2103,Accepted-Assigned,Peter,2012/05/23 09:38:01.000000,Medium,se,Org line G4,,PROD502,Sweden
+1477,Accepted-In Progress,Elisabet,2012/05/23 11:19:58.000000,Medium,se,Org line V2,,PROD334,Sweden
+1477,Queued-Awaiting Assignment,Elisabet,2012/05/23 11:21:06.000000,Medium,se,Org line V2,,PROD334,Sweden
+1477,Accepted-In Progress,Tony,2012/05/28 15:33:20.000000,Medium,se,Org line V2,,PROD334,Sweden
+1477,Completed-Closed,Tony,2012/05/28 15:36:00.000000,Medium,se,Org line V2,,PROD334,Sweden
+2104,Accepted-In Progress,Christer,2012/05/23 11:49:33.000000,Medium,se,Org line G4,,PROD412,Sweden
+2107,Accepted-In Progress,Praveen,2012/05/23 12:31:52.000000,High,se,Org line C,E_10,PROD802,Sweden
+2107,Queued-Awaiting Assignment,Praveen,2012/05/23 12:39:28.000000,High,se,Org line C,E_10,PROD802,Sweden
+2107,Queued-Awaiting Assignment,Martin,2012/05/23 13:37:16.000000,High,se,Org line C,C_6,PROD802,Sweden
+2107,Accepted-In Progress,Christian,2012/05/23 16:52:44.000000,High,se,Org line C,C_6,PROD802,Sweden
+2107,Queued-Awaiting Assignment,Martin,2012/05/23 17:31:52.000000,High,se,Org line C,C_6,PROD802,Sweden
+2106,Accepted-In Progress,Christer,2012/05/23 13:47:18.000000,Major,se,Org line C,C_6,PROD805,Sweden
+2109,Accepted-In Progress,Saki,2012/05/23 14:41:45.000000,Low,us,Org line A2,A2_4,PROD589,Sweden
+2109,Accepted-Wait,Saki,2012/05/23 15:31:00.000000,Low,us,Org line A2,A2_4,PROD589,Sweden
+2108,Accepted-In Progress,Hongming,2012/05/23 14:51:33.000000,Medium,se,Org line A2,A2_4,PROD67,Sweden
+2108,Accepted-Assigned,Hongming,2012/05/23 14:56:14.000000,Medium,se,Org line A2,A2_4,PROD67,Sweden
+2111,Accepted-In Progress,Henrique,2012/05/23 15:20:24.000000,Medium,br,Org line A2,A2_2,PROD134,Brazil
+2111,Queued-Awaiting Assignment,Henrique,2012/05/28 21:21:25.000000,Medium,br,Org line A2,A2_2,PROD134,Brazil
+2111,Accepted-Assigned,Flavio,2012/05/30 14:29:30.000000,Medium,br,Org line A2,A2_2,PROD134,Brazil
+2110,Accepted-In Progress,Saki,2012/05/23 15:30:51.000000,Low,us,Org line A2,A2_4,PROD589,Sweden
+2110,Accepted-Wait,Saki,2012/05/23 15:31:07.000000,Low,us,Org line A2,A2_4,PROD589,Sweden
+2113,Accepted-In Progress,Christoffer,2012/05/23 16:37:53.000000,Low,se,Org line G4,,PROD412,Sweden
+2114,Accepted-In Progress,Christoffer,2012/05/23 16:43:46.000000,Low,se,Org line G4,,PROD412,Sweden
+2115,Accepted-In Progress,Christoffer,2012/05/23 16:48:42.000000,Low,se,Org line G4,,PROD412,Sweden
+1631,Accepted-In Progress,Miroslaw,2012/05/23 16:48:45.000000,Medium,pl,Org line A2,A2_1,PROD756,POLAND
+1631,Completed-Closed,Miroslaw,2012/05/23 16:51:16.000000,Medium,pl,Org line A2,A2_1,PROD756,POLAND
+2112,Accepted-In Progress,Ian,2012/05/23 17:02:51.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2112,Accepted-Assigned,Ian,2012/05/23 17:05:35.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2116,Accepted-In Progress,Erik,2012/05/23 17:04:39.000000,Medium,se,Org line G4,,PROD343,Sweden
+2116,Accepted-In Progress,Erik,2012/06/04 12:50:28.000000,Medium,se,Org line G4,,PROD343,Sweden
+2117,Accepted-Wait,Saki,2012/05/23 17:15:50.000000,Low,us,Org line A2,A2_4,PROD589,Sweden
+2119,Accepted-In Progress,Timothy,2012/05/23 17:59:36.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2119,Accepted-Wait,Timothy,2012/05/23 18:07:31.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2105,Accepted-In Progress,Andrew,2012/05/23 18:26:49.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2120,Accepted-In Progress,Britt,2012/05/23 20:18:20.000000,Medium,se,Org line A2,A2_1,PROD350,Sweden
+2120,Accepted-Wait,Britt,2012/05/23 20:25:02.000000,Medium,se,Org line A2,A2_1,PROD350,Sweden
+2121,Accepted-Wait,Joakim,2012/05/23 23:20:14.000000,Low,us,Org line A2,A2_4,PROD546,USA
+2118,Accepted-In Progress,Saki,2012/05/24 09:06:53.000000,Low,us,Org line A2,A2_4,PROD521,Sweden
+2122,Accepted-In Progress,Saki,2012/05/24 09:24:10.000000,Low,us,Org line A2,A2_4,PROD557,Sweden
+2122,Accepted-Wait,Saki,2012/05/24 10:04:54.000000,Low,us,Org line A2,A2_4,PROD557,Sweden
+2123,Accepted-Assigned,Piotr,2012/05/24 09:42:00.000000,Medium,pl,Org line A2,A2_2,PROD442,POLAND
+2124,Accepted-In Progress,Saki,2012/05/24 10:04:10.000000,Low,us,Org line A2,A2_4,PROD521,Sweden
+2124,Accepted-Wait,Saki,2012/05/24 10:12:23.000000,Low,us,Org line A2,A2_4,PROD521,Sweden
+2125,Accepted-In Progress,Ian,2012/05/24 11:31:30.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2125,Accepted-Assigned,Ian,2012/05/24 11:38:26.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2126,Accepted-Wait,Alan,2012/05/24 13:24:35.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2129,Accepted-In Progress,Anup,2012/05/24 15:24:01.000000,Medium,in,Org line C,E_8,PROD597,INDIA
+2131,Accepted-In Progress,Marc,2012/05/24 15:53:02.000000,Medium,be,Org line A2,A2_4,PROD41,Belgium
+2131,Queued-Awaiting Assignment,Marc,2012/05/24 15:55:45.000000,Medium,be,Org line A2,A2_4,PROD41,Belgium
+2131,Accepted-In Progress,Marc,2012/05/30 18:16:10.000000,Medium,be,Org line A2,A2_4,PROD41,Belgium
+2127,Accepted-In Progress,Pankaj,2012/05/24 15:59:07.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2127,Accepted-Wait,Pankaj,2012/05/28 10:02:06.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2127,Accepted-In Progress,Pankaj,2012/06/05 13:21:29.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2127,Accepted-Wait,Pankaj,2012/06/11 09:17:57.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+1478,Accepted-In Progress,Ewa,2012/05/24 15:59:11.000000,Medium,us,Org line G3,,PROD98,POLAND
+1478,Completed-Closed,Ewa,2012/05/24 16:00:55.000000,Medium,us,Org line G3,,PROD98,POLAND
+2128,Accepted-In Progress,Ewa,2012/05/24 15:59:11.000000,Medium,us,Org line G3,,PROD98,POLAND
+2128,Completed-Closed,Ewa,2012/05/24 16:00:55.000000,Medium,us,Org line G3,,PROD98,POLAND
+2132,Accepted-In Progress,Praveen,2012/05/24 16:24:36.000000,Medium,se,Org line C,E_10,PROD802,Sweden
+2132,Queued-Awaiting Assignment,Praveen,2012/05/24 16:27:03.000000,Medium,se,Org line C,E_10,PROD802,Sweden
+2132,Accepted-In Progress,Raja,2012/05/24 16:51:21.000000,Medium,se,Org line C,E_10,PROD802,Sweden
+2132,Queued-Awaiting Assignment,Martin,2012/05/24 16:52:40.000000,Medium,se,Org line C,C_6,PROD802,Sweden
+2132,Queued-Awaiting Assignment,Steve,2012/05/25 09:41:22.000000,Medium,se,Org line C,C_6,PROD802,Sweden
+2132,Accepted-In Progress,Lennart,2012/05/25 09:44:38.000000,Medium,se,Org line C,C_6,PROD802,Sweden
+2132,Accepted-Wait,Lennart,2012/05/28 11:40:54.000000,Medium,se,Org line C,C_6,PROD802,Sweden
+2130,Accepted-In Progress,Jonathan,2012/05/24 16:53:41.000000,Low,fr,Org line C,E_6,PROD525,France
+2133,Accepted-In Progress,Agneta,2012/05/24 17:32:26.000000,Low,se,Org line A2,A2_3,PROD530,Sweden
+2134,Accepted-In Progress,Janusz,2012/05/24 17:36:03.000000,Medium,pl,Org line A2,A2_1,PROD756,POLAND
+2136,Accepted-In Progress,Astrid,2012/05/24 18:10:33.000000,Low,be,Org line C,V3_2,PROD424,Belgium
+2136,Accepted-Wait,Astrid,2012/05/24 18:14:10.000000,Low,be,Org line C,V3_2,PROD424,Belgium
+2135,Accepted-In Progress,Murali,2012/05/24 19:11:46.000000,High,in,Org line B,E_10,PROD209,INDIA
+2137,Accepted-In Progress,Shamna,2012/05/25 05:28:10.000000,Medium,in,Org line C,E_4,PROD436,INDIA
+2137,Queued-Awaiting Assignment,Shamna,2012/05/25 05:31:39.000000,Medium,in,Org line C,E_4,PROD436,INDIA
+2137,Accepted-In Progress,Avronil,2012/05/25 06:19:44.000000,Medium,in,Org line C,E_4,PROD436,INDIA
+2137,Accepted-Wait,Avronil,2012/05/25 06:21:11.000000,Medium,in,Org line C,E_4,PROD436,INDIA
+2138,Accepted-In Progress,Praveen,2012/05/25 09:55:16.000000,Medium,se,Org line C,E_10,PROD802,Sweden
+2138,Queued-Awaiting Assignment,Praveen,2012/05/25 10:24:06.000000,Medium,se,Org line C,E_10,PROD802,Sweden
+2138,Accepted-In Progress,Arun,2012/05/30 14:24:24.000000,Medium,se,Org line C,E_10,PROD802,Sweden
+2138,Queued-Awaiting Assignment,Martin,2012/05/30 14:26:25.000000,Medium,se,Org line C,C_6,PROD802,Sweden
+2138,Accepted-In Progress,Aurelien,2012/05/30 15:16:44.000000,Medium,se,Org line C,C_6,PROD802,France
+2138,Accepted-Wait,Aurelien,2012/05/31 14:55:33.000000,Medium,se,Org line C,C_6,PROD802,France
+2139,Accepted-In Progress,Tomas,2012/05/25 10:04:05.000000,Medium,se,Org line C,C_6,PROD424,Sweden
+2139,Queued-Awaiting Assignment,Tomas,2012/05/25 10:14:23.000000,Medium,se,Org line C,C_6,PROD424,Sweden
+2139,Accepted-In Progress,Kenneth,2012/05/30 08:48:13.000000,Medium,se,Org line C,C_6,PROD424,Sweden
+2139,Accepted-Assigned,Tomas,2012/06/07 14:14:29.000000,Medium,se,Org line C,C_6,PROD424,Sweden
+2139,Accepted-In Progress,Tomas,2012/06/07 14:22:30.000000,Medium,se,Org line C,C_6,PROD424,Sweden
+2140,Accepted-In Progress,?sa,2012/05/25 10:32:26.000000,Medium,se,Org line V2,,PROD615,Sweden
+2140,Accepted-Assigned,?sa,2012/05/25 10:42:34.000000,Medium,se,Org line V2,,PROD615,Sweden
+1479,Accepted-In Progress,?sa,2012/05/25 10:32:26.000000,Medium,se,Org line V2,,PROD615,Sweden
+1479,Accepted-Assigned,?sa,2012/05/25 10:42:34.000000,Medium,se,Org line V2,,PROD615,Sweden
+1479,Accepted-In Progress,Maria,2012/05/30 11:16:02.000000,Medium,se,Org line V2,,PROD615,Sweden
+1479,Completed-Closed,Maria,2012/05/30 11:17:28.000000,Medium,se,Org line V2,,PROD615,Sweden
+2141,Accepted-In Progress,?sa,2012/05/25 10:33:16.000000,Medium,se,Org line V2,,PROD615,Sweden
+2141,Accepted-Assigned,?sa,2012/05/25 10:35:21.000000,Medium,se,Org line V2,,PROD615,Sweden
+2142,Accepted-In Progress,Ian,2012/05/25 11:02:09.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2142,Accepted-Assigned,Ian,2012/05/28 10:49:12.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2143,Accepted-In Progress,Ingela,2012/05/25 11:44:47.000000,Low,se,Org line G4,,PROD406,Sweden
+2144,Accepted-Wait,Pramod,2012/05/25 11:59:41.000000,Low,us,Org line A2,A2_4,PROD552,INDIA
+2145,Accepted-Wait,Pramod,2012/05/25 12:05:54.000000,Medium,us,Org line A2,A2_4,PROD552,INDIA
+2146,Accepted-In Progress,Marcin,2012/05/25 12:51:00.000000,High,pl,Org line C,C_6,PROD452,POLAND
+2147,Accepted-In Progress,Lars-G?ran,2012/05/25 14:40:59.000000,Low,se,Org line G4,,PROD374,Sweden
+2148,Accepted-In Progress,Christoffer,2012/05/25 15:26:13.000000,Low,se,Org line C,V3_2,PROD412,Sweden
+2149,Queued-Awaiting Assignment,Mohsin,2012/05/25 16:25:26.000000,High,in,Org line C,E_5,PROD745,INDIA
+2149,Accepted-In Progress,Mohsin,2012/05/28 08:59:19.000000,High,in,Org line C,E_5,PROD745,INDIA
+2149,Accepted-Wait,Mohsin,2012/05/28 09:05:43.000000,High,in,Org line C,E_5,PROD745,INDIA
+2149,Queued-Awaiting Assignment,Peter,2012/05/28 10:48:40.000000,High,in,Org line C,E_1,PROD745,Belgium
+2149,Accepted-In Progress,Mohsin,2012/05/28 10:49:42.000000,High,in,Org line C,E_5,PROD745,INDIA
+2149,Accepted-Wait,Mohsin,2012/05/28 10:51:18.000000,High,in,Org line C,E_5,PROD745,INDIA
+2150,Accepted-In Progress,Wim,2012/05/25 17:02:19.000000,Medium,us,Org line D,D_2,PROD618,Belgium
+2150,Queued-Awaiting Assignment,Wim,2012/05/25 17:14:45.000000,Medium,us,Org line D,D_2,PROD618,Belgium
+2151,Accepted-In Progress,Celine,2012/05/25 19:08:45.000000,Medium,fr,Org line C,V3_3,PROD374,France
+2152,Accepted-In Progress,Praveen,2012/05/25 21:13:47.000000,High,se,Org line C,E_10,PROD802,Sweden
+2152,Queued-Awaiting Assignment,Praveen,2012/05/25 21:29:08.000000,High,se,Org line C,E_10,PROD802,Sweden
+2152,Accepted-In Progress,Kreeti,2012/05/25 21:31:45.000000,High,se,Org line C,E_10,PROD802,Sweden
+2152,Accepted-Assigned,Sandeep,2012/05/25 22:26:11.000000,High,se,Org line C,E_10,PROD802,Sweden
+2152,Accepted-Wait,Sandeep,2012/05/26 02:08:51.000000,High,se,Org line C,E_10,PROD802,Sweden
+2152,Accepted-In Progress,Sandeep,2012/05/30 02:34:16.000000,High,se,Org line C,E_10,PROD802,Sweden
+2152,Queued-Awaiting Assignment,Martin,2012/05/30 02:34:58.000000,High,se,Org line C,C_6,PROD802,Sweden
+2152,Accepted-In Progress,Martin,2012/05/30 09:14:05.000000,High,se,Org line C,C_6,PROD802,Sweden
+2153,Accepted-In Progress,Peter,2012/05/28 10:46:21.000000,Medium,be,Org line C,E_5,PROD745,Belgium
+2153,Accepted-In Progress,Peter,2012/05/28 10:47:09.000000,Medium,be,Org line C,E_5,PROD745,Belgium
+2153,Queued-Awaiting Assignment,Peter,2012/05/28 10:53:42.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2153,Accepted-Assigned,Kell,2012/05/29 14:01:53.000000,Medium,be,Org line C,E_1,PROD745,Sweden
+2155,Accepted-In Progress,Lars-Ove,2012/05/28 11:01:38.000000,Medium,us,Org line C,E_4,PROD815,Sweden
+2154,Accepted-Wait,Alan,2012/05/28 11:35:48.000000,Low,gb,Org line A2,A2_1,PROD236,United Kingdom
+1480,Accepted-In Progress,Anurag,2012/05/28 15:36:41.000000,Major,in,Org line C,E_10,PROD154,Sweden
+1480,Completed-Closed,Anurag,2012/05/28 15:52:22.000000,Major,in,Org line C,E_10,PROD154,Sweden
+1481,Accepted-In Progress,Peder,2012/05/28 15:53:36.000000,Major,se,Org line F,,PROD186,Sweden
+1481,Completed-Closed,Peder,2012/05/31 17:16:14.000000,Major,se,Org line F,,PROD186,Sweden
+1481,Accepted-In Progress,Peder,2012/05/31 23:44:52.000000,Major,se,Org line F,,PROD186,Sweden
+1481,Completed-Closed,Peder,2012/05/31 23:48:05.000000,Major,se,Org line F,,PROD186,Sweden
+1481,Accepted-In Progress,Peder,2012/05/31 23:48:15.000000,Major,se,Org line F,,PROD186,Sweden
+1481,Accepted-Assigned,Ulrik,2012/05/31 23:49:03.000000,Major,se,Org line C,E_6,PROD186,Sweden
+1481,Accepted-In Progress,Peder,2012/05/31 23:49:04.000000,Major,se,Org line C,E_6,PROD186,Sweden
+1481,Completed-Closed,Peder,2012/05/31 23:49:06.000000,Major,se,Org line C,E_6,PROD186,Sweden
+2156,Accepted-In Progress,Ranveer,2012/05/28 17:14:06.000000,Low,in,Org line C,E_10,PROD805,Sweden
+2156,Accepted-Wait,Ranveer,2012/05/28 17:18:07.000000,Low,in,Org line C,E_10,PROD805,Sweden
+2156,Accepted-In Progress,Ranveer,2012/05/31 18:09:28.000000,Low,in,Org line C,E_10,PROD805,Sweden
+2156,Accepted-Wait,Ranveer,2012/05/31 18:21:33.000000,Low,in,Org line C,E_10,PROD805,Sweden
+2157,Accepted-In Progress,Habib,2012/05/28 19:49:10.000000,Major,us,Org line C,E_4,PROD348,Sweden
+2157,Accepted-Assigned,Habib,2012/05/29 11:12:26.000000,Major,us,Org line C,E_4,PROD348,Sweden
+2158,Accepted-In Progress,Johnny,2012/05/29 08:44:03.000000,High,se,Org line C,E_2,PROD328,Sweden
+2159,Accepted-In Progress,Rolf,2012/05/29 10:05:58.000000,Medium,se,Org line C,E_3,PROD714,Sweden
+1482,Accepted-In Progress,Ewa,2012/05/29 11:54:33.000000,Medium,us,Org line G3,,PROD97,POLAND
+1482,Completed-Closed,Ewa,2012/05/29 12:08:42.000000,Medium,us,Org line G3,,PROD97,POLAND
+2160,Accepted-In Progress,Yu,2012/05/29 11:58:59.000000,Low,cn,Org line A2,A2_2,PROD753,China
+2161,Accepted-In Progress,Ian,2012/05/29 12:43:07.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2161,Accepted-Assigned,Ian,2012/05/29 12:43:23.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2163,Accepted-In Progress,Tomas,2012/05/29 13:48:35.000000,Low,cn,Org line A2,A2_2,PROD753,Sweden
+2162,Accepted-In Progress,Ian,2012/05/29 14:05:01.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2162,Accepted-In Progress,Ian,2012/05/29 14:13:43.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2162,Accepted-Assigned,Ian,2012/05/29 14:15:11.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2164,Accepted-Wait,Tomasz,2012/05/29 15:28:01.000000,Medium,fr,Org line A2,A2_2,PROD698,POLAND
+2164,Accepted-In Progress,Tomasz,2012/05/29 15:28:15.000000,Medium,fr,Org line A2,A2_2,PROD698,POLAND
+2164,Accepted-In Progress,Tomasz,2012/05/29 15:28:48.000000,Medium,fr,Org line A2,A2_2,PROD698,POLAND
+2164,Accepted-Wait,Tomasz,2012/05/29 16:07:32.000000,Medium,fr,Org line A2,A2_2,PROD698,POLAND
+2165,Accepted-Wait,Alan,2012/05/29 15:42:20.000000,Low,gb,Org line A2,A2_1,PROD236,United Kingdom
+2166,Accepted-In Progress,Charlotta,2012/05/29 16:48:03.000000,Low,se,Org line G4,,PROD412,Sweden
+2166,Accepted-Assigned,Charlotta,2012/05/29 16:49:44.000000,Low,se,Org line G4,,PROD412,Sweden
+2167,Accepted-In Progress,Anna,2012/05/29 17:44:19.000000,Medium,fr,Org line A2,A2_2,PROD200,POLAND
+1483,Queued-Awaiting Assignment,Morten,2012/05/29 18:05:02.000000,Major,in,Org line C,C_5,PROD597,Sweden
+1483,Accepted-In Progress,Larry,2012/05/29 22:06:41.000000,Major,in,Org line C,E_8,PROD597,USA
+1483,Completed-Closed,Larry,2012/05/29 22:09:36.000000,Major,in,Org line C,E_8,PROD597,USA
+2168,Accepted-In Progress,Bartlomiej,2012/05/29 19:24:19.000000,Medium,pl,Org line A2,D_1,PROD74,POLAND
+2168,Accepted-In Progress,Bartlomiej,2012/05/29 19:24:45.000000,Medium,pl,Org line A2,D_1,PROD74,POLAND
+2169,Accepted-In Progress,Carla,2012/05/29 20:28:51.000000,Major,br,Org line A2,A2_2,PROD126,Brazil
+2169,Accepted-Wait,Carla,2012/05/30 14:03:07.000000,Major,br,Org line A2,A2_2,PROD126,Brazil
+2170,Accepted-In Progress,Cindy,2012/05/30 08:28:43.000000,Low,cn,Org line A2,A2_2,PROD753,China
+1484,Accepted-In Progress,Lars,2012/05/30 11:41:37.000000,High,se,Org line V2,,PROD493,Sweden
+1484,Accepted-In Progress,Lars,2012/05/30 11:49:50.000000,High,se,Org line V2,,PROD493,Sweden
+1484,Queued-Awaiting Assignment,Lars,2012/05/30 14:50:42.000000,High,se,Org line V2,,PROD493,Sweden
+1484,Accepted-In Progress,Eva-Lott,2012/05/30 15:15:25.000000,High,se,Org line V2,,PROD493,Sweden
+1484,Completed-Closed,Eva-Lott,2012/05/30 15:17:53.000000,High,se,Org line V2,,PROD493,Sweden
+2171,Accepted-In Progress,Praveen,2012/05/30 13:56:34.000000,Medium,se,Org line C,E_10,PROD350,Sweden
+2171,Queued-Awaiting Assignment,Praveen,2012/05/30 17:14:44.000000,Medium,se,Org line C,E_10,PROD350,Sweden
+2171,Accepted-In Progress,Gaurav,2012/05/30 17:25:24.000000,Medium,se,Org line C,E_10,PROD350,Sweden
+2171,Queued-Awaiting Assignment,Ganesh,2012/05/30 17:30:40.000000,Medium,se,Org line B,C_6,PROD350,INDIA
+2171,Queued-Awaiting Assignment,Praveen,2012/05/31 04:28:35.000000,Medium,se,Org line C,E_10,PROD350,Sweden
+2171,Accepted-In Progress,Umar Farooque,2012/05/31 04:55:20.000000,Medium,se,Org line C,E_10,PROD350,Sweden
+2171,Queued-Awaiting Assignment,Ganesh,2012/05/31 08:25:26.000000,Medium,se,Org line B,C_6,PROD350,INDIA
+2171,Accepted-In Progress,Anandgiri,2012/05/31 13:40:54.000000,Medium,se,Org line B,C_6,PROD350,INDIA
+2171,Queued-Awaiting Assignment,Britt,2012/06/14 13:56:52.000000,Medium,se,Org line A2,A2_1,PROD350,Sweden
+2172,Accepted-In Progress,Frederic,2012/05/30 14:03:09.000000,Medium,fr,Org line A2,A2_2,PROD196,France
+2172,Queued-Awaiting Assignment,Frederic,2012/05/30 14:05:01.000000,Medium,fr,Org line A2,A2_2,PROD196,France
+2173,Accepted-Wait,Alan,2012/05/30 14:53:31.000000,Low,gb,Org line A2,A2_1,PROD236,United Kingdom
+1485,Accepted-In Progress,Karl,2012/05/30 14:55:35.000000,Medium,se,Org line C,E_7,PROD671,Sweden
+1485,Completed-Closed,Karl,2012/05/30 15:04:30.000000,Medium,se,Org line C,E_7,PROD671,Sweden
+2174,Accepted-In Progress,Saki,2012/05/30 15:40:15.000000,Medium,us,Org line A2,A2_4,PROD521,Sweden
+2176,Accepted-Wait,Alan,2012/05/30 16:50:36.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2177,Accepted-In Progress,Ian,2012/05/30 17:55:15.000000,Medium,gb,Org line A2,A2_1,PROD235,United Kingdom
+2177,Accepted-Assigned,Ian,2012/05/30 18:28:36.000000,Medium,gb,Org line A2,A2_1,PROD235,United Kingdom
+2178,Queued-Awaiting Assignment,Jari,2012/05/30 19:38:56.000000,Medium,us,Org line C,E_1,PROD153,Sweden
+2178,Accepted-Assigned,Maria,2012/06/12 12:51:01.000000,Medium,us,Org line C,E_1,PROD153,Sweden
+2178,Accepted-Assigned,Maria,2012/06/12 14:15:26.000000,Medium,us,Org line C,E_1,PROD153,Sweden
+2178,Queued-Awaiting Assignment,William,2012/06/12 14:15:27.000000,Medium,us,Org line C,E_1,PROD153,USA
+2179,Accepted-In Progress,Peter,2012/05/30 19:45:49.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2179,Queued-Awaiting Assignment,Peter,2012/05/30 19:48:43.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2179,Accepted-Assigned,Ruhi,2012/06/04 10:25:49.000000,Medium,se,Org line C,E_7,PROD673,INDIA
+2179,Accepted-Assigned,Santosh,2012/06/04 10:40:13.000000,Medium,se,Org line C,E_7,PROD673,INDIA
+2179,Accepted-In Progress,Santosh,2012/06/14 18:19:47.000000,Medium,se,Org line C,E_7,PROD673,INDIA
+2180,Accepted-In Progress,Peter,2012/05/30 19:54:30.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2180,Queued-Awaiting Assignment,Peter,2012/05/30 19:56:16.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2180,Accepted-Assigned,Santosh,2012/06/04 10:26:54.000000,Medium,se,Org line C,E_7,PROD673,INDIA
+2175,Accepted-In Progress,Johan,2012/05/31 10:31:01.000000,Medium,se,Org line G4,,PROD412,Sweden
+2181,Accepted-In Progress,Olof,2012/05/31 10:50:47.000000,Medium,se,Org line C,E_3,PROD379,Sweden
+2183,Accepted-In Progress,H?kan,2012/05/31 10:54:47.000000,Medium,se,Org line G4,,PROD397,Sweden
+1486,Accepted-In Progress,Niklas,2012/05/31 11:58:45.000000,Major,se,Org line A2,A2_3,PROD831,Sweden
+1486,Completed-Closed,Niklas,2012/05/31 12:01:24.000000,Major,se,Org line A2,A2_3,PROD831,Sweden
+2184,Accepted-In Progress,Ann-Charlotte,2012/05/31 12:06:38.000000,Medium,se,Org line A2,A2_3,PROD368,Sweden
+2182,Accepted-In Progress,Tonie,2012/05/31 13:03:18.000000,Medium,se,Org line V2,,PROD257,Sweden
+2182,Accepted-Assigned,Tonie,2012/06/04 16:51:04.000000,Medium,se,Org line V2,,PROD257,Sweden
+2185,Queued-Awaiting Assignment,-,2012/05/31 13:20:22.000000,Medium,in,Org line C,E_7,PROD424,INDIA
+2185,Accepted-In Progress,Rajendra,2012/06/03 22:01:15.000000,Medium,in,Org line C,E_7,PROD424,INDIA
+2186,Accepted-In Progress,Britt,2012/05/31 13:29:15.000000,High,se,Org line A2,A2_1,PROD350,Sweden
+2186,Accepted-Wait,Britt,2012/05/31 16:22:09.000000,High,se,Org line A2,A2_1,PROD350,Sweden
+2187,Accepted-In Progress,Ian,2012/05/31 15:34:19.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2187,Accepted-Assigned,Ian,2012/05/31 15:51:16.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2190,Accepted-In Progress,Celine,2012/05/31 18:08:17.000000,Medium,fr,Org line C,V3_3,PROD30,France
+2190,Queued-Awaiting Assignment,Celine,2012/05/31 18:10:24.000000,Medium,fr,Org line C,V3_3,PROD30,France
+2190,Accepted-In Progress,Celine,2012/06/06 12:21:45.000000,Medium,fr,Org line C,V3_3,PROD30,France
+2190,Accepted-Assigned,Fabrice,2012/06/12 12:48:38.000000,Medium,fr,Org line C,V3_3,PROD30,France
+2189,Accepted-In Progress,Leif,2012/05/31 18:34:35.000000,High,se,Org line C,E_10,PROD646,Sweden
+2188,Accepted-In Progress,Ian,2012/05/31 18:40:05.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2188,Accepted-Assigned,Ian,2012/05/31 18:46:30.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+1487,Accepted-In Progress,Ewa,2012/05/31 20:07:59.000000,High,us,Org line G3,,PROD97,POLAND
+1487,Completed-Closed,Ewa,2012/05/31 20:09:21.000000,High,us,Org line G3,,PROD97,POLAND
+2191,Accepted-In Progress,Atul,2012/06/01 08:48:05.000000,Low,se,Org line C,E_1,PROD567,INDIA
+2192,Accepted-In Progress,Vinodhkumar,2012/06/01 09:59:47.000000,Medium,se,Org line C,E_5,PROD325,INDIA
+2192,Queued-Awaiting Assignment,Vinodhkumar,2012/06/01 10:10:41.000000,Medium,se,Org line C,E_5,PROD325,INDIA
+2192,Accepted-In Progress,Freddy,2012/06/01 12:44:14.000000,Medium,se,Org line C,E_4,PROD325,INDIA
+2192,Queued-Awaiting Assignment,Inger,2012/06/06 09:36:27.000000,Medium,se,Org line C,C_3,PROD325,Sweden
+2192,Accepted-In Progress,Amar,2012/06/08 12:29:39.000000,Medium,se,Org line C,C_3,PROD325,INDIA
+2193,Accepted-In Progress,Linda,2012/06/01 10:57:22.000000,Medium,se,Org line A2,A2_3,PROD319,Sweden
+2194,Accepted-In Progress,Linda,2012/06/01 11:00:16.000000,Medium,se,Org line A2,A2_3,PROD319,Sweden
+2196,Accepted-In Progress,Ian,2012/06/01 11:48:05.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2196,Accepted-Assigned,Ian,2012/06/01 11:52:18.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2195,Accepted-Assigned,Sandeep,2012/06/01 11:52:54.000000,Medium,se,Org line A2,D_1,PROD607,Sweden
+2195,Accepted-In Progress,Sandeep,2012/06/01 13:11:12.000000,Medium,se,Org line A2,D_1,PROD607,Sweden
+2197,Accepted-In Progress,Erik,2012/06/01 13:32:15.000000,Low,se,Org line G4,,PROD176,Sweden
+2197,Accepted-Assigned,Erik,2012/06/01 13:38:03.000000,Low,se,Org line G4,,PROD176,Sweden
+2203,Accepted-In Progress,Marc,2012/06/01 14:34:16.000000,Medium,be,Org line C,E_6,PROD149,Belgium
+2203,Queued-Awaiting Assignment,Marc,2012/06/01 15:01:28.000000,Medium,be,Org line C,E_6,PROD149,Belgium
+2203,Accepted-In Progress,Ludwig,2012/06/12 12:31:37.000000,Medium,be,Org line C,E_6,PROD149,Belgium
+2203,Accepted-In Progress,Partha,2012/06/13 10:45:10.000000,Medium,be,Org line C,E_10,PROD149,Sweden
+2203,Queued-Awaiting Assignment,Marc,2012/06/13 10:48:18.000000,Medium,be,Org line C,E_6,PROD149,Belgium
+2203,Accepted-In Progress,Marc,2012/06/13 12:06:59.000000,Medium,be,Org line C,E_6,PROD149,Belgium
+2200,Accepted-In Progress,Ian,2012/06/01 14:39:59.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2200,Accepted-Assigned,Ian,2012/06/01 14:40:38.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2201,Accepted-In Progress,Ian,2012/06/01 14:44:41.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2201,Accepted-Assigned,Ian,2012/06/01 14:47:16.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2202,Accepted-In Progress,Ian,2012/06/01 14:56:33.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2202,Accepted-Assigned,Ian,2012/06/04 16:36:57.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2204,Accepted-In Progress,Fredrik,2012/06/01 14:56:50.000000,Low,se,Org line C,V3_2,PROD253,Sweden
+2199,Accepted-In Progress,Ing-Marie,2012/06/01 15:32:42.000000,Medium,se,Org line G4,,PROD609,Sweden
+2199,Queued-Awaiting Assignment,Ing-Marie,2012/06/01 15:56:14.000000,Medium,se,Org line G4,,PROD609,Sweden
+2198,Accepted-In Progress,Ian,2012/06/01 15:36:07.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2198,Accepted-Assigned,Ian,2012/06/01 16:41:29.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2205,Accepted-In Progress,Peter,2012/06/01 16:27:00.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2205,Queued-Awaiting Assignment,Peter,2012/06/01 16:45:38.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2205,Accepted-Assigned,Rohan,2012/06/04 10:27:25.000000,Medium,se,Org line C,E_7,PROD673,INDIA
+2206,Accepted-In Progress,Dusan,2012/06/01 17:43:38.000000,Major,se,Org line A2,A2_3,PROD617,Sweden
+2206,Accepted-Wait,Dusan,2012/06/08 15:48:56.000000,Major,se,Org line A2,A2_3,PROD617,Sweden
+2207,Accepted-In Progress,Ann-Charlotte,2012/06/02 01:05:17.000000,High,us,Org line C,E_10,PROD802,Sweden
+2207,Queued-Awaiting Assignment,Ann-Charlotte,2012/06/02 01:37:22.000000,High,us,Org line C,E_10,PROD802,Sweden
+2207,Accepted-In Progress,Mats,2012/06/08 11:42:37.000000,High,us,Org line C,E_10,PROD802,Sweden
+2207,Queued-Awaiting Assignment,Martin,2012/06/08 11:43:12.000000,High,us,Org line C,C_6,PROD802,Sweden
+2207,Accepted-In Progress,Andreas,2012/06/08 11:56:45.000000,High,us,Org line C,C_6,PROD802,Sweden
+2207,Accepted-Wait,Andreas,2012/06/08 15:52:35.000000,High,us,Org line C,C_6,PROD802,Sweden
+2207,Queued-Awaiting Assignment,Robert,2012/06/15 09:57:23.000000,High,us,Org line C,E_4,PROD802,USA
+2208,Accepted-In Progress,Ann-Charlotte,2012/06/02 01:08:11.000000,High,us,Org line C,E_10,PROD802,Sweden
+2208,Queued-Awaiting Assignment,Ann-Charlotte,2012/06/02 01:37:24.000000,High,us,Org line C,E_10,PROD802,Sweden
+2208,Accepted-In Progress,Mats,2012/06/04 09:40:27.000000,High,us,Org line C,E_10,PROD802,Sweden
+2208,Queued-Awaiting Assignment,Martin,2012/06/04 09:42:50.000000,High,us,Org line C,C_6,PROD802,Sweden
+2208,Accepted-In Progress,Andreas,2012/06/04 10:15:01.000000,High,us,Org line C,C_6,PROD802,Sweden
+2208,Accepted-Wait,Andreas,2012/06/04 11:08:07.000000,High,us,Org line C,C_6,PROD802,Sweden
+2208,Queued-Awaiting Assignment,Shamna,2012/06/07 17:50:26.000000,High,us,Org line C,E_4,PROD802,INDIA
+2208,Accepted-In Progress,Shamna,2012/06/08 06:41:35.000000,High,us,Org line C,E_4,PROD802,INDIA
+2208,Accepted-Wait,Shamna,2012/06/08 06:42:07.000000,High,us,Org line C,E_4,PROD802,INDIA
+2208,Queued-Awaiting Assignment,Robert,2012/06/08 09:04:18.000000,High,us,Org line C,E_4,PROD802,USA
+2208,Accepted-In Progress,Jagannath,2012/06/13 14:34:31.000000,High,us,Org line C,E_4,PROD802,Sweden
+2209,Accepted-In Progress,Ryouhei,2012/06/03 03:06:31.000000,Medium,jp,Org line C,E_10,PROD802,Japan
+2209,Accepted-In Progress,Ryouhei,2012/06/03 03:13:02.000000,Medium,jp,Org line C,E_10,PROD802,Japan
+2209,Accepted-Wait,Ryouhei,2012/06/11 06:54:29.000000,Medium,jp,Org line C,E_10,PROD802,Japan
+2210,Accepted-In Progress,Thomas,2012/06/03 22:47:58.000000,Medium,us,Org line C,,PROD330,USA
+2211,Accepted-In Progress,Amit,2012/06/04 09:19:20.000000,Medium,us,Org line A2,A2_4,PROD500,INDIA
+2212,Accepted-In Progress,Marc,2012/06/04 11:25:16.000000,Medium,be,Org line A2,A2_4,PROD41,Belgium
+2213,Accepted-In Progress,Ian,2012/06/04 11:28:12.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2213,Accepted-Assigned,Ian,2012/06/04 13:08:55.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2214,Accepted-In Progress,Ian,2012/06/04 11:35:58.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2214,Accepted-Assigned,Ian,2012/06/04 13:53:09.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2215,Accepted-In Progress,Michel,2012/06/04 12:14:07.000000,Medium,fr,Org line C,,PROD209,France
+2216,Accepted-In Progress,Ian,2012/06/04 14:30:02.000000,Medium,gb,Org line A2,A2_1,PROD235,United Kingdom
+2216,Accepted-Assigned,Ian,2012/06/04 16:35:57.000000,Medium,gb,Org line A2,A2_1,PROD235,United Kingdom
+2217,Accepted-In Progress,Praveen,2012/06/04 22:27:38.000000,High,se,Org line C,E_10,PROD154,Sweden
+2217,Queued-Awaiting Assignment,Praveen,2012/06/07 20:30:43.000000,High,se,Org line C,E_10,PROD154,Sweden
+2217,Accepted-In Progress,Parbhat,2012/06/07 20:35:32.000000,High,se,Org line C,E_10,PROD154,Sweden
+2217,Accepted-Assigned,Ankit,2012/06/07 20:36:14.000000,High,se,Org line C,E_10,PROD154,Sweden
+2217,Queued-Awaiting Assignment,Martin,2012/06/07 21:17:30.000000,High,se,Org line C,C_6,PROD154,Sweden
+2218,Accepted-In Progress,Ratikanta,2012/06/05 10:42:00.000000,Medium,se,Org line A2,A2_1,PROD730,Sweden
+2218,Accepted-Wait,Ratikanta,2012/06/05 15:35:33.000000,Medium,se,Org line A2,A2_1,PROD730,Sweden
+2219,Accepted-In Progress,Jenny,2012/06/05 10:52:23.000000,High,se,Org line G1,E_6,PROD292,Sweden
+2220,Accepted-In Progress,Jenny,2012/06/05 10:53:56.000000,High,se,Org line G1,E_6,PROD292,Sweden
+2221,Accepted-In Progress,Peter,2012/06/05 12:55:32.000000,High,se,Org line C,E_7,PROD671,Sweden
+2221,Queued-Awaiting Assignment,Peter,2012/06/05 13:27:59.000000,High,se,Org line C,E_7,PROD671,Sweden
+2221,Accepted-In Progress,Peter,2012/06/05 18:21:46.000000,High,se,Org line C,E_7,PROD671,Sweden
+2222,Accepted-In Progress,Ian,2012/06/05 13:19:36.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2222,Accepted-Assigned,Ian,2012/06/05 13:23:56.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2224,Accepted-In Progress,Olle,2012/06/05 13:36:48.000000,High,se,Org line C,E_2,PROD330,Sweden
+2224,Accepted-Assigned,Olle,2012/06/05 13:44:41.000000,High,se,Org line C,E_2,PROD330,Sweden
+2224,Accepted-In Progress,Olle,2012/06/05 13:58:00.000000,High,se,Org line C,E_2,PROD330,Sweden
+2223,Accepted-In Progress,Ian,2012/06/05 14:12:32.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2223,Accepted-Assigned,Ian,2012/06/05 16:57:00.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2225,Accepted-In Progress,Mats,2012/06/05 16:42:00.000000,Medium,be,Org line C,E_3,PROD382,USA
+2227,Accepted-In Progress,Ryou,2012/06/06 06:51:21.000000,Major,jp,Org line C,V3_2,PROD214,Japan
+2226,Queued-Awaiting Assignment,Srinivasan,2012/06/06 07:34:19.000000,High,in,Org line B,E_10,PROD452,INDIA
+2226,Accepted-In Progress,Rijin,2012/06/06 07:35:41.000000,High,in,Org line B,E_10,PROD452,INDIA
+2226,Accepted-Assigned,Sujith,2012/06/08 12:28:48.000000,High,in,Org line B,E_10,PROD452,INDIA
+2226,Accepted-Wait,Sujith,2012/06/08 14:53:53.000000,High,in,Org line B,E_10,PROD452,INDIA
+2226,Accepted-In Progress,Sujith,2012/06/12 15:07:26.000000,High,in,Org line B,E_10,PROD452,INDIA
+2226,Accepted-Wait,Sujith,2012/06/12 16:21:10.000000,High,in,Org line B,E_10,PROD452,INDIA
+2228,Accepted-In Progress,Flavio,2012/06/06 13:48:04.000000,Medium,br,Org line A2,A2_2,PROD135,Brazil
+2229,Accepted-In Progress,Krzysztof,2012/06/06 14:02:19.000000,Medium,pl,Org line A2,A2_1,PROD761,POLAND
+2229,Accepted-Wait,Krzysztof,2012/06/06 14:22:35.000000,Medium,pl,Org line A2,A2_1,PROD761,POLAND
+2230,Accepted-In Progress,Ian,2012/06/06 16:39:18.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2230,Accepted-Assigned,Ian,2012/06/06 16:39:50.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2232,Accepted-In Progress,Ian,2012/06/06 16:59:53.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2232,Accepted-Assigned,Ian,2012/06/14 09:38:36.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2231,Accepted-In Progress,David,2012/06/06 17:31:49.000000,Medium,us,Org line A2,A2_3,PROD488,USA
+2233,Accepted-In Progress,Thiago,2012/06/06 22:40:56.000000,High,br,Org line B,E_6,PROD143,Brazil
+2234,Accepted-In Progress,Marc,2012/06/07 10:48:12.000000,Low,se,Org line F,,PROD535,Belgium
+2234,Accepted-Assigned,Marc,2012/06/07 10:49:11.000000,Low,se,Org line F,,PROD535,Belgium
+2234,Accepted-In Progress,Marc,2012/06/07 11:03:55.000000,Low,se,Org line F,,PROD535,Belgium
+2236,Accepted-In Progress,B?rje,2012/06/07 11:23:55.000000,Medium,se,Org line C,E_7,PROD671,Sweden
+2235,Accepted-In Progress,Niklas,2012/06/07 11:38:08.000000,Medium,se,Org line A2,A2_2,PROD681,Sweden
+2235,Queued-Awaiting Assignment,Niklas,2012/06/07 11:39:44.000000,Medium,se,Org line A2,A2_2,PROD681,Sweden
+2235,Accepted-In Progress,Niklas,2012/06/07 11:42:35.000000,Medium,se,Org line A2,A2_2,PROD681,Sweden
+2237,Accepted-In Progress,Peter,2012/06/07 18:07:28.000000,Major,se,Org line C,E_7,PROD673,Sweden
+2238,Accepted-In Progress,Eric,2012/06/07 20:39:13.000000,Low,ca,Org line C,,OTHERS,Canada
+2239,Accepted-In Progress,Ian,2012/06/08 10:33:24.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2239,Accepted-Assigned,Ian,2012/06/08 10:38:37.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2241,Accepted-In Progress,Rickard,2012/06/08 12:06:09.000000,Low,se,Org line G4,,PROD374,Sweden
+2240,Accepted-In Progress,Rakesh,2012/06/08 12:06:15.000000,High,se,Org line C,E_10,PROD659,Sweden
+2240,Queued-Awaiting Assignment,Rakesh,2012/06/08 12:07:50.000000,High,se,Org line C,E_10,PROD659,Sweden
+2240,Accepted-In Progress,Manisha,2012/06/08 12:19:22.000000,High,se,Org line C,E_10,PROD659,Sweden
+2240,Queued-Awaiting Assignment,Praveen,2012/06/08 12:31:24.000000,High,se,Org line C,E_10,PROD659,Sweden
+2240,Queued-Awaiting Assignment,Martin,2012/06/08 13:23:16.000000,High,se,Org line C,C_6,PROD659,Sweden
+2242,Accepted-In Progress,Ian,2012/06/08 16:36:00.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2242,Accepted-Assigned,Ian,2012/06/08 16:45:37.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2243,Accepted-In Progress,Martin,2012/06/08 16:38:24.000000,Low,se,Org line C,C_6,PROD804,Sweden
+2243,Accepted-In Progress,Martin,2012/06/08 16:50:17.000000,Low,se,Org line C,C_6,PROD804,Sweden
+2243,Accepted-Assigned,Andreas,2012/06/11 11:39:13.000000,Low,se,Org line C,C_6,PROD804,Sweden
+2243,Accepted-In Progress,Andreas,2012/06/11 14:20:05.000000,Low,se,Org line C,C_6,PROD804,Sweden
+2245,Queued-Awaiting Assignment,Peter,2012/06/08 16:39:57.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2245,Accepted-In Progress,Per,2012/06/12 08:06:05.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2244,Accepted-In Progress,Sachin,2012/06/08 18:15:36.000000,Medium,se,Org line V5,,PROD221,Sweden
+2246,Queued-Awaiting Assignment,Peter,2012/06/08 19:53:20.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2246,Queued-Awaiting Assignment,Peter,2012/06/08 19:53:21.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2246,Accepted-In Progress,Per,2012/06/12 08:05:11.000000,Medium,se,Org line C,E_7,PROD673,Sweden
+2247,Accepted-In Progress,Neeraj,2012/06/10 04:58:06.000000,High,in,Org line C,E_10,PROD802,Sweden
+2247,Accepted-Wait,Neeraj,2012/06/10 04:58:47.000000,High,in,Org line C,E_10,PROD802,Sweden
+2247,Accepted-Wait,Neeraj,2012/06/10 06:27:41.000000,High,in,Org line C,E_10,PROD802,Sweden
+2248,Accepted-In Progress,Sophie,2012/06/11 10:00:31.000000,Low,se,Org line A2,A2_1,PROD350,China
+2250,Accepted-In Progress,Paulina,2012/06/11 10:43:55.000000,Major,pl,Org line A2,A2_1,PROD776,POLAND
+2250,Queued-Awaiting Assignment,Paulina,2012/06/11 11:00:37.000000,Major,pl,Org line A2,A2_1,PROD776,POLAND
+2249,Accepted-In Progress,Leif,2012/06/11 10:44:56.000000,Medium,se,Org line V2,,PROD615,Sweden
+2249,Accepted-In Progress,Leif,2012/06/11 10:59:01.000000,Medium,se,Org line V2,,PROD615,Sweden
+2249,Accepted-Assigned,Leif,2012/06/11 11:20:23.000000,Medium,se,Org line V2,,PROD615,Sweden
+2249,Accepted-Wait,Leif,2012/06/14 10:04:22.000000,Medium,se,Org line V2,,PROD615,Sweden
+2252,Accepted-In Progress,Przemyslaw,2012/06/11 14:06:21.000000,Medium,pl,Org line A2,A2_1,PROD761,POLAND
+2252,Accepted-Wait,Przemyslaw,2012/06/11 14:06:29.000000,Medium,pl,Org line A2,A2_1,PROD761,POLAND
+2251,Accepted-In Progress,Michal,2012/06/11 14:17:17.000000,Low,pl,Org line A2,A2_1,PROD110,POLAND
+2254,Accepted-In Progress,Ewa,2012/06/11 14:57:27.000000,Medium,us,Org line G3,,PROD98,POLAND
+2254,Accepted-In Progress,Ewa,2012/06/11 15:01:41.000000,Medium,us,Org line G3,,PROD98,POLAND
+2253,Accepted-Wait,Sumesh,2012/06/11 16:54:37.000000,Medium,fr,Org line A2,A2_2,PROD698,0
+2256,Accepted-In Progress,Aurelie,2012/06/11 17:04:18.000000,Medium,se,Org line C,C_5,PROD473,France
+2256,Queued-Awaiting Assignment,Aurelie,2012/06/11 17:10:17.000000,Medium,se,Org line C,C_5,PROD473,France
+2256,Accepted-In Progress,Mikael,2012/06/11 17:15:59.000000,Medium,se,Org line C,C_5,PROD473,Sweden
+2255,Accepted-In Progress,Ian,2012/06/11 17:26:26.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2255,Accepted-Assigned,Ian,2012/06/11 17:31:53.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2255,Accepted-In Progress,Tomasz,2012/06/13 12:01:55.000000,Medium,gb,Org line A2,A2_1,PROD236,POLAND
+2255,Accepted-Wait,Tomasz,2012/06/14 16:43:04.000000,Medium,gb,Org line A2,A2_1,PROD236,POLAND
+2257,Queued-Awaiting Assignment,Craig,2012/06/11 23:06:30.000000,High,se,Org line F,,PROD417,Sweden
+2257,Accepted-In Progress,Stefan,2012/06/12 12:39:59.000000,High,se,Org line F,,PROD417,Sweden
+2257,Accepted-Assigned,William,2012/06/12 12:41:31.000000,High,se,Org line F,,PROD417,Sweden
+2257,Accepted-Assigned,Milos,2012/06/12 12:51:38.000000,High,se,Org line F,,PROD417,Sweden
+2258,Accepted-In Progress,Ian,2012/06/12 10:43:36.000000,Medium,se,Org line G4,,PROD236,United Kingdom
+2258,Accepted-Assigned,Ian,2012/06/14 09:38:57.000000,Medium,se,Org line G4,,PROD236,United Kingdom
+2258,Queued-Awaiting Assignment,Ing-Marie,2012/06/14 17:18:38.000000,Medium,se,Org line G4,,PROD236,Sweden
+2259,Accepted-In Progress,Ian,2012/06/12 11:34:53.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2259,Accepted-In Progress,Ian,2012/06/12 13:12:05.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2259,Accepted-Assigned,Ian,2012/06/14 09:38:47.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2261,Accepted-In Progress,Conny,2012/06/12 11:57:31.000000,High,se,Org line V2,,PROD42,Sweden
+2261,Queued-Awaiting Assignment,Conny,2012/06/12 13:34:06.000000,High,se,Org line V2,,PROD42,Sweden
+2261,Accepted-In Progress,Conny,2012/06/12 15:29:10.000000,High,se,Org line V2,,PROD42,Sweden
+2262,Accepted-In Progress,Peter,2012/06/12 12:19:13.000000,High,se,Org line C,E_7,PROD673,Sweden
+2262,Queued-Awaiting Assignment,Peter,2012/06/12 12:21:08.000000,High,se,Org line C,E_7,PROD673,Sweden
+2262,Queued-Awaiting Assignment,Sten,2012/06/14 08:17:55.000000,High,se,Org line C,E_6,PROD673,Sweden
+2260,Queued-Awaiting Assignment,Anson,2012/06/12 12:22:50.000000,Medium,cn,Org line A2,A2_5,PROD789,China
+2264,Accepted-In Progress,Andreas,2012/06/12 14:04:59.000000,Medium,se,Org line C,C_6,PROD802,Sweden
+2266,Accepted-In Progress,Peter,2012/06/12 14:06:49.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2266,Queued-Awaiting Assignment,Peter,2012/06/12 14:08:37.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2265,Accepted-In Progress,Robert,2012/06/12 14:23:20.000000,Major,us,Org line C,E_4,PROD348,USA
+2265,Accepted-Wait,Robert,2012/06/12 14:24:23.000000,Major,us,Org line C,E_4,PROD348,USA
+2265,Queued-Awaiting Assignment,Robert,2012/06/13 12:04:35.000000,Major,us,Org line C,E_4,PROD348,USA
+2265,Accepted-In Progress,Kjell,2012/06/13 12:05:17.000000,Major,us,Org line C,E_4,PROD348,Sweden
+2263,Accepted-In Progress,Lars-G?ran,2012/06/12 14:42:26.000000,High,se,Org line G4,,PROD374,Sweden
+2267,Accepted-In Progress,Peter,2012/06/12 15:05:08.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2267,Queued-Awaiting Assignment,Peter,2012/06/12 15:06:16.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2269,Accepted-In Progress,Peter,2012/06/12 15:09:48.000000,Medium,be,Org line C,E_1,PROD821,Belgium
+2269,Queued-Awaiting Assignment,Peter,2012/06/12 15:10:43.000000,Medium,be,Org line C,E_1,PROD821,Belgium
+2270,Accepted-In Progress,Peter,2012/06/12 15:12:56.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2270,Queued-Awaiting Assignment,Peter,2012/06/12 15:15:39.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2271,Accepted-In Progress,Peter,2012/06/12 15:43:50.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2271,Queued-Awaiting Assignment,Peter,2012/06/12 15:45:09.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2272,Accepted-In Progress,Peter,2012/06/12 15:47:47.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2272,Queued-Awaiting Assignment,Peter,2012/06/12 15:50:01.000000,Medium,be,Org line C,E_1,PROD745,Belgium
+2268,Accepted-Wait,Alan,2012/06/12 16:00:03.000000,High,gb,Org line A2,A2_1,PROD236,United Kingdom
+2274,Accepted-In Progress,Niklas,2012/06/12 16:00:53.000000,Low,se,Org line A2,A2_2,PROD681,Sweden
+2273,Accepted-In Progress,Jerker,2012/06/12 16:02:20.000000,Low,se,Org line A2,A2_3,PROD240,Sweden
+2275,Accepted-In Progress,Sumesh,2012/06/12 17:05:11.000000,Medium,fr,Org line A2,A2_2,PROD698,0
+2275,Accepted-In Progress,Sumesh,2012/06/12 17:50:53.000000,Medium,fr,Org line A2,A2_2,PROD698,0
+2275,Queued-Awaiting Assignment,Frederic,2012/06/12 17:56:46.000000,Medium,fr,Org line A2,A2_2,PROD698,France
+2276,Accepted-In Progress,Adam,2012/06/12 23:09:10.000000,Low,se,Org line G4,,PROD409,Sweden
+2277,Accepted-In Progress,Dusan,2012/06/13 09:50:34.000000,Major,se,Org line A2,A2_3,PROD617,Sweden
+2278,Accepted-In Progress,Cyril,2012/06/13 10:06:25.000000,High,fr,Org line C,E_6,PROD348,France
+2280,Accepted-In Progress,Grzegorz,2012/06/13 13:24:30.000000,High,pl,Org line C,E_10,PROD600,POLAND
+2280,Queued-Awaiting Assignment,Grzegorz,2012/06/13 18:46:51.000000,High,pl,Org line C,E_10,PROD600,POLAND
+2280,Accepted-Assigned,Krystian,2012/06/14 10:26:10.000000,High,pl,Org line C,E_10,PROD600,POLAND
+2279,Accepted-In Progress,Radoslaw,2012/06/13 13:43:03.000000,High,pl,Org line A2,A2_3,PROD791,POLAND
+2282,Accepted-In Progress,Stefan,2012/06/13 13:51:57.000000,High,se,Org line A2,D_1,PROD607,Sweden
+2282,Accepted-Wait,Stefan,2012/06/13 13:54:13.000000,High,se,Org line A2,D_1,PROD607,Sweden
+2283,Accepted-In Progress,Wim,2012/06/13 15:42:23.000000,High,se,Org line C,C_5,PROD618,Belgium
+2283,Accepted-In Progress,Wim,2012/06/13 16:18:13.000000,High,se,Org line C,C_5,PROD618,Belgium
+2281,Accepted-In Progress,Jonas,2012/06/13 16:26:06.000000,Major,in,Org line C,E_8,PROD473,Sweden
+2284,Accepted-In Progress,Lars,2012/06/13 16:33:44.000000,Medium,se,Org line C,C_4,PROD673,Sweden
+2284,Accepted-Wait,Lars,2012/06/13 16:43:37.000000,Medium,se,Org line C,C_4,PROD673,Sweden
+2285,Accepted-In Progress,Richard,2012/06/13 18:33:11.000000,Medium,se,Org line C,V3_2,PROD412,Sweden
+2285,Queued-Awaiting Assignment,Richard,2012/06/13 18:34:09.000000,Medium,se,Org line C,V3_2,PROD412,Sweden
+2285,Accepted-In Progress,Joakim,2012/06/13 23:21:57.000000,Medium,se,Org line C,V3_2,PROD412,Sweden
+2285,Queued-Awaiting Assignment,Viktoria,2012/06/13 23:22:04.000000,Medium,se,Org line G4,V3_2,PROD412,Sweden
+2285,Accepted-In Progress,Christoffer,2012/06/14 10:06:14.000000,Medium,se,Org line C,V3_2,PROD412,Sweden
+2285,Queued-Awaiting Assignment,Viktoria,2012/06/14 10:06:32.000000,Medium,se,Org line G4,V3_2,PROD412,Sweden
+2285,Accepted-In Progress,Christoffer,2012/06/14 10:06:45.000000,Medium,se,Org line G4,V3_2,PROD412,Sweden
+2286,Accepted-In Progress,Robert,2012/06/13 20:26:46.000000,Medium,us,Org line C,E_4,PROD436,USA
+2286,Queued-Awaiting Assignment,Robert,2012/06/13 20:31:53.000000,Medium,us,Org line C,E_4,PROD436,USA
+2286,Accepted-In Progress,Lotta,2012/06/13 20:35:25.000000,Medium,us,Org line A2,A2_2,PROD436,Sweden
+2286,Accepted-In Progress,Robert,2012/06/13 20:35:53.000000,Medium,us,Org line C,E_4,PROD436,USA
+2287,Queued-Awaiting Assignment,Robert,2012/06/13 20:44:59.000000,High,us,Org line C,E_4,PROD436,USA
+2290,Accepted-In Progress,Christophe,2012/06/14 10:38:07.000000,Medium,be,Org line C,V3_2,PROD815,Belgium
+2290,Accepted-Wait,Christophe,2012/06/14 14:04:54.000000,Medium,be,Org line C,V3_2,PROD815,Belgium
+2289,Accepted-In Progress,Pankaj,2012/06/14 10:40:06.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2289,Accepted-Wait,Pankaj,2012/06/14 13:02:17.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2288,Accepted-In Progress,Maria,2012/06/14 10:41:28.000000,High,se,Org line A2,A2_4,PROD591,Sweden
+2291,Accepted-In Progress,Pankaj,2012/06/14 12:16:48.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2291,Accepted-Wait,Pankaj,2012/06/14 13:08:25.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2292,Accepted-In Progress,Pankaj,2012/06/14 12:42:16.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2292,Accepted-Wait,Pankaj,2012/06/15 07:00:00.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2293,Accepted-In Progress,Bikshamaiah,2012/06/14 12:45:20.000000,High,in,Org line C,E_8,PROD597,Sweden
+2294,Accepted-In Progress,Bharath,2012/06/14 13:43:56.000000,Medium,se,Org line G4,,PROD304,Sweden
+2294,Accepted-Assigned,Bharath,2012/06/14 13:52:38.000000,Medium,se,Org line G4,,PROD304,Sweden
+2295,Accepted-In Progress,Ian,2012/06/14 13:52:07.000000,Low,gb,Org line A2,A2_1,PROD236,United Kingdom
+2295,Accepted-Assigned,Ian,2012/06/14 13:53:26.000000,Low,gb,Org line A2,A2_1,PROD236,United Kingdom
+2296,Accepted-In Progress,Rohit,2012/06/14 14:02:35.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2296,Accepted-Wait,Rohit,2012/06/15 07:16:11.000000,Medium,in,Org line C,E_10,PROD802,Sweden
+2297,Accepted-In Progress,Rickard,2012/06/14 15:19:34.000000,Medium,se,Org line G4,,PROD374,Sweden
+2298,Accepted-In Progress,Ian,2012/06/14 16:39:26.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2298,Accepted-Assigned,Ian,2012/06/14 16:41:06.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2301,Accepted-In Progress,Robert,2012/06/14 17:29:30.000000,Medium,us,Org line C,E_4,PROD793,USA
+2301,Queued-Awaiting Assignment,Robert,2012/06/14 17:33:44.000000,Medium,us,Org line C,E_4,PROD793,USA
+2301,Accepted-In Progress,Jay,2012/06/14 18:03:20.000000,Medium,us,Org line C,E_4,PROD793,USA
+2299,Accepted-In Progress,Andreas,2012/06/14 18:03:24.000000,High,se,Org line C,C_6,PROD802,Sweden
+2300,Accepted-In Progress,J?rgen,2012/06/14 18:38:15.000000,High,us,Org line C,E_4,PROD348,Sweden
+2302,Accepted-In Progress,K?re,2012/06/14 20:26:45.000000,High,be,Org line C,E_1,PROD821,Sweden
+2303,Accepted-In Progress,Rijin,2012/06/15 09:07:27.000000,Medium,in,Org line B,E_10,PROD10,INDIA
+2304,Accepted-In Progress,Ranveer,2012/06/15 11:20:18.000000,Low,in,Org line C,E_10,PROD805,Sweden
+2304,Accepted-Wait,Ranveer,2012/06/15 11:21:56.000000,Low,in,Org line C,E_10,PROD805,Sweden
+2305,Accepted-In Progress,Hanna,2012/06/15 11:36:37.000000,Low,gb,Org line A2,A2_1,PROD236,POLAND
+2305,Accepted-In Progress,Hanna,2012/06/15 11:46:31.000000,Low,gb,Org line A2,A2_1,PROD236,POLAND
+2306,Accepted-In Progress,Ian,2012/06/15 12:17:18.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
+2306,Accepted-Assigned,Ian,2012/06/15 12:19:56.000000,Medium,gb,Org line A2,A2_1,PROD236,United Kingdom
