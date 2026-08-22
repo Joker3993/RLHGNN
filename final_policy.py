@@ -10,9 +10,11 @@ from utils import calculate_entropy, calculate_longest_consecutive_subsequence
 
 
 class final_policy:
-    def __init__(self, dataset, fold):
+    def __init__(self, dataset, fold, model_path=None, output_suffix=None):
         self.eventlog = dataset
         self.fold = fold
+        self.model_path = model_path
+        self.output_suffix = output_suffix
 
     def get_device(self, gpu):
 
@@ -126,9 +128,12 @@ class final_policy:
                 elif type == 'test':
                     test_data.append(data_dict)
 
-        self.device = self.get_device(0)
+        self.device = self.get_device(3)
 
-        rl_model = DQN.load(f"./RL_model/{eventlog}/DQN_best_model_{fold}", device=self.device)
+        # rl_model = DQN.load(f"./RL_model/{eventlog}/DQN_best_model_{fold}", device=self.device)
+        if self.model_path is None:
+            self.model_path = f"./RL_model/{eventlog}/PPO_best_model_{fold}"
+        rl_model = PPO.load(self.model_path, device=self.device)
 
         train_graphs, train_labels, train_actions = self.generate_optimal_graphs(train_data, self.features_name,
                                                                                  rl_model, self.device)
@@ -148,12 +153,18 @@ class final_policy:
         print_action_distribution("Validation", val_actions)
         print_action_distribution("Test", test_actions)
 
-        dgl.save_graphs(f"./graph_data/{eventlog}_{fold}/train_graphs",
+        graph_root = f"./graph_data/{eventlog}_{fold}"
+        if self.output_suffix is not None:
+            graph_root = f"{graph_root}_{self.output_suffix}"
+
+        os.makedirs(graph_root, exist_ok=True)
+
+        dgl.save_graphs(f"{graph_root}/train_graphs",
                         train_graphs,
                         {"label": torch.tensor(train_labels)})
-        dgl.save_graphs(f"./graph_data/{eventlog}_{fold}/val_graphs",
+        dgl.save_graphs(f"{graph_root}/val_graphs",
                         val_graphs,
                         {"label": torch.tensor(val_labels)})
-        dgl.save_graphs(f"./graph_data/{eventlog}_{fold}/test_graphs",
+        dgl.save_graphs(f"{graph_root}/test_graphs",
                         test_graphs,
                         {"label": torch.tensor(test_labels)})

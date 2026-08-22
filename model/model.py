@@ -48,9 +48,12 @@ class HeteroSAGE(nn.Module):
             nn.ReLU(),
             nn.Linear(hidden_dim, hidden_dim)
         )
+        self.proj_norm = nn.LayerNorm(hidden_dim)
+        self.proj_dropout = nn.Dropout(dropout)
 
         self.hetero_convs = nn.ModuleList()
         self.norms = nn.ModuleList()
+        self.residual_dropouts = nn.ModuleList()
 
         aggregator_dict = {
             'forward': 'lstm',
@@ -65,15 +68,19 @@ class HeteroSAGE(nn.Module):
             }
             self.hetero_convs.append(HeteroGraphConv(conv_dict, aggregate='mean'))
             self.norms.append(nn.LayerNorm(hidden_dim))
+            self.residual_dropouts.append(nn.Dropout(dropout))
 
         self.classifier = nn.Sequential(
             nn.Linear(hidden_dim, hidden_dim),
             nn.ReLU(),
+            nn.Dropout(dropout),
             nn.Linear(hidden_dim, hidden_dim),
             nn.ReLU(),
+            nn.Dropout(dropout),
             nn.Linear(hidden_dim, self.n_classes)
         )
 
+        self._init_last_layer()
         self.init_weights()
 
     def _load_feature_config(self, dataname, fold):
@@ -102,16 +109,23 @@ class HeteroSAGE(nn.Module):
         path = f"raw_dir/{dataname}_{fold}/"
         return np.load(path + "activity_info.npy", allow_pickle=True)
 
-    def init_weights(self):
+    def _init_last_layer(self):
+        for module in self.classifier.modules():
+            if isinstance(module, nn.Linear) and module.out_features == self.n_classes:
+                init.xavier_normal_(module.weight, gain=0.01)
+                if module.bias is not None:
+                    init.constant_(module.bias, 0)
 
-        for name, param in self.named_parameters():
-            if 'weight' in name:
-                if 'embedding' in name:
-                    init.normal_(param, mean=0, std=0.1)
-                elif 'linear' in name.lower():
-                    init.kaiming_normal_(param, nonlinearity='relu')
-            elif 'bias' in name:
-                init.constant_(param, 0)
+    def init_weights(self):
+        for module in self.modules():
+            if isinstance(module, nn.Linear):
+                if module.out_features == self.n_classes:
+                    continue
+                init.kaiming_normal_(module.weight, nonlinearity='relu')
+                if module.bias is not None:
+                    init.constant_(module.bias, 0)
+            elif isinstance(module, nn.Embedding):
+                init.normal_(module.weight, mean=0, std=0.1)
 
     def forward(self, hg):
 
@@ -120,13 +134,16 @@ class HeteroSAGE(nn.Module):
             feat_embeds.append(embed(hg.ndata[feat_name].long()))
         h = torch.cat(feat_embeds, dim=1)
         h = self.feature_proj(h)
+        h = self.proj_norm(h)
+        h = self.proj_dropout(h)
 
-        for conv, norm in zip(self.hetero_convs, self.norms):
+        for conv, norm, res_drop in zip(self.hetero_convs, self.norms, self.residual_dropouts):
             residual = h
             h_dict = conv(hg, {'node': h})
             h = h_dict['node']
 
-            h = norm(h + residual)
+            h = residual + res_drop(h - residual)
+            h = norm(h)
             h = F.relu(h)
             h = self.dropout(h)
 

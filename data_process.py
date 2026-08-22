@@ -1,5 +1,7 @@
 import os
 import pickle
+import random
+
 import dgl
 import numpy as np
 import torch
@@ -7,6 +9,10 @@ from tqdm import tqdm
 
 from ProcessEventlog_one_graph import PreProcess
 
+# 固定随机种子工具函数
+def set_seed(seed):
+    random.seed(seed)
+    np.random.seed(seed)
 
 def split_dataset(graph_list, labels):
     total_samples = len(graph_list)
@@ -34,7 +40,7 @@ def split_attr(graph_list):
 def process_datasets(path):
     data_types = ["train", "val", "test"]
     for choice in range(4):
-
+        print(f"choice: {choice}")
         for data_type in data_types:
 
             graph_path = os.path.join(path, f"Positive_graph_{data_type}_choice_{choice}")
@@ -71,24 +77,30 @@ def process_datasets(path):
 
 
 if __name__ == '__main__':
+    # 程序启动后先设置随机种子，种子值可根据需要自行修改
+    set_seed(133)
+
     list_eventlog = [
         'bpi13_closed_problems',
         'bpi13_problems',
-        'bpi13_incidents',
-        'bpi12w_complete',
-        'bpi12_all_complete',
-        'BPI2020_Prepaid',
+        # 'bpi13_incidents',
+        # 'bpi12w_complete',
+        # 'bpi12_all_complete',
+        # 'BPI2020_Prepaid',
+        # 'p2p'
     ]
 
     for eventlog in tqdm(list_eventlog):
         print(f"--------------数据预处理------------")
         PreProcess(event_log=eventlog).main_process()
 
-        for fold in range(3):
-            path = "./raw_dir/" + eventlog + "_" + str(fold)
+        # 单次时间拆分，不需要多折交叉验证，fold固定为0
+        fold = 0
 
-            features_name_path = path + "/" + "features_name" + ".npy"
-            with open(features_name_path, 'rb') as file:
-                features_name = pickle.load(file)
+        path = "./raw_dir/" + eventlog + "_" + str(fold)
 
-            process_datasets(path)
+        features_name_path = path + "/" + "features_name" + ".npy"
+        with open(features_name_path, 'rb') as file:
+            features_name = pickle.load(file)
+
+        process_datasets(path)

@@ -3,9 +3,6 @@ import torch
 import numpy as np
 import math
 
-np.random.seed(133)
-
-
 def encode_map(input_array):
     p_map = {}
     length = len(input_array)
