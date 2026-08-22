@@ -20,7 +20,7 @@ Traditional methods represent event log prefixes with a single fixed graph struc
 | 2 | `forward_complex` | Forward + repeated-activity skip edges |
 | 3 | `Bidirect_complex` | Bidirectional + repeated-activity skip edges |
 
-Each node represents an event (with multi-dimensional attributes such as `activity` / `duration`), modeled by `HeteroSAGE` (heterogeneous SAGE convolution: `forward` / `backward` edges use LSTM aggregation, `repeat_next` edges use mean aggregation; Pre-LN residual blocks + stochastic depth + max-pooling readout), which finally outputs the probability distribution over the next activity.
+Each node represents an event (with multi-dimensional attributes such as `activity` / `duration`), modeled by `HeteroSAGE` (heterogeneous SAGE convolution: `forward` / `backward` edges use LSTM aggregation, `repeat_next` edges use mean aggregation; Post-LN residual blocks + stochastic depth (DropPath) + max-pooling readout), which finally outputs the probability distribution over the next activity.
 
 ### Pipeline
 
@@ -265,7 +265,7 @@ Outputs `cd_diagram_accuracy.png` and `cd_diagram_f1.png` (Demsar 2006 style).
 | `ablation_main.py` / `ablation_metrics.py` | Ablation study |
 | `ablation_oracle_ceiling.py` | Oracle ceiling: per-prefix best-action accuracy + F1 upper-bound search |
 | `cd_diagram.py` | Friedman / Nemenyi tests and CD diagram (`cd_diagram_accuracy.png`, `cd_diagram_f1.png`) |
-| `model/model.py` | `HeteroSAGE` model (hetero SAGEConv + LSTM/mean aggregation, Pre-LN + stochastic depth, max pooling) |
+| `model/model.py` | `HeteroSAGE` model (hetero SAGEConv + LSTM/mean aggregation, Post-LN + stochastic depth (DropPath), max pooling) |
 | `MyDataset*.py` | DGL dataset wrappers |
 
 ## 9. FAQ
