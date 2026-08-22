@@ -77,7 +77,6 @@ The project supports the following datasets (raw event logs go in `train_test_da
 - `bpi12_all_complete`
 - `BPI2020_Prepaid`
 - `p2p` (source file is the OCEL file `p2p.jsonocel`; conversion required first)
-- `OTC` (source file is the OCEL file `OTC.jsonocel`)
 
 > The event logs can be obtained from 4TU Research Data. Some data is already included under `train_test_data/`.
 
