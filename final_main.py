@@ -341,6 +341,7 @@ if __name__ == '__main__':
         'bpi12w_complete',
         'bpi12_all_complete',
         'BPI2020_Prepaid',
+        'OTC'
     ]
 
     for eventlog in list_eventlog:

@@ -83,11 +83,12 @@ if __name__ == '__main__':
     list_eventlog = [
         'bpi13_closed_problems',
         'bpi13_problems',
-        # 'bpi13_incidents',
-        # 'bpi12w_complete',
-        # 'bpi12_all_complete',
-        # 'BPI2020_Prepaid',
-        # 'p2p'
+        'bpi13_incidents',
+        'bpi12w_complete',
+        'bpi12_all_complete',
+        'BPI2020_Prepaid',
+        'p2p',
+        'OTC'
     ]
 
     for eventlog in tqdm(list_eventlog):

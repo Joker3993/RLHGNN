@@ -289,6 +289,7 @@ if __name__ == '__main__':
         'BPI2020_Prepaid',
         'bpi12w_complete',
         'bpi12_all_complete',
+        'OTC'
     ]
     beta_value = 1
     print(f"beta:{beta_value}")
