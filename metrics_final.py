@@ -158,14 +158,14 @@ def set_seed(seed):
 if __name__ == '__main__':
     seed_list = [133, 188, 456, 789, 1666]
     list_eventlog = [
-        'p2p',
         'bpi13_closed_problems',
         'bpi13_problems',
+        'OTC',
         'bpi13_incidents',
         'bpi12w_complete',
+        'p2p',
         'bpi12_all_complete',
         'BPI2020_Prepaid',
-        'OTC'
     ]
 
     fold=0

@@ -335,13 +335,13 @@ if __name__ == '__main__':
 
     list_eventlog = [
         'bpi13_closed_problems',
-        'p2p',
         'bpi13_problems',
+        'OTC',
         'bpi13_incidents',
         'bpi12w_complete',
+        'p2p',
         'bpi12_all_complete',
         'BPI2020_Prepaid',
-        'OTC'
     ]
 
     for eventlog in list_eventlog:

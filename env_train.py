@@ -284,14 +284,14 @@ if __name__ == '__main__':
     list_eventlog = [
         'bpi13_closed_problems',
         'bpi13_problems',
+        'OTC',
         'bpi13_incidents',
-        'p2p',
-        'BPI2020_Prepaid',
         'bpi12w_complete',
-        'bpi12_all_complete',
-        'OTC'
+        # 'p2p',
+        # 'bpi12_all_complete',
+        # 'BPI2020_Prepaid',
     ]
-    beta_value = 1
+    beta_value = 2
     print(f"beta:{beta_value}")
 
     for eventlog in list_eventlog:
@@ -394,8 +394,12 @@ if __name__ == '__main__':
                 n_steps=1024,
                 batch_size=128,
                 n_epochs=3,
-                gamma=0.99,
-                gae_lambda=0.95,
+                # 一个 reward batch 内的 32 个 trace prefixes 相互独立，
+                # 其在 batch 中的先后位置仅为数据排列顺序，不存在前后 decision 的时序依赖，
+                # 故 gamma=gae_lambda=1.0，避免离 batch terminal reward 较远的 decision
+                # 获得更弱反馈而引入与 batch 位置有关的额外衰减。
+                gamma=1.0,
+                gae_lambda=1.0,
                 clip_range=0.2,
                 ent_coef=0.01,
                 vf_coef=0.5,
