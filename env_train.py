@@ -1,8 +1,10 @@
+import argparse
 import contextlib
 import math
 import os
 import pickle
 import random
+import sys
 import time
 
 import gymnasium as gym
@@ -17,6 +19,7 @@ from torch import nn, optim
 
 from build_graph import build_graph
 from final_policy import final_policy
+from reward_table import build_or_load, table_fingerprint
 from utils import calculate_entropy, calculate_longest_consecutive_subsequence
 
 
@@ -80,7 +83,12 @@ def evaluate_gnn(P_graph, attr_label, action):
     return loss, correct, pred
 
 
-def calculate_reward(prefix, action, attr_label):
+def calculate_reward(prefix, action, attr_label, table=None):
+    # 快路径：reward 表已在启动时按 (样本, 动作) 算好，这里只做一次数组索引。
+    # table 里存的就是 evaluate_gnn 的原返回值（逐位相同），见 reward_table.py。
+    if table is not None:
+        return table.get(attr_label['_tid'], action)
+
     P_graph = attr_label['graph_cache'][action]
 
     loss, correct, pred = evaluate_gnn(P_graph, attr_label, action)
@@ -88,10 +96,19 @@ def calculate_reward(prefix, action, attr_label):
     return loss, correct, pred
 
 
+def get_obs(attr_label):
+    """取观测。预计算过就直接返回，否则走原路径。"""
+    obs = attr_label.get('_obs')
+    if obs is not None:
+        return obs
+    return extract_features(attr_label)
+
+
 class PrefixGraphEnv(gym.Env):
-    def __init__(self, data_prefix, batch_size=32):
+    def __init__(self, data_prefix, batch_size=32, table=None):
         super(PrefixGraphEnv, self).__init__()
         self.data = data_prefix
+        self.table = table
         self.current_prefix = None
         self.current_label = None
         self.current_prefix_all_attr = None
@@ -122,13 +139,13 @@ class PrefixGraphEnv(gym.Env):
         self.current_label = node_feature_dict['label']
         self.current_prefix_all_attr = node_feature_dict
 
-        obs = extract_features(node_feature_dict)
+        obs = get_obs(node_feature_dict)
         info = {}
         return obs, info
 
     def step(self, action):
 
-        loss, correct, pred = calculate_reward(self.current_prefix, action, self.current_prefix_all_attr)
+        loss, correct, pred = calculate_reward(self.current_prefix, action, self.current_prefix_all_attr, self.table)
         current_loss = loss.item()
 
         # 将当前样本结果加入batch缓存
@@ -175,7 +192,7 @@ class PrefixGraphEnv(gym.Env):
 
                 terminated = True
                 truncated = False
-                next_state = extract_features(self.current_prefix_all_attr)
+                next_state = get_obs(self.current_prefix_all_attr)
                 info = {}
                 return next_state, reward, terminated, truncated, info
 
@@ -185,7 +202,7 @@ class PrefixGraphEnv(gym.Env):
             self.current_prefix = node_feature_dict['activity']
             self.current_label = node_feature_dict['label']
             self.current_prefix_all_attr = node_feature_dict
-            next_state = extract_features(node_feature_dict)
+            next_state = get_obs(node_feature_dict)
             reward = 0.0
             terminated = False
             truncated = False
@@ -220,28 +237,27 @@ class PrefixGraphEnv(gym.Env):
 
         terminated = True
         truncated = False
-        next_state = extract_features(self.current_prefix_all_attr)
+        next_state = get_obs(self.current_prefix_all_attr)
         info = {}
 
         return next_state, reward, terminated, truncated, info
 
 
-def evaluate(model, data):
+def evaluate(model, data, table=None):
     total_loss = 0.0
     total_correct = 0
     action_counts = [0] * 4
 
     with torch.inference_mode():
         for sample in data:
-            obs = extract_features(sample)
+            obs = get_obs(sample)
 
             action, _ = model.predict(obs, deterministic=True)
             action = int(action)
             action_counts[action] += 1
 
-            attr_label = sample
-            P_graph = attr_label['graph_cache'][action]
-            loss, correct, pred = evaluate_gnn(P_graph, attr_label, action)
+            # 与 calculate_reward 同一条路径：有表查表，没表走原始 GNN 前向
+            loss, correct, pred = calculate_reward(sample['activity'], action, sample, table)
 
             total_loss += loss.item()
             total_correct += correct
@@ -279,7 +295,136 @@ def set_seed(seed):
     torch.backends.cudnn.benchmark = True
 
 
+def verify_reward_table(tables, model_list, device, features_name, splits, k=None):
+    """比对 reward 表与"现场重算"的 evaluate_gnn，给出可判定的结论。
+
+    判定规则（两条同时满足才算 PASS）：
+      1. pred 与 correct 必须**完全一致**。这两个量直接进 batch macro-F1 和
+         reward，翻转一个就会改变训练轨迹，没有容差空间。
+      2. max|Δloss| < 1e-6。loss 允许末位级别的差异（GPU 归约顺序所致，原实现
+         自己对同一张图反复前向时也可能有同量级抖动），但不允许量级偏差。
+
+    顺带校验（任一失败即 FAIL）：
+      - 每个 split 的 _tid 恰好是 0..N-1 的一个排列（决定"查哪一行"）
+      - 预计算观测与 extract_features 逐位一致
+      - 表内数值有限、pred 落在合法类别范围内
+
+    k=None 表示全量校验；给整数则每个 split 随机抽 k 个样本。
+    """
+    rng = random.Random(20240101)
+    ok = True
+    n_actions = len(model_list)
+    n_classes = getattr(model_list[0], 'n_classes', None)
+
+    print("\n" + "=" * 78)
+    print("reward 表等价性校验")
+    print("=" * 78)
+
+    # ---- 0. 索引完整性 ----
+    for name, dataset in splits:
+        tids = [d.get('_tid') for d in dataset]
+        good = tids == list(range(len(dataset)))
+        print(f"  [{'PASS' if good else 'FAIL'}] _tid  {name:5s}: "
+              f"{'0..N-1 完整连续' if good else '索引缺失或错位，查表行会串位'}")
+        ok &= good
+
+    # ---- 1. 观测 ----
+    for name, dataset in splits:
+        if dataset and '_obs' not in dataset[0]:
+            print(f"  [SKIP] obs   {name:5s}: legacy 模式未做观测预计算")
+            continue
+        bad = sum(1 for d in dataset
+                  if not np.array_equal(np.asarray(extract_features(d), dtype=np.float32), d['_obs']))
+        print(f"  [{'PASS' if bad == 0 else 'FAIL'}] obs   {name:5s}: "
+              f"{len(dataset) - bad}/{len(dataset)} 逐位一致")
+        ok &= (bad == 0)
+
+    # ---- 2. 表自身取值合理性 ----
+    for name, _ in splits:
+        t = tables[name]
+        finite = bool(np.isfinite(t.loss).all())
+        if n_classes is not None:
+            pred_ok = bool((t.pred >= 0).all() and (t.pred < n_classes).all())
+        else:
+            pred_ok = True
+        ok &= finite and pred_ok
+        rng_txt = (f"pred∈[0,{n_classes})={pred_ok}" if n_classes is not None
+                   else "pred 范围：模型未暴露 n_classes，跳过")
+        print(f"  [{'PASS' if finite and pred_ok else 'FAIL'}] 取值  {name:5s}: "
+              f"loss 有限={finite}  {rng_txt}")
+
+    # ---- 2b. 表内自洽：correct 必须恰好等于 (pred == label) ----
+    # 这是一条不依赖"现场重算"的独立不变式，能抓住"行列写反""_tid 整体偏移一位"
+    # 这类错误——它们会让每一条 loss 都错位，但只要错位是整体的，抽查也可能
+    # 看到"差得不多"的假象。这里做的是全量比对，代价 O(N×4)。
+    for name, dataset in splits:
+        t = tables[name]
+        y = np.asarray([int(d['label']) for d in dataset], dtype=np.int64).reshape(-1, 1)
+        good = bool((t.pred == y).shape == t.correct.shape and ((t.pred == y) == t.correct).all())
+        ok &= good
+        print(f"  [{'PASS' if good else 'FAIL'}] 自洽  {name:5s}: "
+              f"{'correct == (pred == label) 全量成立' if good else 'correct 与 pred/label 不一致，查表行列可能错位'}")
+
+    # ---- 3. reward 逐条比对 ----
+    for name, dataset in splits:
+        n = len(dataset)
+        if n == 0:
+            continue
+        idxs = list(range(n)) if k is None else rng.sample(range(n), min(k, n))
+        tab = tables[name]
+
+        exact = pred_bad = loss_bad = 0
+        max_abs = 0.0
+        for cnt, i in enumerate(idxs):
+            d = dataset[i]
+            for a in range(n_actions):
+                g = build_graph(d['activity'], a, d, features_name).to(device)
+                ref_loss, ref_correct, ref_pred = evaluate_gnn(g, d, a)
+                del g
+
+                ref_loss_val = ref_loss.item()
+                diff = abs(ref_loss_val - float(tab.loss[i, a]))
+                max_abs = max(max_abs, diff)
+                if diff == 0.0:
+                    exact += 1
+                elif diff >= 1e-6:
+                    loss_bad += 1
+
+                if (int(ref_pred) != int(tab.pred[i, a])
+                        or int(ref_correct) != int(tab.correct[i, a])):
+                    pred_bad += 1
+            if (cnt + 1) % 5000 == 0:
+                print(f"    ... {name} {cnt + 1}/{len(idxs)} 样本", flush=True)
+
+        total = len(idxs) * n_actions
+        good = (pred_bad == 0 and loss_bad == 0)
+        print(f"  [{'PASS' if good else 'FAIL'}] reward {name:5s}: {total} 条"
+              f" | 完全相等 {exact} ({exact / total:.4%})"
+              f" | pred/correct 翻转 {pred_bad}"
+              f" | loss 偏差>=1e-6 {loss_bad}"
+              f" | max|Δloss|={max_abs:.3e}")
+        ok &= good
+
+    print("=" * 78)
+    print("结论：" + ("PASS —— 表与现场前向等价，可用于正式实验" if ok
+                     else "FAIL —— 存在 pred 翻转或量级偏差，请勿用表跑正式实验"))
+    print("=" * 78 + "\n")
+    return 0 if ok else 1
+
+
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(add_help=True)
+    parser.add_argument("--legacy-reward", action="store_true",
+                        help="关闭 reward 表，走原始的逐步 GNN 前向（逐位对照 / 兜底用）")
+    parser.add_argument("--verify-reward-table", action="store_true",
+                        help="载入数据与模型后只做等价性校验，然后退出（默认全量）")
+    parser.add_argument("--verify-sample", type=int, default=None,
+                        help="配合 --verify-reward-table：每个 split 只抽查 N 个样本")
+    parser.add_argument("--cache-dir", default="reward_cache",
+                        help="reward 表的磁盘缓存目录")
+    parser.add_argument("--no-cache", action="store_true", help="不读写磁盘缓存")
+    ARGS, _ = parser.parse_known_args()
+
     seed_list = [133, 188, 456, 789, 1666]
     list_eventlog = [
         'bpi13_closed_problems',
@@ -287,9 +432,9 @@ if __name__ == '__main__':
         'OTC',
         'bpi13_incidents',
         'bpi12w_complete',
-        # 'p2p',
-        # 'bpi12_all_complete',
-        # 'BPI2020_Prepaid',
+        'p2p',
+        'bpi12_all_complete',
+        'BPI2020_Prepaid',
     ]
     beta_value = 2
     print(f"beta:{beta_value}")
@@ -357,28 +502,96 @@ if __name__ == '__main__':
 
             device = get_device(0)
 
-            # ========== 预构建图缓存 ==========
-            print("预构建图缓存（约4x加速）...")
-            for dataset_name, dataset in [("train", train_data), ("val", val_data), ("test", test_data)]:
-                for data_dict in dataset:
-                    graph_cache = {}
-                    for action in range(4):
-                        g = build_graph(data_dict['activity'], action, data_dict, features_name)
-                        graph_cache[action] = g.to(device)
-                    data_dict['graph_cache'] = graph_cache
-                print(f"  {dataset_name}: {len(dataset)} 个样本图已缓存")
-
             model_list = []
+            model_paths = []
             for action in range(4):
                 model_path_1 = f"./Pretrain/action_{action}_{seed}/" + eventlog
                 model_path = model_path_1 + '/' + str(eventlog) + f'_fold{fold}' + '_model.pkl'
+                model_paths.append(model_path)
 
-                GNN_model = torch.load(model_path, map_location=device)
+                # .pkl 里存的是完整模型对象（含 dgl 子模块），必须 weights_only=False，
+                # 否则 PyTorch>=2.6 的默认 weights_only=True 会拒绝还原 dgl.nn.pytorch 的类。
+                GNN_model = torch.load(model_path, map_location=device, weights_only=False)
                 GNN_model.to(device)
                 model_list.append(GNN_model)
 
             loss_func = nn.CrossEntropyLoss()
-            train_env = PrefixGraphEnv(train_data)
+
+            splits = [("train", train_data), ("val", val_data), ("test", test_data)]
+
+            # ========== 观测预计算 ==========
+            # extract_features 只依赖样本、是纯函数，每个样本算一次即可。
+            # 存成 np.float32 与 SB3 内部 np.asarray(obs, dtype=np.float32) 的结果逐位一致。
+            for name, dataset in splits:
+                for i, d in enumerate(dataset):
+                    d['_tid'] = i
+                    # legacy 模式下不预计算观测，让 --legacy-reward 成为可以对照的原始路径
+                    if not ARGS.legacy_reward:
+                        d['_obs'] = np.asarray(extract_features(d), dtype=np.float32)
+                if not ARGS.legacy_reward:
+                    print(f"  {name}: {len(dataset)} 个样本观测已预计算")
+
+            # ========== reward 表 ==========
+            tables = {}
+            written = []   # 本次新写入的缓存文件（校验失败时要删掉，否则下次会静默复用坏表）
+            # 注意 --legacy-reward + --verify-reward-table 同时开时**不建图缓存**：
+            # 校验模式一定会建表，calculate_reward 全程走表，graph_cache 一次都不会被读到。
+            # 此时若还按 legacy 建 4N 张图，等于白白多占一份显存（大数据集直接把卡撑爆）。
+            if ARGS.legacy_reward and not ARGS.verify_reward_table:
+                print("预构建图缓存（legacy 模式：保持原始逐步前向）...")
+                for dataset_name, dataset in splits:
+                    for data_dict in dataset:
+                        graph_cache = {}
+                        for action in range(4):
+                            g = build_graph(data_dict['activity'], action, data_dict, features_name)
+                            graph_cache[action] = g.to(device)
+                        data_dict['graph_cache'] = graph_cache
+                    print(f"  {dataset_name}: {len(dataset)} 个样本图已缓存")
+
+            if (not ARGS.legacy_reward) or ARGS.verify_reward_table:
+                print("预计算 reward 表（每个 (样本, 动作) 只算一次，逐位等价）...")
+                cache_dir = None if ARGS.no_cache else ARGS.cache_dir
+                for name, dataset in splits:
+                    t0 = time.perf_counter()
+                    # 指纹覆盖三样东西：4 个 reward 模型、loss 配置、**该 split 的数据内容**。
+                    # 数据用内容哈希而不是 label 文件 mtime：data_process.py 每次重跑都会重写
+                    # npy，用 mtime 会让缓存永远命不中；而只查 label 又会漏掉 activity/duration
+                    # 变化（标签和样本数都没变，表却是错的，且没有任何提示）。
+                    fp = table_fingerprint(model_paths, loss_func, dataset)
+                    cache_path = None
+                    if cache_dir:
+                        cache_path = os.path.join(
+                            cache_dir, f"{eventlog}_fold{fold}_seed{seed}_{name}_{fp}.npz")
+                    existed = bool(cache_path) and os.path.exists(cache_path)
+                    tables[name] = build_or_load(
+                        data=dataset,
+                        reward_fn=evaluate_gnn,
+                        build_fn=lambda d, a: build_graph(d['activity'], a, d, features_name).to(device),
+                        n_actions=len(model_list),
+                        cache_path=cache_path,
+                        fingerprint=fp,
+                        verbose=True,
+                    )
+                    if cache_path and not existed and os.path.exists(cache_path):
+                        written.append(cache_path)
+                    print(f"  {name}: {len(dataset)} 样本 × {len(model_list)} 动作，"
+                          f"耗时 {time.perf_counter() - t0:.1f}s")
+
+            if ARGS.verify_reward_table:
+                rc = verify_reward_table(tables, model_list, device, features_name, splits,
+                                         k=ARGS.verify_sample)
+                if rc != 0 and written:
+                    # 校验没过的表留在磁盘上，下次训练会"命中缓存"直接用——这是最坏的
+                    # 失败模式：错误的表 + 没有任何提示。直接删掉，宁可重算。
+                    for p in written:
+                        try:
+                            os.remove(p)
+                        except OSError:
+                            pass
+                    print(f"  已删除本次新写入的 {len(written)} 个缓存文件，避免下次静默复用")
+                sys.exit(rc)
+
+            train_env = PrefixGraphEnv(train_data, table=tables.get("train"))
 
             policy_kwargs = dict(
                 net_arch=[256, 128, 64],
@@ -450,7 +663,7 @@ if __name__ == '__main__':
                         print(f"Action {a}: count={count} acc={acc:.2f}")
                     train_env.action_performance = {a: {'count': 0, 'correct': 0} for a in range(4)}
 
-                val_loss, val_acc, val_actions = evaluate(model, val_data)
+                val_loss, val_acc, val_actions = evaluate(model, val_data, tables.get("val"))
                 print(f"Epoch {epoch + 1}: Val Loss = {val_loss:.4f}, Val Acc = {val_acc:.4f}")
                 print("Action Distribution:")
                 for action, prob in enumerate(val_actions):
@@ -470,12 +683,12 @@ if __name__ == '__main__':
             print(f"Best epoch :{best_epoch + 1}")
             print("-----------------训练结束------------------")
 
-            test_env = PrefixGraphEnv(test_data)
+            test_env = PrefixGraphEnv(test_data, table=tables.get("test"))
             model_test = PPO.load(model_path, env=test_env)
 
             print("-----------------开始测试模型------------------")
 
-            test_loss, test_acc, test_actions = evaluate(model_test, test_data)
+            test_loss, test_acc, test_actions = evaluate(model_test, test_data, tables.get("test"))
 
             with open(log_path, 'a') as log_file:
                 with contextlib.redirect_stdout(log_file):
@@ -498,9 +711,8 @@ if __name__ == '__main__':
                         total_correct = 0
 
                         for sample in test_data:
-                            attr_label = sample
-                            P_graph = attr_label['graph_cache'][action]
-                            loss, correct, pred = evaluate_gnn(P_graph, attr_label, action)
+                            loss, correct, pred = calculate_reward(
+                                sample['activity'], action, sample, tables.get("test"))
 
                             total_loss += loss.item()
                             total_correct += correct
