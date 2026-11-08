@@ -275,7 +275,9 @@ class Tran:
 
         torch.save(best_model, model_path)
 
-        check_model = torch.load(model_path)
+        # .pkl 里存的是完整模型对象（含 dgl 子模块），必须 weights_only=False，
+        # 否则 PyTorch>=2.6 的默认 weights_only=True 会拒绝还原 dgl.nn.pytorch 的类。
+        check_model = torch.load(model_path, weights_only=False)
         val_loss, val_accuracy = self.validate(check_model, loss_func, val_loader, device, len(dataset_val))
         print('-' * 89)
         print(f'Best_Epoch [{best_epoch:d}/{args.num_epochs}].In best model: Validation Loss: {val_loss:.3f}')
