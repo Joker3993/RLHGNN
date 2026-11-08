@@ -1,6 +1,7 @@
 import os
 import pickle
 import random
+import time
 
 import dgl
 import numpy as np
@@ -93,6 +94,8 @@ if __name__ == '__main__':
 
     for eventlog in tqdm(list_eventlog):
         print(f"--------------数据预处理------------")
+        start_time = time.perf_counter()
+
         PreProcess(event_log=eventlog).main_process()
 
         # 单次时间拆分，不需要多折交叉验证，fold固定为0
@@ -105,3 +108,18 @@ if __name__ == '__main__':
             features_name = pickle.load(file)
 
         process_datasets(path)
+
+        # 记录该数据集的预处理耗时，与 train_time/<eventlog>/ 下其余阶段计时保持一致，
+        # 便于统计"数据预处理 + 预训练 + RL + 最终训练"的完整墙钟时间。
+        end_time = time.perf_counter()
+        preprocess_seconds = end_time - start_time
+        preprocess_hours = preprocess_seconds / 3600
+
+        time_dir = f'train_time/{eventlog}'
+        os.makedirs(time_dir, exist_ok=True)
+        time_file_path = os.path.join(time_dir, 'data_process_time.txt')
+        with open(time_file_path, 'w') as time_file:
+            time_file.write(f"data preprocessing time: {preprocess_hours:.3f} hours\n")
+
+        print(f"{eventlog} 数据预处理耗时: {preprocess_hours:.3f} hours "
+              f"({preprocess_seconds:.1f} s)")
