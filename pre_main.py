@@ -66,5 +66,3 @@ if __name__ == "__main__":
             method_name(start_total, end_total, seed)
             print(f"--------------结束-记录时间------------")
 
-        end_total = time.perf_counter()
-        method_name(start_total, end_total, 55555)

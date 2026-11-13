@@ -65,7 +65,7 @@ def Final_test(args, choice, seed):
 
     model_path = path + '/' + str(args.dataset) + f'_fold{fold}' + '_model.pkl'
 
-    model = torch.load(model_path)
+    model = torch.load(model_path, weights_only=False)
     model.to(device)
 
     model.eval()

@@ -7,7 +7,8 @@ import random
 import numpy as np
 import torch
 import torchvision
-from torch.cuda.amp import autocast, GradScaler
+from torch.amp import autocast
+from torch.cuda.amp import GradScaler
 from dgl.dataloading import GraphDataLoader
 from torch import nn, optim
 import matplotlib.pyplot as plt
@@ -53,15 +54,11 @@ class Tran:
             Positive_graph, labels = batch
 
             if scaler is not None:
-                with autocast():
+                with autocast('cuda'):
                     logits = model(Positive_graph)
-                    logits = logits.to(device)
                     loss = loss_func(logits, labels)
             else:
                 logits = model(Positive_graph)
-
-                logits = logits.to(device)
-
                 loss = loss_func(logits, labels)
 
             optimizer.zero_grad()
@@ -77,11 +74,11 @@ class Tran:
                 torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=clip_grad_norm)
                 optimizer.step()
 
-            total_loss += loss.item()
-            total_accuracy += (logits.argmax(1) == labels).sum().item()
+            total_loss += loss.detach()
+            total_accuracy += (logits.argmax(1) == labels).sum()
             total_step += 1
 
-        return total_loss / total_step, total_accuracy / data_length
+        return (total_loss / total_step).item(), (total_accuracy / data_length).item()
 
     def validate(self, model, loss_func, val_loader, device, data_length):
 
@@ -98,22 +95,18 @@ class Tran:
                 Positive_graph, labels = batch
 
                 if device.type == 'cuda':
-                    with autocast():
+                    with autocast('cuda'):
                         logits = model(Positive_graph)
-                        logits = logits.to(device)
                         loss = loss_func(logits, labels)
                 else:
                     logits = model(Positive_graph)
-
-                    logits = logits.to(device)
-
                     loss = loss_func(logits, labels)
 
-                total_loss += loss.item()
-                total_accuracy += (logits.argmax(1) == labels).sum().item()
+                total_loss += loss.detach()
+                total_accuracy += (logits.argmax(1) == labels).sum()
                 total_test_step += 1
 
-        return total_loss / total_test_step, total_accuracy / data_length
+        return (total_loss / total_test_step).item(), (total_accuracy / data_length).item()
 
     def test(self, model, loss_func, val_loader, device, data_length):
 
@@ -133,16 +126,15 @@ class Tran:
                 Positive_graph, labels = batch
 
                 if device.type == 'cuda':
-                    with autocast():
+                    with autocast('cuda'):
                         logits = model(Positive_graph)
                         loss = loss_func(logits, labels)
                 else:
                     logits = model(Positive_graph)
-
                     loss = loss_func(logits, labels)
 
-                total_loss += loss.item()
-                total_accuracy += (logits.argmax(1) == labels).sum().item()
+                total_loss += loss.detach()
+                total_accuracy += (logits.argmax(1) == labels).sum()
 
                 total_step += 1
 
@@ -150,8 +142,8 @@ class Tran:
                 all_labels.append(labels)
                 all_preds.append(y_pred)
 
-        average_loss = total_loss / total_step
-        average_accuracy = total_accuracy / data_length
+        average_loss = (total_loss / total_step).item()
+        average_accuracy = (total_accuracy / data_length).item()
 
         Y_test_int = torch.cat(all_labels, 0).to('cpu')
         preds_a = torch.cat(all_preds, 0).to('cpu')
@@ -206,9 +198,12 @@ class Tran:
         )
 
         num_workers = 0 if os.name == 'nt' else min(args.num_workers, os.cpu_count() or 1)
-        train_loader = GraphDataLoader(dataset_train, batch_size=args.batch_size, shuffle=True, num_workers=num_workers)
-        val_loader = GraphDataLoader(dataset_val, batch_size=args.batch_size, num_workers=num_workers)
-        test_loader = GraphDataLoader(dataset_test, batch_size=args.batch_size, num_workers=num_workers)
+        loader_kwargs = dict(num_workers=num_workers, pin_memory=device.type == 'cuda')
+        if num_workers > 0:
+            loader_kwargs.update(prefetch_factor=3)
+        train_loader = GraphDataLoader(dataset_train, batch_size=args.batch_size, shuffle=True, **loader_kwargs)
+        val_loader = GraphDataLoader(dataset_val, batch_size=args.batch_size, **loader_kwargs)
+        test_loader = GraphDataLoader(dataset_test, batch_size=args.batch_size, **loader_kwargs)
 
         model.to(device)
 

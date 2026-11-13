@@ -11,7 +11,6 @@ from imblearn.metrics import geometric_mean_score
 from sklearn.metrics import roc_auc_score, average_precision_score, classification_report, \
     precision_recall_fscore_support
 from sklearn.preprocessing import LabelBinarizer
-from torch import nn
 from tqdm import tqdm
 
 from MyDataset_final import MyDataset
@@ -62,25 +61,25 @@ def Final_test(args, seed):
 
     dataset_test = MyDataset(name=args.dataset + "_" + str(fold) + f"_seed{seed}", type="test")
 
-    test_loader = GraphDataLoader(dataset_test, batch_size=args.batch_size, shuffle=True)
-
     device = get_device(args.gpu)
+
+    test_loader = GraphDataLoader(
+        dataset_test, batch_size=args.batch_size, shuffle=True,
+        num_workers=0, pin_memory=device.type == 'cuda',
+    )
 
     model_path = path + '/' + str(args.dataset) + f'_fold{fold}_seed{seed}' + '_model.pkl'
 
-    model = torch.load(model_path)
+    model = torch.load(model_path, weights_only=False)
     model.to(device)
 
     model.eval()
-    loss_func = nn.CrossEntropyLoss()
 
-    total_loss = 0
-    total_accuracy = 0
-    total_step = 0
+    total_correct = 0
     Y_labels = []
     Y_preds = []
 
-    with torch.no_grad():
+    with torch.inference_mode():
 
         for batch in test_loader:
             batch = [item.to(device) for item in batch]
@@ -89,21 +88,16 @@ def Final_test(args, seed):
 
             logits = model(Positive_graph)
 
-            loss = loss_func(logits, labels)
-
-            total_loss += loss.item()
-            total_accuracy += (logits.argmax(1) == labels).sum().item()
-
-            y_pred = logits.argmax(1)
+            total_correct += (logits.argmax(1) == labels).sum()
 
             Y_labels.append(labels)
-            Y_preds.append(y_pred)
+            Y_preds.append(logits.argmax(1))
 
     Y_test_int = torch.cat(Y_labels, 0).to('cpu')
 
     preds_a = torch.cat(Y_preds, 0).to('cpu')
 
-    accuracy = total_accuracy / len(dataset_test)
+    accuracy = (total_correct / len(dataset_test)).item()
     precision, recall, fscore, _ = precision_recall_fscore_support(Y_test_int, preds_a, average='macro',
                                                                    pos_label=None)
 

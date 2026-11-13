@@ -13,7 +13,8 @@ from torch import nn
 from torch.optim.lr_scheduler import LinearLR, SequentialLR, CosineAnnealingLR
 
 import warnings
-from torch.cuda.amp import autocast, GradScaler
+from torch.amp import autocast
+from torch.cuda.amp import GradScaler
 
 from MyDataset_final import MyDataset
 from model.model import HeteroSAGE
@@ -42,13 +43,11 @@ def train(model, train_loader, loss_func, optimizer, device, data_length, scaler
         Positive_graph, labels = batch
 
         if scaler is not None:
-            with autocast():
+            with autocast('cuda'):
                 logits = model(Positive_graph)
-                logits = logits.to(device)
                 loss = loss_func(logits, labels)
         else:
             logits = model(Positive_graph)
-            logits = logits.to(device)
             loss = loss_func(logits, labels)
 
         optimizer.zero_grad()
@@ -64,11 +63,11 @@ def train(model, train_loader, loss_func, optimizer, device, data_length, scaler
             torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=clip_grad_norm)
             optimizer.step()
 
-        total_loss += loss.item()
-        total_accuracy += (logits.argmax(1) == labels).sum().item()
+        total_loss += loss.detach()
+        total_accuracy += (logits.argmax(1) == labels).sum()
         total_step += 1
 
-    return total_loss / total_step, total_accuracy / data_length
+    return (total_loss / total_step).item(), (total_accuracy / data_length).item()
 
 
 def validate(model, loss_func, val_loader, device, data_length):
@@ -87,17 +86,15 @@ def validate(model, loss_func, val_loader, device, data_length):
             Positive_graph, labels = batch
 
             if device.type == 'cuda':
-                with autocast():
+                with autocast('cuda'):
                     logits = model(Positive_graph)
-                    logits = logits.to(device)
                     loss = loss_func(logits, labels)
             else:
                 logits = model(Positive_graph)
-                logits = logits.to(device)
                 loss = loss_func(logits, labels)
 
-            total_loss += loss.item()
-            total_accuracy += (logits.argmax(1) == labels).sum().item()
+            total_loss += loss.detach()
+            total_accuracy += (logits.argmax(1) == labels).sum()
             total_test_step += 1
 
             all_labels.append(labels)
@@ -107,7 +104,7 @@ def validate(model, loss_func, val_loader, device, data_length):
     y_pred = torch.cat(all_preds, 0).to('cpu')
     _, _, val_f1, _ = precision_recall_fscore_support(y_true, y_pred, average='macro', pos_label=None)
 
-    return total_loss / total_test_step, total_accuracy / data_length, val_f1
+    return (total_loss / total_test_step).item(), (total_accuracy / data_length).item(), val_f1
 
 
 def test(model, loss_func, val_loader, device, data_length):
@@ -127,15 +124,15 @@ def test(model, loss_func, val_loader, device, data_length):
             Positive_graph, labels = batch
 
             if device.type == 'cuda':
-                with autocast():
+                with autocast('cuda'):
                     logits = model(Positive_graph)
                     loss = loss_func(logits, labels)
             else:
                 logits = model(Positive_graph)
                 loss = loss_func(logits, labels)
 
-            total_loss += loss.item()
-            total_accuracy += (logits.argmax(1) == labels).sum().item()
+            total_loss += loss.detach()
+            total_accuracy += (logits.argmax(1) == labels).sum()
 
             total_step += 1
 
@@ -143,8 +140,8 @@ def test(model, loss_func, val_loader, device, data_length):
             all_labels.append(labels)
             all_preds.append(y_pred)
 
-    average_loss = total_loss / total_step
-    average_accuracy = total_accuracy / data_length
+    average_loss = (total_loss / total_step).item()
+    average_accuracy = (total_accuracy / data_length).item()
 
     Y_test_int = torch.cat(all_labels, 0).to('cpu')
 
@@ -199,9 +196,12 @@ def train_val(args, seed):
     )
 
     num_workers = 0 if os.name == 'nt' else min(args.num_workers, os.cpu_count() or 1)
-    train_loader = GraphDataLoader(dataset_train, batch_size=args.batch_size, shuffle=True, num_workers=num_workers)
-    val_loader = GraphDataLoader(dataset_val, batch_size=args.batch_size, num_workers=num_workers)
-    test_loader = GraphDataLoader(dataset_test, batch_size=args.batch_size, num_workers=num_workers)
+    loader_kwargs = dict(num_workers=num_workers, pin_memory=device.type == 'cuda')
+    if num_workers > 0:
+        loader_kwargs.update(prefetch_factor=3)
+    train_loader = GraphDataLoader(dataset_train, batch_size=args.batch_size, shuffle=True, **loader_kwargs)
+    val_loader = GraphDataLoader(dataset_val, batch_size=args.batch_size, **loader_kwargs)
+    test_loader = GraphDataLoader(dataset_test, batch_size=args.batch_size, **loader_kwargs)
 
     model.to(device)
 
