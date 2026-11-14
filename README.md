@@ -41,23 +41,52 @@ flowchart LR
 
 ### 2.1 Install Dependencies
 
+**推荐用一键脚本**（会自动检测 CUDA 版本、按正确顺序安装、并做环境自检）：
+
 ```bash
-# PyTorch (install the build matching your CUDA version, see https://pytorch.org)
-pip install torch
-
-# DGL (graph deep learning library; must match your torch/CUDA version, see https://www.dgl.ai/pages/start.html)
-pip install dgl
-
-# Reinforcement learning libraries
-pip install stable-baselines3 gymnasium
-
-# Other dependencies
-pip install numpy pandas scikit-learn imblearn tqdm matplotlib scipy pm4py
+chmod +x setup_env.sh
+./setup_env.sh                  # 自动检测 CUDA；也可 --cuda cu118|cu121|cu124
 ```
 
-> **Note**: DGL must match the CUDA version of PyTorch. It is recommended to install the matching wheel, e.g. `pip install dgl -f https://data.dgl.ai/wheels/cu{version}/repo.html`.
+如果想手动安装，必须严格按下面的顺序，**版本不能改**：
 
-### 2.2 Hardware Requirements
+```bash
+# 1) 先装 torch，并锁定 CUDA 源（DGL 的 wheel 是针对特定 torch/CUDA 编译的）
+pip install torch==2.4.1 torchvision==0.19.1 \
+    --index-url https://download.pytorch.org/whl/cu121   # 按你的卡改成 cu118 / cu121 / cu124
+
+# 2) 再装 DGL。必须用官方 wheel 仓库（PyPI 上的 dgl 是 CPU 版），
+#    且必须 --no-deps，否则 pip 会把 torch 换成别的版本。
+pip install dgl==2.4.0 \
+    -f https://data.dgl.ai/wheels/torch-2.4/cu121/repo.html --no-deps
+
+# 3) 再装 torchdata（DGL 2.x 的硬依赖，版本要与 torch 对齐）
+pip install torchdata==0.9.0 --no-deps
+pip install urllib3 requests
+
+# 4) 最后装其余依赖
+pip install -r requirements.txt
+```
+
+> **Why these versions?** The upper bounds are enforced by the code and by upstream packages, not chosen arbitrarily:
+> - `torch<=2.4.0` — DGL 2.4.0's `setup.py` declares `install_requires=[..., "torch<=2.4.0"]`, and DGL publishes wheels only up to `torch-2.4`. A newer torch has no matching DGL wheel.
+> - `dgl>=2.0` — `model/model.py` calls `dgl.max_nodes(...)`, which only exists from DGL 2.0 (`dgl/readout.py`).
+> - `torch>=2.0` — `Pre_Train.py` / `final_main.py` use `torch.optim.NAdam`, added in torch 2.0.
+> - `pm4py<=2.7.12.2` and `imbalanced-learn<=0.12.4` — newer releases require Python>=3.11 / >=3.10, which excludes the Python 3.9 environment this project runs on.
+> - `numpy<2` — required by DGL 2.3.x and by the pinned pm4py / imbalanced-learn builds.
+> - `stable-baselines3==2.3.2` + `gymnasium==0.29.1` — the last pairing that stays on the gymnasium 0.29 API without pulling in newer behavioural changes.
+
+> **Note:** DGL must match the CUDA version of PyTorch. `pip install dgl` from PyPI installs a **CPU-only** build (PyPI's latest is 2.2.1), so the `-f https://data.dgl.ai/wheels/...` source is mandatory.
+
+### 2.2 Verify the Environment
+
+```bash
+python -c "import torch, dgl; print(torch.__version__, dgl.__version__, dgl.backend.is_cuda_available())"
+```
+
+`setup_env.sh` runs this check (plus API-level checks for every symbol the project imports) and exits non-zero on failure. If `import dgl` raises `ModuleNotFoundError` for `networkx` / `pydantic` / `psutil`, the DGL install lost its dependencies — run `pip install -r requirements.txt` again.
+
+### 2.3 Hardware Requirements
 
 - A **GPU** is required for training (scripts default to `cuda:0`; change it via the `--gpu` argument or the `get_device()` function in the code).
 - Running the full pipeline over all datasets × 5 seeds takes a long time; we recommend first validating the workflow on a small subset.
@@ -146,7 +175,14 @@ python env_train.py
 - Loads the 4 base GNNs from Step 2 as "environment evaluators".
 - Builds a Gymnasium environment: state = prefix features (activity sequence, length, entropy, duration statistics, etc.), action = choose one of the 4 graph configurations (0–3), reward = prediction performance of the selected GNN.
 - Trains a **PPO** policy (MLP `[256, 128, 64]`, cosine-annealed learning rate `1e-3 → 0`, `n_steps=1024`, batch 128, `ent_coef=0.01`, early-stop patience 5).
-- All 4 graph variants for every sample are pre-built and cached on GPU before training to avoid repeated graph construction.
+- In `--legacy-reward` mode all 4 graph variants for every sample are pre-built and kept resident on GPU; the default path does not do this (it would hold `4 x N` DGL graphs in VRAM for no benefit).
+- **Reward table (default since the efficiency pass).** The 4 base GNNs are frozen here, so the reward of a `(prefix, action)` pair is a constant. Instead of running one single-graph GNN forward per environment step (hundreds of thousands of times, with ~19x redundancy), each pair is evaluated exactly once up front and stored as `(loss, correct, pred)`; `env.step()` then just indexes the table. Nothing else changes — batch Macro-F1, the EMA baseline and the final reward are still computed live at every batch boundary, and the PPO policy still chooses actions online. See `reward_table.py`.
+  - The table is computed through the *same* `evaluate_gnn`, on the same single graph, in fp32 — so it is **bit-identical** to the old path, not just numerically close.
+  - Tables are cached on disk under `reward_cache/` (keyed by dataset, fold, seed, split, the 4 reward-model files, the loss config, and a **content hash of the split's own features + labels** — so a re-split, a re-pretrain, or a change in `activity`/`duration` all invalidate it, while simply rewriting the same `.npy` files does not), so re-running the PPO stage only pays the read cost. Cache build/read time is inside the wall-clock timer, so it is counted in the reported training time.
+  - Flags: `--legacy-reward` restores the original per-step forward path, `--verify-reward-table` loads data + models and only runs the equivalence check (every `(prefix, action)` pair is re-forwarded live and compared against the table; add `--verify-sample N` for a quick spot check), `--no-cache` disables the disk cache.
+  - Pass criteria for the check: `pred`/`correct` must match **exactly** (they feed macro-F1 and the reward directly, so a single flip changes the training trajectory), and `max|Δloss| < 1e-6`. It also asserts that `_tid` is a 0..N-1 permutation, that every precomputed state equals a fresh `extract_features` call, and that table values are finite and in range.
+  - Recommended first run on a new dataset/seed: `python env_train.py --verify-reward-table` — it prints PASS/FAIL and exits non-zero on any discrepancy.
+- Prefix state vectors are precomputed once per sample (same pure function, same `float32` cast as SB3 performs), instead of being rebuilt at every step.
 - The default `list_eventlog` covers all 7 datasets; edit it to select a subset.
 - Outputs the policy model: `RL_model/<dataset>/PPO_best_model_fold0_seed{seed}`.
 - After training, `final_policy.py` is invoked automatically: it uses the optimal policy to pick a graph configuration for **every prefix** and generates the final hybrid graph dataset:
@@ -196,7 +232,7 @@ chmod +x run_pipeline.sh
 
 ---
 
-## 6. Ablation Study (Optional)
+## 6. Ablation & Control Experiments (Optional)
 
 Used to validate the contribution of each graph configuration (and of the RL selection mechanism):
 
@@ -222,6 +258,39 @@ python ablation_oracle_ceiling.py
 # --gpu --num-workers --model-root --output-root.
 ```
 
+### 前缀分组与规则选图对照实验（实验三）
+
+**前缀分组（G1–G4）**：按前缀中的重复活动形态分组 —— G1 无重复活动（A→B→C）、G2 仅相邻重复（A→A→B）、G3 仅非相邻重复（A→B→A）、G4 相邻与非相邻重复同时存在（A→A→B→A）。判定实现在 `prefix_groups.py`（口径：同一活动连续出现 3 次及以上如 A→A→A 只算相邻重复归 G2；结构与名称映射 Basic=0 / Context-aware=1 / Pattern-aware=2 / Comprehensive=3）。
+
+```bash
+# 统计每个数据集 train/val/test 的 G1–G4 分布
+python prefix_group_stats.py
+# Outputs: prefix_group_stats/<dataset>_fold0_group_stats.txt
+#          prefix_group_stats/all_datasets_fold0_group_stats.csv
+```
+
+**实验三（PPO vs 规则选图）**：用三种规则选择器替代 PPO 为每条 prefix 选图结构，其余流程（混合图数据集 → final HGNN 训练配置 → 测试集评估）与 RLHGNN 主实验完全一致：
+
+| 规则 | 选择方式 |
+| --- | --- |
+| Rule 1 重复感知 | G1 选 Context-aware；G2/G3/G4 选 Comprehensive |
+| Rule 2 重复模式 | G1 选 Basic；G2/G3 选 Pattern-aware；G4 选 Comprehensive |
+| Rule 3 验证集最优 | 用 4 个固定结构 HGNN（消融模型）在**验证集**上按组统计 Accuracy，每组取最高者；映射按数据集×种子确定，仅用于选图，不接触测试集 |
+
+```bash
+# Rule 3 依赖消融模型，先跑（若还没有）：python ablation_main.py
+python rule_control_main.py                       # 全部数据集 × 5 seeds × 3 规则
+python rule_control_main.py --datasets p2p --seeds 133   # 快速验证
+python rule_control_main.py --rules rule1 rule2   # 只跑静态规则（无需消融模型）
+python rule_control_main.py --skip-existing       # 断点续跑
+```
+
+Outputs:
+- `graph_data/<dataset>_0_seed<seed>_rule{1,2,3}/`（混合图 + `actions_*.npy` + `groups_*.npy`；rule3 另存 `rule3_mapping.txt` 记录验证集 Accuracy 表与组→结构映射）
+- `final_train_rule/rule{X}/<dataset>/seed<seed>/`（模型）
+- `result_final_train_rule/rule{X}/<dataset>/<dataset>_rule{X}_summary.txt`（5 seeds Mean±SD）
+- `result_final_train_rule/<dataset>_rule_vs_ppo_summary.txt`（三种规则 vs RLHGNN 汇总与逐 seed 差值）
+
 Statistical significance analysis (Friedman + Nemenyi test, CD diagram; fill in the metrics of each method manually in the data section of the script):
 
 ```bash
@@ -229,6 +298,45 @@ python cd_diagram.py
 ```
 
 Outputs `cd_diagram_accuracy.png` and `cd_diagram_f1.png` (Demsar 2006 style).
+
+### 6.1 Repeat-pattern prefix analysis (实验二)
+
+Checks whether RLHGNN's advantage is concentrated on prefixes that contain repeated activities,
+instead of claiming a uniform gain. Grouping is done on the window the model actually sees
+(left padding removed, truncated to `mean_trace`), so a prefix longer than the window is
+classified by its last `mean_trace` events.
+
+| Group | Definition | Example |
+| --- | --- | --- |
+| G1 | no repeated activity | A → B → C |
+| G2 | adjacent repeats only | A → A → B |
+| G3 | non-adjacent repeats only | A → B → A |
+| G4 | both kinds present | A → A → B → A |
+
+"Non-adjacent" is tested after compressing runs of equal activities; it does **not** imply business
+rework unless there is event-level semantic evidence.
+
+```bash
+# 1) test-prefix manifest: case_id + prefix_end_event_index + G1-G4 (CPU only, no GPU/DGL)
+python prefix_group_build.py -d bpi12_all_complete -d bpi13_incidents
+# 2) per-prefix predictions of RLHGNN and the 4 fixed structures (+ PPO actions)
+python prefix_group_export_preds.py -d bpi12_all_complete -d bpi13_incidents
+# 3) per-group Accuracy/Macro-F1, McNemar/Wilcoxon tests, DiD bootstrap, action distribution
+python prefix_group_metrics.py -d bpi12_all_complete -d bpi13_incidents
+```
+
+- Step 1 rebuilds the prefix order of `ProcessEventlog_one_graph.py` — note that the order follows
+  the **sorted case key** (because `timestamp_transform()` re-concatenates cases with a sorting
+  `groupby`) — and verifies every row against the `raw_dir` npy windows and labels; any mismatch
+  aborts instead of silently mislabelling prefixes.
+- Step 2 aligns all methods on `prefix_id` (`prefix_index` in the CSV) and refuses to write if a
+  method's row count, prefix index or true label differs. Each fixed-structure graph set is loaded
+  once and reused across seeds.
+- Step 3 writes `per_seed.csv`, `summary.csv`, `mcnemar.csv`, `wilcoxon.csv`,
+  `did_bootstrap.csv`, `action_distribution.csv` and `report.md`. Macro-F1 uses the dataset's full
+  label set with `zero_division=0`. DiD = [RLHGNN − fixed]@Gx − [RLHGNN − fixed]@G1 with a
+  case-level cluster bootstrap, so it directly tests "advantage concentrated on G3/G4".
+- Outputs go to `exp2_repeat_groups/{prefix_index,preds,metrics}/`.
 
 ---
 
@@ -244,6 +352,8 @@ Outputs `cd_diagram_accuracy.png` and `cd_diagram_f1.png` (Demsar 2006 style).
 | `final_train/<dataset>/seed{seed}/` | Final prediction models |
 | `result_Pretrain/` `result_final_train/` | Evaluation metric results (txt) |
 | `ablation_exp/` | Ablation models and results |
+| `graph_data/<dataset>_0_seed{seed}_random/` | Hybrid graphs under random structure selection (control) |
+| `final_train_random/` `result_final_train_random/` | Random-control models and metric results |
 | `logs/` | Logs of the one-command pipeline |
 
 ## 8. Core Files Overview
@@ -263,7 +373,14 @@ Outputs `cd_diagram_accuracy.png` and `cd_diagram_f1.png` (Demsar 2006 style).
 | `metrics_final.py` | Final model evaluation |
 | `ablation_main.py` / `ablation_metrics.py` | Ablation study |
 | `ablation_oracle_ceiling.py` | Oracle ceiling: per-prefix best-action accuracy + F1 upper-bound search |
+| `random_control_main.py` | Random graph-structure selection control (uniform random per prefix → same final HGNN training, 5 seeds) |
+| `prefix_groups.py` | Prefix grouping definitions (G1–G4) and rule name → structure mapping (Basic/Context-aware/Pattern-aware/Comprehensive) |
+| `prefix_group_stats.py` | G1–G4 distribution statistics per dataset/split |
+| `rule_control_main.py` | Experiment 3: PPO vs rule-based graph-structure selection (Rule 1/2/3, 5 seeds, Mean±SD, RLHGNN comparison) |
 | `cd_diagram.py` | Friedman / Nemenyi tests and CD diagram (`cd_diagram_accuracy.png`, `cd_diagram_f1.png`) |
+| `prefix_group_build.py` | Exp.2 step 1: test-prefix manifest (case_id + prefix_end_event_index) and G1–G4 repeat-pattern grouping |
+| `prefix_group_export_preds.py` | Exp.2 step 2: per-prefix predictions of RLHGNN + the 4 fixed structures, plus PPO actions |
+| `prefix_group_metrics.py` | Exp.2 step 3: per-group Accuracy/Macro-F1, McNemar/Wilcoxon, DiD cluster bootstrap, action distribution |
 | `model/model.py` | `HeteroSAGE` model (hetero SAGEConv + LSTM/mean aggregation, Post-LN + stochastic depth (DropPath), max pooling) |
 | `MyDataset*.py` | DGL dataset wrappers |
 

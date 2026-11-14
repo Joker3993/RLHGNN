@@ -175,7 +175,7 @@ if __name__ == '__main__':
 
             parser.add_argument("-d", "--dataset", type=str, default=eventlog, help="dataset to use")
 
-            parser.add_argument("--batch_size", type=int, default=64, help="batch_size")
+            parser.add_argument("--batch_size", type=int, default=1024, help="batch_size")
 
             parser.add_argument("--gpu", type=int, default=0, help="gpu")
 
